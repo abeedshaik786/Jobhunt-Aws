@@ -1,0 +1,648 @@
+{% load static %}
+<style>
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);}
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+.fa-2x {
+font-size: 2em;
+}
+.fa {
+position: relative;
+display: table-cell;
+width: 60px;
+height: 36px;
+text-align: center;
+vertical-align: middle;
+font-size:20px;
+}
+
+
+.main-menu:hover,nav.main-menu.expanded {
+width:250px;
+overflow:visible;
+}
+
+.main-menu {
+background:#212121;
+border-right:1px solid #e5e5e5;
+position:absolute;
+top:0;
+bottom:0;
+height:100%;
+left:0;
+width:60px;
+overflow:hidden;
+-webkit-transition:width .05s linear;
+transition:width .05s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+z-index:1000;
+}
+
+.main-menu>ul {
+margin:7px 0;
+}
+
+.main-menu li {
+padding: 5px;
+margin: auto;
+position:relative;
+display:block;
+width:250px;
+}
+
+.main-menu li>a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+color:#999;
+ font-family: arial;
+font-size: 14px;
+text-decoration:none;
+-webkit-transform:translateZ(0) scale(1,1);
+-webkit-transition:all .1s linear;
+transition:all .1s linear;
+  
+}
+
+.main-menu .nav-icon {
+position:relative;
+display:table-cell;
+width:60px;
+height:36px;
+text-align:center;
+vertical-align:middle;
+font-size:18px;
+}
+
+.main-menu .nav-text {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:190px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.main-menu>ul.logout {
+position:absolute;
+left:0;
+bottom:0;
+}
+
+.no-touch .scrollable.hover {
+overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+overflow-y:auto;
+overflow:visible;
+}
+
+a:hover,a:focus {
+text-decoration:none;
+}
+
+nav {
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;
+}
+
+nav ul,nav li {
+outline:0;
+margin:0;
+padding:0;
+}
+.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+color:#fff;
+}
+.area {
+float: left;
+background: #f38f8f;
+width: 100%;
+height: 100%;
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+  }
+  
+.border-stylish{
+  border-bottom-left-radius: 300px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-start-start-radius: 30px;
+}
+  </style>
+
+  <html>
+  <head>
+      <!-- <link rel="stylesheet" href="{% static 'bootstrap/css/fontawesome-all.css' %}">
+      <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'bootstrap/css/mdb.css' %}">
+      <link rel="stylesheet" href="{% static 'bootstrap/css/style.css' %}"> -->
+      <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="{% static 'animate.css' %}">
+      <link rel="stylesheet" href="{% static 'static_css/base.css' %}">
+      <link type="text/css" rel="stylesheet" href="{% static 'static_css/magicscroll/magicscroll.css' %}"/>
+      <script type="text/javascript" src="{% static 'static_css/magicscroll/magicscroll.js' %}"></script>
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+      <!-- Bootstrap core CSS -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Material Design Bootstrap -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+     
+  </head>
+  <body ><nav class="main-menu" style="position: fixed;">
+            <ul>
+                <li>
+                    <a href="http://justinfarrow.com">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Dashboard
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text">
+                            Stars Components
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text">
+                            Forms
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="#">
+                       <i class="fa fa-folder-open fa-2x"></i>
+                        <span class="nav-text">
+                            Pages
+                        </span>
+                    </a>
+                   
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <span class="nav-text">
+                            Graphs and Statistics
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-font fa-2x"></i>
+                        <span class="nav-text">
+                           Quotes
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="#">
+                       <i class="fa fa-table fa-2x"></i>
+                        <span class="nav-text">
+                            Tables
+                        </span>
+                    </a>
+                </li>
+                <li>
+                   <a href="#">
+                        <i class="fa fa-map-marker fa-2x"></i>
+                        <span class="nav-text">
+                            Maps
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                       <i class="fa fa-info fa-2x"></i>
+                        <span class="nav-text">
+                            Documentation
+                        </span>
+                    </a>
+                </li>
+                <li>
+                  <a href="#">
+                     
+                      <span class="nav-text" >
+                        <a style="position:reletive; top:350px; left:100px;" data-toggle="modal" data-target="#centralModalSm" class="nav-link" style="position: relative; bottom:50px;">
+                          <div class="chat" onclick="this.classList.toggle('active')">
+                          <div class="background"></div>
+                          <svg class="chat-bubble" width="100" height="100" viewBox="0 0 100 100" >
+                            <g class="bubble">
+                              <path class="line line1" d="M 30.7873,85.113394 30.7873,46.556405 C 30.7873,41.101961
+                              36.826342,35.342 40.898074,35.342 H 59.113981 C 63.73287,35.342
+                              69.29995,40.103201 69.29995,46.784744" />
+                              <path class="line line2" d="M 13.461999,65.039335 H 58.028684 C
+                                63.483128,65.039335
+                                69.243089,59.000293 69.243089,54.928561 V 45.605853 C
+                                69.243089,40.986964 65.02087,35.419884 58.339327,35.419884" />
+                              
+                            </g>
+                            <circle class="circle circle1" r="1.9" cy="50.7" cx="42.5" />
+                            <circle class="circle circle2" cx="49.9" cy="50.7" r="1.9" />
+                            <circle class="circle circle3" r="1.9" cy="50.7" cx="57.3" />
+                          </svg>
+                        </div>
+                       </div></a>
+                      </span>
+                  </a>
+              </li>
+               
+            </ul>
+
+            <ul class="logout">
+                <li>
+                   <a href="{% url 'jobkarlepro:Logout' %}">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+        <section>
+          <div class="col-sm-10 m-3"style="position: relative; left:253px;">
+            <div class="row">
+              <div class="col-sm-11"> 
+                <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: darkgrey;">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#"><i class="fa fa-caret-square-o-down fa-2x" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-tasks fa-2x"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="contact.html" class="nav-link"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="far fa-bell fa-2x animated swing"></i>
+                          {% if notification_unread %}
+                          <div class="badge" style="position: relative; bottom:15px; right:20px; background-color:red;">
+                            <div class="message-count">{{notification_count}}</div>
+                          </div>
+                          {% endif %}</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#"><i class="fa fa-arrow-right fa-2x" aria-hidden="true"></i></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" href="#"><i class="fa fa-tag fa-2x" aria-hidden="true"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+            </div>
+              <div class="col-sm-1">
+                <i class="fa fa-print fa-2x float-right" style="padding-top:20px;" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          </section>
+          <section>
+            <div class="row">
+              <div class="card col-sm-6" style="height:780px; position: relative;left:300px;">
+                  <div class=" card m-3" style="background-color: aliceblue;">
+                    <div class="col-sm-11"style="">
+                      <div class="row m-auto">
+                        <div class="col-sm-10 p-2">
+                          <div class="" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                            <h5><strong>Notification Sender : {{obj.Name}}</strong></h5>
+                            <h5><strong>Email : {{company_user.email}}</strong></h5>
+          
+                          </div>
+                        </div>
+                        <div class="col-sm-2 p-2">
+                          <div class="card p-1"><img class="m-auto" src="{{Img.Profile.url}}" width="113" height="113"></div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class=" mt-3" style="margin-left: 20px;">
+                  <div class="row"
+                      <div class="col-sm-8"></div>
+                      <div class="col-sm-4" style="position: relative; right:50px;"> 
+                        <div class="letter-image">
+                          <div class="animated-mail">
+                            <div class="back-fold"></div>
+                            <div class="letter">
+                              <div class="letter-border"></div>
+                              <div class="letter-title"></div>
+                              <div class="letter-context"></div>
+                              <div class="letter-stamp">
+                                <div class="letter-stamp-inner"></div>
+                              </div>
+                            </div>
+                            <div class="top-fold"></div>
+                            <div class="body"></div>
+                            <div class="left-fold"></div>
+                          </div>
+                          <div class="shadow"></div>
+                        </div> 
+
+                      </div>
+                    <div class="row">
+                    <div class="col-sm-8"></div>
+                    <div class="col-sm-4">
+                     <div style="position: fixed; left:90px; top:820px;"> 
+                      <style>
+                        .chat {
+                          display: flex;
+                          position: relative;
+                        }
+                        .background {
+                          background-color: #1950ff;
+                          border-radius: 50%;
+                          box-shadow: 0 2.1px 1.3px rgba(0, 0, 0, 0.044),
+                            0 5.9px 4.2px rgba(0, 0, 0, 0.054), 0 12.6px 9.5px rgba(0, 0, 0, 0.061),
+                            0 25px 20px rgba(0, 0, 0, 0.1);
+                          height: 80px;
+                          left: 10px;
+                          position: absolute;
+                          top: 10px;
+                          width: 80px;
+                        }
+                        .chat-bubble {
+                          cursor: pointer;
+                          position: relative;
+                        }
+                        .bubble {
+                          transform-origin: 50%;
+                          transition: transform 500ms cubic-bezier(0.17, 0.61, 0.54, 0.9);
+                        }
+                        .line {
+                          fill: none;
+                          stroke: #ffffff;
+                          stroke-width: 2.75;
+                          stroke-linecap: round;
+                          transition: stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+                        }
+                        .line1 {
+                          stroke-dasharray: 60 90;
+                          stroke-dashoffset: -20;
+                        }
+                        .line2 {
+                          stroke-dasharray: 67 87;
+                          stroke-dashoffset: -18;
+                        }
+                        .circle {
+                          fill: #ffffff;
+                          stroke: none;
+                          transform-origin: 50%;
+                          transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+                        }
+                        .active .bubble {
+                          transform: translateX(24px) translateY(4px) rotate(45deg);
+                        }
+                        .active .line1 {
+                          stroke-dashoffset: 21;
+                        }
+                        .active .line2 {
+                          stroke-dashoffset: 30;
+                        }
+                        .active .circle {
+                          transform: scale(0);
+                        }
+                        
+                      </style>
+                      <a data-toggle="modal" data-target="#centralModalSm" class="nav-link" style="position: relative; bottom:50px;">
+                        <div class="chat" onclick="this.classList.toggle('active')">
+                        <div class="background"></div>
+                        <svg class="chat-bubble" width="100" height="100" viewBox="0 0 100 100" >
+                          <g class="bubble">
+                            <path class="line line1" d="M 30.7873,85.113394 30.7873,46.556405 C 30.7873,41.101961
+                            36.826342,35.342 40.898074,35.342 H 59.113981 C 63.73287,35.342
+                            69.29995,40.103201 69.29995,46.784744" />
+                            <path class="line line2" d="M 13.461999,65.039335 H 58.028684 C
+                              63.483128,65.039335
+                              69.243089,59.000293 69.243089,54.928561 V 45.605853 C
+                              69.243089,40.986964 65.02087,35.419884 58.339327,35.419884" />
+                          </g>
+                          <circle class="circle circle1" r="1.9" cy="50.7" cx="42.5" />
+                          <circle class="circle circle2" cx="49.9" cy="50.7" r="1.9" />
+                          <circle class="circle circle3" r="1.9" cy="50.7" cx="57.3" />
+                        </svg>
+                      </div>
+                     </div></a>
+                     
+                    </div>
+                   </div>
+                  <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color:black;"><stong>{{obj.Subject}}</stong></h4>
+                  {{obj.Message | safe}}
+                  {{media}}
+                 </div>
+              </div>
+              <div class="col-sm-3" style="height:780px; position: relative;left:300px;">
+                <div class="card pb-2" style="position: relative; right:5px;">
+                  <!DOCTYPE html> 
+<html> 
+	<head> 
+		<style> 
+			div.scroll { 
+				width: 490px; 
+				height: 720px; 
+				overflow-x: hidden; 
+				overflow-x: auto; 
+				text-align:justify; 
+      } 
+      .main-head{
+        background-color:#212121;
+        color:white;
+      }
+		</style> 
+	</head> 
+	<body> 
+		<center> 
+	<div class="main-head">
+    <h5 class="p-2" style="font-family: Georgia, 'Times New Roman', Times, serif;"><strong>Notifications</strong> </h5>
+  </div>
+		<div class="scroll "> {% for i in notifications %}  
+      {% if 'Unread' == i.Status %}
+      <div class=" card  m-1 p-2" style="background-color: rgb(228, 187, 208); width:450px; position:relative; left:10px;">
+        <a href="{% url 'jobkarleapp:notification_read' i.id variable2.id %}">
+          <div class="row">
+            <div class="col-sm-3">
+              <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">
+            </div>
+            <div class="col-sm-9">
+              <strong class="" style="color:rgb(85, 83, 83);">{{i.Name}}</strong>
+              <div style="color: #999;">
+                {{i.Subject}}
+               </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      
+      {% else%}
+      
+       <div class=" card  m-1 p-2" style="background-color: rgb(240, 230, 235); width:450px; position:relative; left:10px;">
+        <a href="{% url 'jobkarleapp:notification_read' i.id variable2.id %}" >
+          <div class="row">
+            <div class="col-sm-3">
+              <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black;" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">
+            </div>
+            <div class="col-sm-9">
+              <strong class="" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(85, 83, 83);"">{{i.Name}}</strong>
+              <div style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(175, 168, 168);">
+                {{i.Subject}}
+               </div>
+
+            </div>
+          </div>
+        </a>
+      </div>
+     
+      {% endif %}
+      {% endfor %}
+		</div> 
+		</center> 
+	</body> 
+</html>					 
+
+                </div>
+              </div>
+            </div>
+            
+          </section>
+<!-- Button trigger modal -->
+
+
+<!-- Central Modal Small -->
+<div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+
+  <!-- Change class .modal-sm to change the size of the modal -->
+  <div class=" card modal-dialog modal-lg" role="document">
+
+
+      <div class="modal-header">
+        <h6 class="modal-title" id="myModalLabel">
+          <div class="">
+            <div class=" m-auto" style="background-color: yellow;">        
+              <strong><div class="row"><mark  style="background-color: black; color:white; text-align:center;">SEND Your</mark><mark style="background-color: yellow; color:black;">INTENCTION</mark></div></<strong>
+          </div>
+        </h6>
+        <button type="button" class="close chat" onclick="this.classList.toggle('active')" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-content modal-body">
+        <div class="">
+          <input class="p-2"  style="position:relative; left:400px;color:white; background-color:rgb(129, 200, 248);" type="submit" value="Send Notification">
+        </div>
+        <section>
+            <!-- intenction hidden model -->
+            <div class="col-sm" style="position: relative; right:15px; top:30px;">
+              </div>
+              <form method="POST" action="{% url 'jobkarleapp:User_intenction' %}">
+                {% csrf_token %}
+                <input type="hidden" name="user_id" value="{{user_data.id}}">
+              <div class="m-2">
+                <label style="color:rgb(129, 200, 248);">Your Name</label>
+                {{forms.Name}}
+              </div>
+              <div class="m-2">
+                <label style="color:rgb(129, 200, 248);">Subject</label>
+                {{forms.Subject}}
+              </div>
+              <div class="">
+                <label class="ml-1" style="color:rgb(129, 200, 248);">Message</label><br>
+                <div  class = p-2"border-stylish "
+                 style="
+                position: relative;
+                position:relative;
+                right:px;">
+                   <div class="m-auto"style="overflow: hidden;>
+                    {{forms.media}}
+                    {{forms.Message|safe}}
+                   </div>
+                  
+              </div>
+              </div>
+              
+            </form>
+            </div>
+          </section>
+    
+    </div>
+  </div>
+</div>
+<!-- Central Modal Small -->
+          <section>
+              <section class="modal fade col-sm-8" id="studentcommentmodel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"aria-hidden="true">
+              <div class="modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+                <!-- intenction hidden model -->
+                <div class="card col-sm-6 m-2" style="position: relative; right:15px; top:30px;">
+                  <div class="m-2">
+                    <div class="card col-sm-3 m-auto" style="background-color: yellow;">        
+                      <strong><div class="row"><mark  style="background-color: black; color:white; text-align:center;">SEND Your</mark><mark style="background-color: yellow; color:black;">INTENCTION</mark></div></<strong>
+                  </div>
+                  </div>
+                  <form method="POST" action="{% url 'jobkarleapp:User_intenction' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="user_id" value="{{user_data.id}}">
+                  <div class="m-2">
+                    <label style="color:rgb(129, 200, 248);">Your Name</label>
+                    {{forms.Name}}
+                  </div>
+                  <div class="m-2">
+                    <label style="color:rgb(129, 200, 248);">Subject</label>
+                    {{forms.Subject}}
+                  </div>
+                  <div class="">
+                    <label class="ml-1" style="color:rgb(129, 200, 248);">Message</label><br>
+                    <div class="ml-5 pl-4" >
+                        {{forms.media}}
+                      {{forms.Message|safe}}
+                  </div>
+                  </div>
+                  <div class="m-2 ">
+                    <input class="p-2"  style="position:relative; left:400px;color:white; background-color:rgb(129, 200, 248);" type="submit" value="Send Notification">
+                  </div>
+                </form>
+              
+                </div>
+            
+              </section>
+          </section>
+          
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+      <datalist id="id_country_list"></datalist>
+  </body>
+    </html>

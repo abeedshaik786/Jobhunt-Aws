@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+<!-- {% load static %} -->
+{% block content %}
+{% load static %}
+
+
+<!-- <div class="container">
+  <div class="card">
+    <div class="m-auto">
+      <strong class="card m-3"><div class="row"><mark  style="background-color: black; color:white; text-align:center;">Student</mark><mark style="background-color: yellow; color:black;"> Qualification</mark></div></<strong>
+    </div>
+    <div class="">
+      <form>
+        <div class="row m-1">
+          <div class="col-sm m-auto p-1" style="background-color: pink;">
+          <div class="row m-auto">
+            <div style="background-color:white;">
+              <img src="{% static 'done.png' %}" width="25" height="25">
+            </div>
+            <div class="m-auto">
+              <p style="text-align:center"><strong>Step 1</strong></p>
+            </div>
+          </div>
+          </div>
+          <div class="col-sm m-auto p-1" style="background-color: pink;">
+            <div class="row m-auto">
+              <div style="background-color:white;">
+                <img src="{% static 'done.png' %}" width="25" height="25">
+              </div>
+              <div class="m-auto">
+                <p style="text-align:center"><strong>Step 1</strong></p>
+              </div>
+            </div>
+            </div>
+            <div class="col-sm m-auto p-1" style="background-color: pink;">
+              <div class="row m-auto">
+                <div style="background-color:white;">
+                  <img src="{% static 'done.png' %}" width="25" height="25">
+                </div>
+                <div class="m-auto">
+                  <p style="text-align:center"><strong>Step 1</strong></p>
+                </div>
+              </div>
+              </div>
+              <div class="col-sm m-auto p-1" style="background-color: pink;">
+                <div class="row m-auto">
+                  <div style="background-color:white;">
+                    <img src="{% static 'done.png' %}" width="25" height="25">
+                  </div>
+                  <div class="m-auto">
+                    <p style="text-align:center"><strong>Step 1</strong></p>
+                  </div>
+                </div>
+                </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6 m-5"></div> -->
+
+<!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
+
+<!-- NO JS ADDED YET -->
+
+<form class="p-4 container" method="POST" action="{% url 'jobkarlepro:fresherqualificationextra' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      
+      
+      <input type="hidden" name="user_id" value="{{user_id.id}}">
+
+      <div style="width:170px;">
+        <strong class="card m-3 p-0 "><div class="row"><mark  style="background-color: black; color:white; text-align:center;">Student</mark><mark style="background-color: yellow; color:black;"> Qualification</mark></div></<strong>   
+      </div>
+        <div class="row m-2">
+          <div class="col-sm-6">
+            {{forms.Highest_Qualification}}
+          </div>
+          <div class="col-sm-6">
+            <select class="form-control" name="course" placeholder="Slect Course" required id="id_course">     
+            </select>
+          </div>
+        </div>
+        <div class="col-sm m-2">
+          {{forms.Specialization}}
+        </div>
+        <div class="row m-2">
+          <div class="col-sm-6 ">
+            {{forms.Course_Type}}
+          </div>
+          <div class="col-sm-6">
+            {{forms.Passing_Year}}
+          </div>
+        </div>
+        <div class="row m-2">
+          <div class="col-sm-6">
+            {{forms.Phone}}
+          </div>
+          <div class="col-sm-6">
+            {{forms.Resume}}
+          </div>
+        </div>
+          
+        <div style="width:190px;">
+          <strong class="card m-3 p-0 "><div class="row"><mark  style="background-color: black; color:white; text-align:center;">Student</mark><mark style="background-color: yellow; color:black;">MInimum Skills </mark></div></<strong>   
+        </div>
+        <div class="row">
+          <div class="col-sm m-2">
+            {{forms.Skills1}}
+          </div>
+          <div class="col-sm m-2">
+            {{forms.Skills2}}
+          </div>
+          <div class="col-sm m-2">
+            {{forms.Skills3}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm m-2">
+            {{forms.Range1}}
+          </div>
+          <div class="col-sm m-2">
+            {{forms.Range2}}
+          </div>
+          <div class="col-sm m-2">
+            {{forms.Range3}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm m-2">
+            {{forms.Skills4}}
+          </div>
+          <div class="col-sm m-2">
+            {{forms.Skills5}}
+          </div>
+          <div class="col-sm m-2">
+            {{forms.Skills6}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm m-2">
+            {{forms.Range4}}
+          </div>
+          <div class="col-sm m-2">
+            {{forms.Range5}}
+          </div>
+          <div class="col-sm m-2">
+            {{forms.Range6}}
+          </div>
+        </div>
+    </div>
+        <input  style="background-color:#4A90E2;" class="col-sm-2 m-auto p-2" type="submit" value="Add Qualification">
+    </form>
+</div>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.min.js"></script>
+<script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+<script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.16599" type="text/javascript"></script>
+<script type="text/javascript">
+   JotForm.setConditions([{"action":{"field":"13","visibility":"Show"},"link":"Any","terms":[{"field":"11","operator":"equals","value":"Others, please specify below."}],"type":"field"}]);
+	JotForm.init(function(){
+if (window.JotForm && JotForm.accessible) $('input_6').setAttribute('tabindex',0);
+      setTimeout(function() {
+          $('input_5').hint('ex: myname@example.com');
+       }, 20);
+if (window.JotForm && JotForm.accessible) $('input_13').setAttribute('tabindex',0);
+if (window.JotForm && JotForm.accessible) $('input_8').setAttribute('tabindex',0);
+	JotForm.newDefaultTheme = false;
+    /*INIT-END*/
+	});
+
+   JotForm.prepareCalculationsOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"Submit Registration","type":"control_button"},{"name":"address3","qid":"3","text":"Address","type":"control_address"},{"name":"businessOwner","qid":"4","text":"Business Owner","type":"control_fullname"},{"name":"email","qid":"5","text":"E-mail","type":"control_email"},{"name":"businessName","qid":"6","text":"Business Name","type":"control_textbox"},null,{"name":"message","qid":"8","text":"Message","type":"control_textarea"},null,{"name":"clickTo","qid":"10","text":"Register Your Business","type":"control_head"},{"name":"typeOf","qid":"11","text":"Type of Business","type":"control_dropdown"},{"name":"contactNumber","qid":"12","text":"Contact Number","type":"control_phone"},{"name":"others","qid":"13","text":"Others","type":"control_textbox"}]);
+   setTimeout(function() {
+JotForm.paymentExtrasOnTheFly([null,null,{"name":"submitForm","qid":"2","text":"Submit Registration","type":"control_button"},{"name":"address3","qid":"3","text":"Address","type":"control_address"},{"name":"businessOwner","qid":"4","text":"Business Owner","type":"control_fullname"},{"name":"email","qid":"5","text":"E-mail","type":"control_email"},{"name":"businessName","qid":"6","text":"Business Name","type":"control_textbox"},null,{"name":"message","qid":"8","text":"Message","type":"control_textarea"},null,{"name":"clickTo","qid":"10","text":"Register Your Business","type":"control_head"},{"name":"typeOf","qid":"11","text":"Type of Business","type":"control_dropdown"},{"name":"contactNumber","qid":"12","text":"Contact Number","type":"control_phone"},{"name":"others","qid":"13","text":"Others","type":"control_textbox"}]);}, 20); 
+</script>
+<link href="https://cdn.jotfor.ms/static/formCss.css?3.3.16599" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.16599" />
+<link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.16599" />
+<style type="text/css">
+    .form-label-left{
+        width:150px;
+    }
+    .form-line{
+        padding-top:12px;
+        padding-bottom:12px;
+    }
+    .form-label-right{
+        width:150px;
+    }
+    .form-all{
+        width:690px;
+        color:Black !important;
+        font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, sans-serif;
+        font-size:14px;
+    }
+    .form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
+        color: false;
+    }
+
+</style> -->
+
+
+  <script>
+    $("#id_Highest_Qualification").on('change',function () {
+        //debugger
+          // get the url of the `load_cities` view
+      var Highest_Qualification_id = $(this).val();  // get the selected country ID from the HTML input
+      $.ajax({    
+        headers: { "X-CSRFToken": '{{csrf_token}}' },
+        type: "POST",                   // initialize an AJAX request
+        url: "{% url 'jobkarlepro:load_Course' %} ",            // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'Highest_Qualification_id': Highest_Qualification_id       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          debugger
+          var datalist = JSON.parse(data.data)
+          $.each(datalist, function(key, value) {   
+            $("#id_course")
+                .append($("<option></option>")
+                           .attr("value",value)
+                           .text(value)); 
+       });
+     // replace the contents of the city input with the data that came from the server
+        },
+      });
+
+    });
+  </script>
+{% endblock %}

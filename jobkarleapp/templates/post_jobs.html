@@ -1,0 +1,152 @@
+{% extends 'companybase.html' %}
+{% block content %}
+{% load static %}
+<div class="container card mt-5">
+    {% if obj %}
+<section class="m-4">
+  <div class="container card col-sm mr-5">
+    <div class="row">
+      <div class="col-sm-1">
+        <img src="{% static 'rigth.png' %}" width="30" id="img-companys" > 
+      </div>
+    <div class="applied-allert">
+     <P  class="m-auto centar" style=" color: green;"><span style="color: black;"><strong>{{user_data.username}}</strong></span> your successfully posted a new job on the role of <span style="color:#3c98ed;">{{obj.Skills}}</span> in <span style="color:#3c98ed;">{{obj.CompanyName}}</span></P>
+    </div>
+  </div>
+</section>
+{% endif %}
+   {{forms.errors}}
+   
+    <form action="{% url 'jobkarleapp:job_postview' %}" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="{{user.id}}">
+    <div class="card col-sm-2 mt-2" style="background-color: yellow;">        
+      <strong><div class="row"><mark  style="background-color: black; color:white; text-align:center;">POST</mark><mark style="background-color: yellow; color:black;">VACANCY</mark></div></<strong>
+  </div>
+    <div class="row">
+        <div class="col-sm-5 m-2">
+          <label for="cars">Company Name</label>
+            <input type="text" class="form-control" name="companyname" placeholder="CompanyName">
+
+        </div>
+        <div class="col-sm-5 m-2">
+          <label for="cars">Designation</label>
+            <input type="text" class="form-control" name="skills" placeholder="Role">
+        </div>
+    </div>
+    <div class="m-2">
+        <div class="form-group shadow-textarea col-sm-12">
+            <label for="exampleFormControlTextarea6">Company Description</label>
+            <textarea class=" form-control z-depth-1" name = "Company_description" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 m-2">
+            <label for="cars">Choose a Minimum Experience:</label>
+
+            <select id="min_exp" class="form-control" name="min_experience">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+        </div>
+        <div class="col-sm-5 m-2">
+            <label for="cars">Choose a Maximum Experience:</label>
+
+            <select id="max_exp"  class="form-control" name="max_experience">
+            
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 m-2">
+            <label for="cars">Choose a Minimum Experience:</label>
+
+            <select id="min_salary" class="form-control"name="min_salary">
+              <option value="0">0</option>
+              <option value="1,00,000">1</option>
+              <option value="2,00,000">2</option>
+              <option value="3,00,000">3</option>
+              <option value="4,00,000">4</option>
+              <option value="5,00,000">5</option>
+              <option value="6,00,000">6</option>
+              <option value="7,00,000">7</option>
+            </select>
+        </div>
+        <div class="col-sm-5 m-2">
+            <label for="cars">Choose a Maximum Experience:</label>
+
+            <select id="max_salary " class="form-control" name="max_salary">
+              <option value="0">0</option>
+              <option value="1,00,000">1</option>
+              <option value="2,00,000">2</option>
+              <option value="3,00,000">3</option>
+              <option value="4,00,000">4</option>
+              <option value="5,00,000">5</option>
+              <option value="6,00,000">6</option>
+              <option value="7,00,000">7</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group shadow-textarea col-sm-12">
+      <label for="exampleFormControlTextarea6">Roles and Responsibilities</label>
+      <textarea class="form-control z-depth-1 form-control" name="roledescription" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 m-2">
+          <label for="cars">First Hr Name</label>
+            <input type="text"  class="form-control" name="firsthrname" placeholder="First HrName">
+        </div>
+        <div class="col-sm-5 m-2">
+          <label for="cars">First Hr Number</label>
+            <input type="number"  class="form-control" name="firsthrnumber" placeholder="First HrNumber">        </div>
+    </div>
+    <div class="row">
+      
+        <div class="col-sm-5 m-2">
+          <label for="cars">Second Hr Name</label>
+          <input type="text"  class="form-control" name="secondhrname" placeholder="Second HrName"></div>
+        <div class="col-sm-5 m-2">
+          <label for="cars">Second Hr Number</label>
+          <input type="number"  class="form-control" name="secondhrnumber" placeholder="Second HrNumber"></div>
+    </div>
+    <div class="m-2">
+      <label for="cars">Interview Date</label>
+        <input type="text"  class="form-control" name="interviewdate" placeholder="Interview Date">
+    </div>
+    <div class="m-2">
+      <label for="cars">Interview Location</label>
+        <input type="text"  class="form-control" name="interviewlocation" placeholder="Interview Location">
+    </div>
+    <input type="submit" class="p-2 card" style="margin-left:400px; margin-bottom:5px; background-color:#3c98ed;" value="POST COMPANY REQUIREMENTS">
+</form> 
+</div>
+<script>
+    $("#demoCustomPalette").mdbWYSIWYG({
+        colorPalette: {
+          red: '#d50000',
+          green: '#64dd17',
+          yellow: '#fff176',
+          blue: '#03a9f4',
+          purple: '#6a1b9a',
+          white: '#fff',
+          black: '#000'
+        }
+      });
+</script>
+
+{% endblock %}

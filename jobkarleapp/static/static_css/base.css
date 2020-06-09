@@ -1,0 +1,200 @@
+.body-imgset{
+    background-color: #ebeff5;
+} 
+.companyback{
+  background-image: linear-gradient(rgba(164, 177, 233, 0.1),rgba(160, 168, 241, 0.1));
+
+  
+}
+.applied-allert {
+  text-align: center;
+  align-items: center;
+  padding-top: 4px;
+}
+.company-img{
+  border: solid, 1px, black;
+}
+.nav-imgset{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) , url("/static/78.jpg");
+  color: white;
+  widows:100%;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: repeat-y;
+  height:500px; 
+
+}
+.navbar-text-color a{
+    color: black;
+
+}
+.light-navbar{
+    background: linear-gradient(rgba(240, 239, 241, 0.5),rgba(251, 250, 252, 0.3));
+    width: 5px;
+
+}
+.search-heading{
+    font-size: 25px;
+    position: relative;
+    right: 20px;
+}
+.base11{
+    background-color:white;
+}
+.search-box-input input{
+    text-decoration: none;
+    border:none;
+    padding: 20px;
+    
+}
+.search-color{
+    background-color:#4A90E2;
+}
+.search-box-input .row{
+    display:flex;
+}
+.search-text{
+    font-size: 30px;
+    float:right;
+}
+.main-search {
+    text-decoration: none;
+    color: #fff;
+    background-color: #4A90E2;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer; 
+
+
+
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    min-width: 320px;
+    z-index: 1;
+  }
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {background-color:white;}
+  .nav-item li:hover{
+      transition-delay: 0.8s;
+      background-color: #ebeff5;
+
+    
+  }
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+
+
+
+.dropdown-recruiters {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    min-width: 320px;
+    z-index: 1;
+  }
+.dropdown-recruiters a {
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-recruiters a:hover {background-color:#ebeff5;}
+  .dropdown:hover a {
+    
+  }
+/* Show the dropdown menu on hover */
+.dropdown-RECRUITERS:hover .dropdown-recruiters {display: block;}
+
+
+.dropdown-companys {
+    display: none;
+    position: absolute;
+    background-color:white;
+    padding: 10px;
+    min-width: 320px;
+    z-index: 1;
+  }
+.dropdown-companys a {
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-companys a:hover {background-color:#ebeff5;}
+  .dropdown:hover a {
+    
+  }
+/* Show the dropdown menu on hover */
+.dropdown-comp:hover .dropdown-companys {display: block;}
+
+.dropdown-tools {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    min-width: 320px;
+    z-index: 1;
+  }
+.dropdown-tools a {
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-tools a:hover {background-color:#ebeff5;}
+  .dropdown:hover a {
+    
+  }
+/* Show the dropdown menu on hover */
+.dropdown-tool:hover .dropdown-tools {display: block;}
+
+.dropdown-more {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    min-width: 320px;
+    z-index: 1;
+  }
+.dropdown-more a {
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-more a:hover {background-color: #ebeff5;}
+  .dropdown:hover a {
+    
+  }
+/* Show the dropdown menu on hover */
+.dropdown-mor:hover .dropdown-more {display: block;}
+
+.dropdown-user {
+  display: none;
+  position: absolute;
+  background-color:white;
+  padding: 10px;
+  min-width: 320px;
+  z-index: 1;
+}
+.dropdown-user a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-user a:hover {background-color: #ebeff5;}
+.dropdown:hover a {
+  
+}
+/* Show the dropdown menu on hover */
+.dropdown-users:hover .dropdown-user {display: block;
+  margin-right: 100px;
+}
+

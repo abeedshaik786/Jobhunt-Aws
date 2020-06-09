@@ -1,0 +1,110 @@
+
+{% extends 'base.html'%}
+{% block content %}
+<select multiple="multiple"  name="services" id="services" size="5">
+  {% for service in filter_data %}
+      <option value="{{service.id}}">{{service}}</option>
+  {% endfor %}
+</select>
+<div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            {% for filter in filter_data %}
+            {{filter.Interview_Location}}
+            <div class="card booking-card m-2">
+                <!-- Card content -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-5">
+                        <h4 class="card-title font-weight-bold"><a>{{filter.CompanyName}}</a></h4>
+                    </div>
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-2">
+                      {% for user in users %}
+                        <input type="hidden"  id='user_id' value="{{ user.id }}">
+                      {% endfor %}
+                       <a href="#!">
+                          <i class="fas fa-user-edit company_user" style="color: orange;"   company_id='{{comdata.id}}' aria-hidden="true">Apply</i>
+                          </a>
+                    </div>
+                  </div>
+              
+                  <!-- Title -->
+                  <!-- Data -->
+                  <ul class="list-unstyled list-inline rating mb-0">
+                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+                    <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+                    <li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
+                  </ul>
+                  <p class="mb-2">{{filter.CompanyName}}</p>
+                  <!-- Text -->
+                  <p class="card-text">{{filter.Description}}</p>
+                  <hr class="my-4">
+                  <p class="lead"><strong>{{filter.Skills}}</strong></p>
+                  <p class="card-text">{{filter.JobDescription}}</p><br>
+                  <p class="lead"><strong>Interview</strong></p>
+                  <p class="card-text">{{filter.InterviewDate}}</p>
+                  <p class="card-text">{{filter.InterviewLocation}}</p>
+                  <p class="card-text">{{filter.HrNumber}}</p>
+                  <!-- Button -->
+                </div>
+              
+              </div>
+            {% endfor %}
+            abeed 
+
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+<!-- Side Modal Top Right -->
+
+<!-- To change the direction of the modal animation change .right class -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#basicExampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <input id="room-name-input" type="text" size="100"/><br/>
+          <input id="room-name-submit" type="button" value="Enter"/>
+      
+          <script>
+              document.querySelector('#room-name-input').focus();
+              document.querySelector('#room-name-input').onkeyup = function(e) {
+                  if (e.keyCode === 13) {  // enter, return
+                      document.querySelector('#room-name-submit').click();
+                  }
+              };
+      
+              document.querySelector('#room-name-submit').onclick = function(e) {
+                  var roomName = document.querySelector('#room-name-input').value;
+                  window.location.pathname = '/chat/' + roomName + '/';
+              };
+          </script>
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Side Modal Top Right -->
+{% endblock %}

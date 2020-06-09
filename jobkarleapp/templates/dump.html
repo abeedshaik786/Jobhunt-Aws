@@ -1,0 +1,704 @@
+<style>
+    @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
+*, *::before, *::after { box-sizing: border-box; -webkit-box-sizing: border-box; }
+.cf::after, .cf::before { content: ' '; display: table; }
+.cf::after { clear: both; }
+
+body, html {
+	height: 100%;
+}
+
+body {
+	background: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #484848;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+.red {
+	color: #ef5350;
+}
+
+.blue {
+	color: #0277bd;
+}
+
+.orange {
+	color: #fd6b0d;
+}
+
+.yellow {
+  color: #e5af0e;
+}
+
+.green {
+	color: #2e7d32;
+}
+
+.cyan {
+	color: #3f9489;
+}
+
+.full-width {
+	position: relative;
+	max-width: 906px;
+	margin: 20px auto;
+}
+
+.col-md-3 {
+	width: 100%;
+	margin-top: 10px;
+}
+
+/* ---- Switch button ---- */
+/*.icon-switch {
+	width: 100%;
+}
+
+.card {
+	float: right;
+	font-size: 20px;
+	margin-right: 20px;
+	display: inline-block;
+}
+
+.list {
+	float: right;
+	font-size: 20px;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.active {
+	color: #0990aa;
+}*/
+.Switch {
+	position: relative;
+	float: right;
+	font-weight: bold;
+	color: #fff;
+	width: 60px;
+	height: 30px;
+	border-radius: 15px;
+	background: #0990aa;
+	cursor: pointer;
+	-webkit-transition: background-color 0.3s ease-in-out;
+	-moz-transition   : background-color 0.3s ease-in-out;
+	-o-transition     : background-color 0.3s ease-in-out;
+	-ms-transition    : background-color 0.3s ease-in-out;
+}
+
+.Switch.list {
+	background: #fd7117;
+}
+
+.Switch span { 
+	position: relative;
+	display: inline-block; 
+	width: 25px; 
+	top: 6px;
+}
+
+.Switch span.on {
+	left: 9px;
+}
+
+.Switch span.off {
+	left: 6px;
+}
+
+.Switch .Toggle {
+	position: absolute;
+	right: 0;
+	top: 2px;
+	width: 26px;
+	height: 26px;
+	border-radius: 13px;
+	background: #fff;
+	z-index: 999;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition   : all 0.3s ease-in-out;
+	-o-transition     : all 0.3s ease-in-out;
+	-ms-transition    : all 0.3s ease-in-out;
+}
+
+.Switch.list .Toggle { left: 1px; }
+.Switch.card .Toggle { left: 33px; }
+
+/* ---- Card View ---- */
+.card-view {
+	background: #fff;
+	-webkit-box-shadow: 0px 1px 1px 0px rgba(204,204,204,0.2);
+	-moz-box-shadow   : 0px 1px 1px 0px rgba(204,204,204,0.2);
+	box-shadow        : 0px 1px 1px 0px rgba(204,204,204,0.2);
+	float: left;
+	width: 292px;
+	margin: 5px;
+}
+
+.container {
+	border: 1px solid #efefef;
+	padding: 15px;
+}
+
+.bg {
+	display: block;
+	overflow: hidden;
+	max-height: 170px;
+	max-width: 292px;
+	background: #000;
+}
+
+.bg img {
+	-webkit-transform: translate3d(0,-5px,0);
+	transform: translate3d(0,-5px,0);
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transition: opacity 0.35s, transform 0.35s;
+}
+
+.bg:hover img {
+	opacity: 0.7;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+}
+
+.tag_name {
+	font-family: 'Roboto Slab', serif;	
+	font-size  : 12px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+
+/* COMPANY INFO ------------------------ */
+.c_logo {
+	display: table-cell;
+}
+
+.c_logo img {
+	display: inline-block;
+	outline: none;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.c_info {
+	display: table-cell;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-left: 10px;
+	line-height: 18px;
+}
+
+.c_name {
+	font-size: 20px;
+	font-weight: 500;
+	color: #3c3c3c;
+}
+
+.c_industry {
+	font-weight: 400;
+	font-size: 12px;
+	letter-spacing: 0.05em;
+	color: #7e8890;
+}
+
+.card-view #c_stars, #c_stars span { /* white star bottom */
+	display: inline-block;
+	background: url('https://s15.postimg.org/igu2opvh3/stars.png') 0 -12px repeat-x;
+	width: 60px;
+	height: 12px;
+}
+
+.card-view #c_stars span { /* orange stars overlay  - set width by JS code */
+	background-position: 0 0;
+	vertical-align: super;
+}
+
+.c_num {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 500;
+	vertical-align: super;
+}
+
+.c_content {
+	margin-top: -10px;
+}
+
+.c_content p {
+	line-height: 21px;
+}
+
+.c_content .title {
+	color: #484848;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 0.02em;
+}
+
+.c_content .review {
+	font-weight: 300;
+	font-size: 14px;
+	letter-spacing: 0.05em;
+	margin-top: -10px;
+}
+
+ /* USER INFO ------------------------ */
+.user .user_avatar img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+
+.user .user_avatar {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.user .user_info {
+	display: table-cell;
+	vertical-align: middle;
+	color: rgba(0,0,0,0.35);
+	font-size: 14px;
+	line-height: 1.4;
+	padding-left: 10px;
+}
+
+.user .user_name {
+	font-weight: 500;
+}
+
+/* ---- List View ---- */
+.list-view {
+	background: #fff;
+	-webkit-box-shadow: 0px 1px 1px 0px rgba(204,204,204,0.2);
+	-moz-box-shadow   : 0px 1px 1px 0px rgba(204,204,204,0.2);
+	box-shadow        : 0px 1px 1px 0px rgba(204,204,204,0.2);
+	float: left;
+	margin: 5px;
+}
+
+.list-view:last-child {
+	margin-bottom: 20px;
+}
+
+.list-view .container {
+	border: 1px solid #efefef;
+	padding: 15px;
+}
+
+.list-view .bg {
+	display: none;
+}
+
+.list-view .bg img {
+	-webkit-transform: translate3d(0,-5px,0);
+	transform: translate3d(0,-5px,0);
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transition: opacity 0.35s, transform 0.35s;
+}
+
+.list-view .bg:hover img {
+	opacity: 0.7;
+	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0,0,0);
+}
+
+.list-view .tag_name {
+	font-family: 'Roboto Slab', serif;	
+	font-size  : 12px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+/* COMPANY INFO ------------------------ */
+.list-view .c_logo {
+	display: none;
+}
+
+.list-view .c_logo img {
+	display: none;
+}
+
+.list-view .c_info {
+	display: table-cell;
+	vertical-align: middle;
+	padding-top: 5px;
+	padding-left: 0;
+	line-height: 18px;
+}
+
+.list-view .c_name {
+	font-size: 20px;
+	font-weight: 500;
+	color: #3c3c3c;
+}
+
+.list-view .c_industry {
+	font-weight: 400;
+	font-size: 12px;
+	letter-spacing: 0.05em;
+	color: #7e8890;
+}
+
+.list-view #c_stars, #c_stars span { /* white star bottom */
+	display: inline-block;
+	background: url('https://s15.postimg.org/igu2opvh3/stars.png') 0 -12px repeat-x;
+	width: 60px;
+	height: 12px;
+}
+
+.list-view #c_stars span { /* orange stars overlay  - set width by JS code */
+	background-position: 0 0;
+	vertical-align: super;
+}
+
+.list-view .c_num {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 500;
+	vertical-align: super;
+}
+
+.list-view .c_content {
+	margin-top: -15px;
+}
+
+.list-view .c_content p {
+	line-height: 21px;
+}
+
+.list-view .c_content .title {
+	color: #484848;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 0.02em;
+}
+
+.list-view .c_content .review {
+	font-weight: 300;
+	font-size: 14px;
+	letter-spacing: 0.05em;
+	margin-top: -10px;
+}
+
+ /* USER INFO ------------------------ */
+.list-view .user .user_avatar img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+
+.user .user_avatar {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.list-view .user .user_info {
+	display: table-cell;
+	vertical-align: middle;
+	color: rgba(0,0,0,0.35);
+	font-size: 14px;
+	line-height: 1.4;
+	padding-left: 10px;
+}
+
+.list-view .user .user_name {
+	font-weight: 500;
+}
+
+@media screen and (max-width: 920px) and (min-width: 621px) {
+	.full-width {
+		max-width: 604px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media screen and (max-width: 620px){
+	.full-width {
+		max-width: 302px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+</style>
+<div class="full-width">
+    
+    <div class='cf'>
+      <div class="Switch card">
+        <div class="Toggle"></div>
+        <span class="on"><i class="fa fa-th"></i></span>
+        <span class="off"><i class="fa fa-th-list"></i></span>
+      </div>
+    </div>
+      
+    <div class="col-md-3">
+
+      <div class="card-view">
+          <div class='bg'>
+            <img src="https://s4.postimg.org/ysci5cbcd/com1.jpg" alt="company image">
+          </div>
+        <div class="container">
+          <a href='#'><div class="tag_name red">work / life balance</div></a>
+          <div class="company">
+            <div class="c_logo">
+              <a href="#"><img src="https://s10.postimg.org/k7scmco79/focuslab.jpg" alt="Focus Lab"></a>
+            </div>
+            <div class="c_info">
+              <a href="#" class="c_name">Focus Lab</a><br>
+              <span class="c_industry">Digital Media</span><br>
+              <span id="c_stars" data-star="3.5"></span>
+              <div class="c_num">3.5</div >
+            </div>
+            <div class="c_content">
+              <a href='#' class="title"><p>The most briliant company that I’ve ever worked for</p></a>
+              <p class="review">Amazing opportunities for any person. The projects we are given always stress new and innovating ideas that constantly challenge ourselves to improve our ...</p>
+            </div>
+          </div> <!-- end .company -->
+
+          <div class="user">
+            <div class="user_avatar">
+              <img src="https://s4.postimg.org/la5lt1z6x/image.jpg" alt="Bill Kenny">
+            </div>
+            <div class="user_info">
+              <a href="#" class="user_name orange">Bill Kenny</a> • May 30, 2015<br>Current Brand Director
+            </div>
+          </div> <!-- end .user -->
+        </div> <!-- end .container -->
+      </div> <!-- end card -->
+
+      <div class="card-view">
+        <div class="container">
+          <a href='#'><div class="tag_name blue">Salary &amp; Benefit</div></a>
+          <div class="company">
+            <div class="c_logo">
+              <a href="#"><img src="https://s24.postimg.org/a4jaok74x/lo2.jpg" alt="SSS"></a>
+            </div>
+            <div class="c_info">
+              <a href="#" class="c_name">Silicon Straits Saigon</a><br>
+              <span class="c_industry">Information Technology</span><br>
+              <span id="c_stars" data-star="4"></span>
+              <div class="c_num">4.0</div >
+            </div>
+            <div class="c_content">
+              <a href='#' class="title"><p>Enjoying myself so much I no longer call it work</p></a>
+              <p class="review">Because we all love our job, we're a super passionate team and we always look out for each other. That passion really shows, from the general way our business is ...</p>
+            </div>
+          </div> <!-- end .company -->
+          <div class="user">
+            <div class="user_avatar">
+              <img src="https://s1.postimg.org/48vr8yjaz/image.gif" alt="Kent Nguyen">
+            </div>
+            <div class="user_info">
+              <a href="#" class="user_name orange">Kent nguyen</a> • May 30, 2015<br>Current CEO
+            </div>
+          </div> <!-- end .user -->
+        </div> <!-- end .container -->
+      </div> <!-- end card -->
+
+      <div class="card-view">
+          <div class='bg'>
+            <img src="https://s18.postimg.org/4m9u2dlqx/com3.jpg" alt="company image">
+          </div>
+        <div class="container">
+          <a href='#'><div class="tag_name yellow">Company Culture</div></a>
+          <div class="company">
+            <div class="c_logo">
+              <a href="#"><img src="https://s18.postimg.org/er3we7exh/lo3.jpg" alt="Dribbble"></a>
+            </div>
+            <div class="c_info">
+              <a href="#" class="c_name">Dribbble</a><br>
+              <span class="c_industry">Design Community</span><br>
+              <span id="c_stars" data-star="3.5"></span>
+              <div class="c_num">3.5</div >
+            </div>
+            <div class="c_content">
+              <a href='#' class="title"><p>The most briliant company that I’ve ever worked for</p></a>
+              <p class="review">Amazing opportunities for any person. The projects we are given always stress new and innovating ideas that constantly challenge ourselves to improve our ...</p>
+            </div>
+          </div> <!-- end .company -->
+
+          <div class="user">
+            <div class="user_avatar">
+              <img src="https://s18.postimg.org/r36srp2s5/image.jpg" alt="Danis Jack">
+            </div>
+            <div class="user_info">
+              <a href="#" class="user_name orange">Danis Jack</a> • May 30, 2015<br>Current Brand Director
+            </div>
+          </div> <!-- end .user -->
+        </div> <!-- end .container -->
+      </div> <!-- end card -->
+
+      <div class="card-view">
+          <div class='bg'>
+            <img src="https://s18.postimg.org/som2jid09/com4.jpg" alt="company image">
+          </div>
+        <div class="container">
+          <a href='#'><div class="tag_name green">Senior Management</div></a>
+          <div class="company">
+            <div class="c_logo">
+              <a href="#"><img src="https://s18.postimg.org/8rg5aju51/lo4.gif" alt="W&amp;S"></a>
+            </div>
+            <div class="c_info">
+              <a href="#" class="c_name">W&amp;S Group</a><br>
+              <span class="c_industry">Research Community</span><br>
+              <span id="c_stars" data-star="4.5"></span>
+              <div class="c_num">4.5</div >
+            </div>
+            <div class="c_content">
+              <a href='#' class="title"><p>My boss my hero</p></a>
+              <p class="review">Amazing opportunities for any person. The projects we are given always stress new and innovating ideas that constantly challenge ourselves to improve our ...</p>
+            </div>
+          </div> <!-- end .company -->
+
+          <div class="user">
+            <div class="user_avatar">
+              <img src="https://s18.postimg.org/pa3w3dhlh/image.jpg" alt="Karmi Phuc">
+            </div>
+            <div class="user_info">
+              <a href="#" class="user_name orange">Karmi Phuc</a> • May 30, 2015<br>Current Project Manager
+            </div>
+          </div> <!-- end .user -->
+        </div> <!-- end .container -->
+      </div> <!-- end card -->
+
+      <div class="card-view">
+          <div class='bg'>
+            <img src="https://s18.postimg.org/4wcr7zazd/com5.jpg" alt="company image">
+          </div>
+        <div class="container">
+          <a href='#'><div class="tag_name cyan">Organization</div></a>
+          <div class="company">
+            <div class="c_logo">
+              <a href="#"><img src="https://s18.postimg.org/fs453bvx1/lo5.gif" alt="Medium"></a>
+            </div>
+            <div class="c_info">
+              <a href="#" class="c_name">Medium</a><br>
+              <span class="c_industry">Digital Media</span><br>
+              <span id="c_stars" data-star="5"></span>
+              <div class="c_num">5.0</div >
+            </div>
+            <div class="c_content">
+              <a href='#' class="title"><p>The most briliant company that I’ve ever worked for</p></a>
+              <p class="review">Amazing opportunities for any person. The projects we are given always stress new and innovating ideas that constantly challenge ourselves to improve our ...</p>
+            </div>
+          </div> <!-- end .company -->
+
+          <div class="user">
+            <div class="user_avatar">
+              <img src="https://s18.postimg.org/thyoc4j11/image.gif" alt="Ev Williams">
+            </div>
+            <div class="user_info">
+              <a href="#" class="user_name orange">Evan Williams</a> • May 30, 2015<br>Current Brand Director
+            </div>
+          </div> <!-- end .user -->
+        </div> <!-- end .container -->
+      </div> <!-- end card -->
+    
+      <div class="card-view">
+        <div class="container">
+          <a href='#'><div class="tag_name red">work / life balance</div></a>
+          <div class="company">
+            <div class="c_logo">
+              <a href="#"><img src="https://s18.postimg.org/3l4zzifdh/lo6.jpg" alt="Linkedin"></a>
+            </div>
+            <div class="c_info">
+              <a href="#" class="c_name">Linkedin</a><br>
+              <span class="c_industry">Information Technology</span><br>
+              <span id="c_stars" data-star="3"></span>
+              <div class="c_num">3.0</div >
+            </div>
+            <div class="c_content">
+              <a href='#' class="title"><p>Fantastic organisation to work</p></a>
+              <p class="review">True adherence to non discrimination policy. If you are young then rest assure that you will not finish up on the retrenchment list in the later age because of ...</p>
+            </div>
+          </div> <!-- end .company -->
+          <div class="user">
+            <div class="user_avatar">
+              <img src="https://s18.postimg.org/9xk59cifp/image.gifhttp://imgur.com/R6qhkWo.gif" alt="Yukino Kinoshita">
+            </div>
+            <div class="user_info">
+              <a href="#" class="user_name orange">Yukino Kinoshita</a> • May 30, 2015<br>Current Brand Director
+            </div>
+          </div> <!-- end .user -->
+        </div> <!-- end .container -->
+      </div> <!-- end card -->
+    
+    </div> <!-- end col-md-3 -->
+</div>
+<script>
+    var $container = $(".col-md-3");
+    $container.imagesLoaded(function() {
+      $container.masonry({
+        itemSelector: '.card-view',
+        columnWidth: 302
+      });
+
+    });
+
+    $.fn.stars = function() {
+      return $(this).each(function() {
+        var num = $(this).data("star");
+        $(this).html($("<span />").width(Math.max(0, Math.min(5, num)) * 12));
+      })
+    };
+
+    $(function() {
+
+      $('.Switch').click(function() {
+        $(this).toggleClass('list').toggleClass('card');
+        // check current view mode: 'list' or 'card'
+        if($(this).hasClass('list')) {
+          console.log('List view');
+          $(".card-view").attr("class", "list-view");
+          $(".list-view").removeAttr("style");
+        } else {
+          console.log('Card view');
+          $(".list-view").attr("class", "card-view");
+          var container = document.querySelector('.col-md-3');
+          // Reload masonry again
+          var msnry = new Masonry( container, {
+            itemSelector: '.card-view',
+            columnWidth: 302
+          });
+        }
+      });
+
+      // $("#list").click(function() {
+      //   $("#list").addClass("active");
+      //   $("#card").removeClass("active");
+      //   $(".card-view").attr("class", "list-view");
+      //   $(".list-view").removeAttr("style");
+      // });
+
+      // $('#card').click(function() {
+      //   $("#card").removeClass("active");
+      //   $("#list").removeClass("active");
+      //   $("#card").addClass("active");
+      //   $(".list-view").attr("class", "card-view");
+      //   var container = document.querySelector('.col-md-3');
+      //   var msnry = new Masonry( container, {
+      //     itemSelector: '.card-view',
+      //     columnWidth: 302
+      //   });
+      // });
+
+      $("span#c_stars").stars(); 
+    });
+</script>

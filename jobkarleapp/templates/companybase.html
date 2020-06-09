@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'animate.css' %}">
+    <link rel="stylesheet" href="{% static 'static_css/companybase.css' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body class="body-imgset">
+    <!--/.Navbar-->
+    <section>
+    <nav class="navbar navbar-expand-lg base11 navbar-text-color ">
+      <img src="{% static 'logo1.png' %}" width="50" alt="My image"> <strong class="navbar-brand "> SV colleges</strong>
+           
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#uiNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="uiNavbar">
+                <ul class="navbar-nav m-auto" style="float: right">
+                    
+                    <li class="nav-item dropdown-RECRUITERS">
+                        <a href="about.html" class="nav-link">
+                            RECRUITERS</a>
+                           
+                    </li>
+                    <li class="nav-item dropdown-RECRUITERS">
+                        <a href="{% url 'jobkarleapp:studentlist' %}" class="nav-link">
+                            BROWSE ALL STUDENTS </a>
+                          
+                    </li>
+                   <li class="nav-item dropdown-RECRUITERS">
+                    <a href="{% url 'jobkarleapp:job_postview' %}" class="nav-link">POST JOBS</a>
+                           
+                    </li>
+                    <li class="nav-item dropdown-comp ">
+                        <a href="services.html" class="nav-link">
+                             COMPANYS</a>
+                    </li>
+                    <li class="nav-item dropdown-tool">
+                        <a href="contact.html" class="nav-link">
+                             TOOLS</a>
+                             
+                    </li>
+                    <li class="nav-item dropdown-mor ">
+                        <a href="contact.html" class="nav-link">
+                         MORE</a>
+                         
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a  href="{% url 'jobkarlepro:Logout' %}"class="nav-link">
+                          LOGOUT</a>
+                  </li>
+                    
+                     {% else %}
+                      <li class="nav-item">
+                        <a  href="#" data-toggle="modal" data-target="#darkModalForm" class="nav-link">
+                            LOGIN</a>
+                    </li>
+                      {% endif %}
+                    
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">
+                            <i class="far fa-bell fa-2x animated swing"></i></a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    {% else %}
+                    <li class="nav-item">
+                      <a href="#" data-toggle="modal" data-target="#modalRegisterForm " class="nav-link">
+                           REGISTER</a>
+                  </li>
+                  {% endif %}
+                <li class="nav-item dropdown-users">
+                  <a href="contact.html" class="nav-link">
+                      <i class="far fa-user fa-2x animated swing rounded-circle img-responsive"></i></a>
+                      <div class="dropdown-user animated zoomIn">
+                        <div class="row">
+                      
+                          <div class="col-sm-4">
+                           
+                        </div>
+                        </div>
+              </li>
+                </ul>
+            </div>
+         
+      </nav>
+</section>
+
+    <section>
+        {% block content %}
+
+        {% endblock %}
+    </section>
+     
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    
+  <datalist id="id_country_list"></datalist>
+    </body>
+
+</html>
+

@@ -1,0 +1,609 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .rigister-button {
+        text-align: center;
+        margin-left: 100px;
+    }
+    .card-body ::placeholder{
+        color: #4A90E2;
+    }
+    .jobkarle-conditions{
+        box-shadow: 0 0 5px;
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        color: black;
+    }
+    .jobkarle-conditions strong{
+        font-size:20px;
+    }
+    .know-more1{
+        float: right;
+        font-size: 20px;
+    }
+    .know-more2{
+        float: right;
+        font-size: 20px;
+    }
+    .google-logo{
+        border: 2px solid black;
+    }
+    .google-name strong{
+        margin-left: 10px;
+    }
+    .google-name strong{
+        position: relative;
+        top: 10px;
+    
+    }
+    .rigister-modal{
+        margin-top: 50%;
+        background-color: white;
+        
+    }
+    .login-input input{
+        text-decoration: none;
+    }
+
+    .bootimg{
+      }  
+</style>
+<section style="position: relative; top:10px;">
+  <div class="container card col-sm-9 my-5 py-5 z-depth-1">
+
+
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 text-center dark-grey-text">
+  
+      <!--Grid row-->
+      <div class="row">
+  
+        <!--Grid column-->
+        <div class="col-md-6 mb-4 mb-md-0">
+  
+          <h3 class="font-weight-bold">SVCE Application Blocks</h3>
+  
+          <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
+            molestiae
+            numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum.</p>
+  
+          <a class="btn btn-purple btn-md ml-0" href="#" role="button">Start now<i class="fa fa-gem ml-2"></i></a>
+  
+          <hr class="my-5">
+  
+          <p class="font-weight-bold">Follow us on:</p>
+  
+          <!--Facebook-->
+          <a href="#" class="mx-1" role="button"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="mx-1" role="button"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="mx-1" role="button"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="mx-1" role="button"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="mx-1" role="button"><i class="fab fa-pinterest"></i></a>
+          <a href="#" class="mx-1" role="button"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="mx-1" role="button"><i class="fab fa-github"></i></a>
+          <a href="#" class="mx-1" role="button"><i class="fab fa-stack-overflow"></i></a>
+  
+        </div>
+        <!--Grid column-->
+  
+        <!--Grid column-->
+        <div class="col-md-5 mb-4 mb-md-0">
+         
+          <img style="position: relative; left:300px;" class=" card p-2 bootimg" src="{% static 'testpic.jpg' %}" width="" height="550"  class="img-fluid" alt="">
+  
+        </div>
+        <!--Grid column-->
+  
+      </div>
+      <!--Grid row-->
+  
+  
+    </section>
+    <!--Section: Content-->
+  
+  
+  </div>
+  <div class="container my-5">
+
+    <!-- Section -->
+    <section>
+  
+      <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our Services</h3>
+      <hr class="w-header my-4">
+      <div class="row">
+  
+        <div class="col-md-6 col-xl-3 mb-4">
+          <div class="card text-center bg-success text-white">
+            <div class="card-body">
+              <p class="mt-4 pt-2"><i class="far fa-object-ungroup fa-4x"></i></p>
+              <h5 class="font-weight-normal my-4 py-2"><a class="text-white" href="#">JOBS FOR YOU</a></h5>
+              <p class="mb-4">Stand out as an Early Applicant with instant access to jobs
+                Use SVCE Recruitments Application expert advantage to get handpicked jobs in your inbox </>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-6 col-xl-3 mb-4">
+          <div class="card text-center">
+            <div class="card-body">
+              <p class="mt-4 pt-2"><i class="fas fa-mobile-alt fa-4x grey-text"></i></p>
+              <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Recruiters Search</a></h5>
+              <p class="text-muted mb-4">Not getting enough profile views?</p>
+              <p class="text-muted mb-4">
+
+                Get a Featured Profile and increase your visibility to recruiters up to 3 times</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-6 col-xl-3 mb-4">
+          <div class="card text-center deep-purple lighten-1 text-white">
+            <div class="card-body">
+              <p class="mt-4 pt-2"><i class="fas fa-chart-line fa-4x"></i></p>
+              <h5 class="font-weight-normal my-4 py-2"><a class="text-white" href="#">Companys Info</a></h5>
+              <p class="mb-4">SV Colleges tied with Multi National Companies and as well as StartUp Companies soo students can get all the information about they required comapnies </p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-6 col-xl-3">
+          <div class="card text-center">
+            <div class="card-body">
+              <p class="mt-4 pt-2"><i class="fas fa-bullhorn fa-4x grey-text"></i></p>
+              <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Premium Package</a></h5>
+              <p class="text-muted mb-4">Premium membership will only do the following: 1) Your profile visibility to employers will increase. 2) You will receive job offers at regular intervals through sms ...</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+    </section>
+    <!-- Section -->
+  
+  </div>
+  <div class="m-5">
+    {% for message in messages %}
+    <script>
+      alert('{{message}}');
+    </script>
+    {{message}}
+    {% endfor %}
+          <!-- background: linear-gradient(rgba(11, 44, 231, 0.3),rgba(0,0,0,0.3)); -->
+  
+          <!-- <img src="{% static 'ibm-logo-2.png' %}" width="40" alt="My image"> -->
+      <!-- Material form register -->
+      <div>
+  
+          <div>
+              {% block companys %}
+              {% include 'companys-img.html'%}
+              {% endblock %}
+          </div>
+          <!--Card content-->
+      </div>
+  
+  <!-- <div class="col-sm">
+      <div class=" jobkarle-conditions ">
+          <strong>Jobkarle Services you might be interested in</strong>
+          <strong>Be a Priority Applicant</strong>
+          <p>Increase your chances of getting shortlisted for the applied jobs and receiving calls from recruiters.</p>
+          <a href="#" class=" know-more1 ">Know More</a>
+          <br><br>
+          <strong>Increase your visibility by up to 3 times</strong>
+          <p>Get your profile marked as 'Featured' and get a higher rank when recruiters search for resumes</p>
+          <a href="#" class=" know-more2 ">Know More</a>
+          <br>
+          <p>Call 1500-235-8854 now! (Toll-free)</p>
+          <br>
+      </div>
+  </div> -->
+      <!-- Material form register -->
+      
+  </div>
+  
+  </div>
+  <section>
+          <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="card-body px-lg-5 pt-0">
+                      <!-- Form -->
+                      <form action="{% url 'jobkarlepro:FresherRigister' %}" method="POST">
+                          {% csrf_token %}
+                          <input type="hidden" name="Fresher_id" id='Fresher_id' value="{{ forms.id }}">
+                           <div>
+                          <div class="form-row">
+                              <div class="col">
+                                  <!-- First name -->
+                                  <div class="md-form">
+                                      <input type="text" placeholder="FirstName" name='firstname'>
+                                  </div>
+                              </div>
+                              <div class="col">
+                                  <!-- Last name -->
+                                  <div class="md-form">
+                                      <input type="text" placeholder="SecondName" name="lastname">
+                                  </div>
+                              </div>
+                          </div>
+          
+                          <!-- E-mail -->
+                          <div class="md-form mt-0">
+                            <input type="text" placeholder="UserName" name="username">
+                          </div>
+                          <div class="md-form mt-0">
+                              <input type="email" placeholder="Email" name='email'>
+                          </div>
+                          <!-- Password -->
+                          <div class="md-form">
+                          </div>
+                          <div class="md-form">
+                              <input type="text" placeholder="Password" name="password">
+                          </div>
+                          </div>
+                          <!-- Sign up button -->
+                          <div class="modal-footer d-flex justify-content-center">
+                                  <button class="btn btn-deep-orange">Sign up</button>
+                                </div>
+                      </form>
+                      <!-- Form -->
+                  </div>
+            </div>
+          </div>
+        </div>
+  </section>
+  <!-- loginmodal form -->
+  <section>
+      <!-- Modal -->
+  <div class="modal fade" id="darkModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog form-dark" role="document">
+    <!--Content-->
+    <div class="modal-content card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/pricing-table%20(7).jpg');">
+      <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4">
+        <!--Header-->
+        <div class="modal-header text-center pb-4">
+          <h3 class="modal-title w-100 white-text font-weight-bold" id="myModalLabel"><strong>SIGN</strong> <a
+              class="green-text font-weight-bold"><strong> UP</strong></a></h3>
+          <button type="button" class="close white-text" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body">
+          <!--Body-->
+          <form action="{% url 'jobkarlepro:Login' %}" method="POST">
+          {% csrf_token %}
+          <div class="md-form mb-5">
+            <input type="text" id="Form-email5" name='username' class="form-control validate white-text">
+            <label data-error="wrong" data-success="right" for="Form-email5">Your email</label>
+          </div>
+  
+          <div class="md-form pb-3">
+            <input type="password" id="Form-pass5" name='password' class="form-control validate white-text">
+            <label data-error="wrong" data-success="right" for="Form-pass5">Your password</label>
+          </div>
+            <div class="form-group mt-4">
+              <input class="form-check-input" type="checkbox" id="checkbox624">
+              <label for="checkbox624" class="white-text form-check-label">Accept the<a href="#" class="green-text font-weight-bold">
+                  Terms and Conditions</a></label>
+            </div>
+          <!--Grid row-->
+          <div class="row d-flex align-items-center mb-4">
+  
+            <!--Grid column-->
+            <div class="text-center mb-3 col-md-12">
+              <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1">Sign up</button>
+            </div>
+            </form>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+  
+          <!--Grid row-->
+          <div class="row">
+  
+            <!--Grid column-->
+            <div class="col-md-12">
+              <p class="font-small white-text d-flex justify-content-end">Have an account? <a href="#" class="green-text ml-1 font-weight-bold">
+                  Log in</a></p>
+            </div>
+            <!--Grid column-->
+  
+          </div>
+          <!--Grid row-->
+  
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+  </div>
+  <!-- Modal -->
+  <section>
+  
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+  
+      <div class="modal-content">
+        <div class="row">
+      <div class="col-sm-6 companyback">
+        <div class="">
+        <div class="col-sm-2 m-auto">
+          <div class="modal-header">
+            <a href="#" ><img src="{% static 'company-register.png' %}" width="80" height="80" alt="avatar" class=" img-responsive"></a>
+          </div>
+        </div>
+        <div class="col-sm-10 p-2 ">
+          <div class="row">
+            <div class="col-sm">
+              <i class="fa fa-hand-o-left"></i>
+            </div>
+            <div class="col-sm">
+              <a href="#" data-toggle="collapse" data-target=".multi1-collapse"
+          aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Companys</a>
+            </div>
+          </div>
+          <p>We Help You Invent The Future</p>
+  
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="">
+        <div class="col-sm-2 m-auto">
+          <div class="modal-header">
+            <a > <img src="{% static 'student-register.png' %}" width="80" height="80" alt="avatar" class=" img-responsive"></a>
+          </div>
+        </div>
+        <div class="col-sm-10">
+          <a href="#" data-toggle="collapse" data-target=".multi-collapse"
+          aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Students</a>
+          <p>The Future Begins Here !</p>
+  
+          
+        </div>
+        </div>
+        </div>
+      </div>
+      <!-- Collapse buttons -->
+  
+  
+  <!-- Collapsible content -->
+  <div class="row">
+    <div class="col-sm-12">
+    <div class="col">
+      <div class="collapse multi1-collapse animated zoomIn" id="multiCollapseExample1">
+        <div class="card-body">
+          <form action="{% url 'jobkarlepro:CompanyRegister' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="Fresher_id" id='Fresher_id' value="{{ forms.id }}">
+            <h3 style="background-color:black; color:white; padding:5px;"><strong>Companys Register</strong></h3>
+            <p>jobkarle is required avery field</p>
+             <div>
+              <div class="text-center" style="color: #757575;">
+  
+                <div class="form-row">
+                    <div class="col">
+                        <!-- First name -->
+                        <div class="md-form">
+                            <input type="text" id="materialRegisterFormFirstName" name="firstname" class="form-control">
+                            <label for="materialRegisterFormFirstName">First name</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- Last name -->
+                        <div class="md-form">
+                            <input type="text" id="materialRegisterFormLastName" name="secondname" class="form-control">
+                            <label for="materialRegisterFormLastName">Last name</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="md-form mt-0">
+                  <input type="text" id="materialRegisterFormEmail" name="username" class="form-control">
+                  <label for="materialRegisterFormEmail">username</label>
+              </div>
+      
+      
+                <!-- E-mail -->
+                <div class="md-form mt-0">
+                    <input type="email" id="materialRegisterFormEmail" name="email" class="form-control">
+                    <label for="materialRegisterFormEmail">E-mail</label>
+                </div>
+      
+                <!-- Password -->
+                <div class="md-form">
+                    <input type="password" id="materialRegisterFormPassword" name="password"class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+                    <label for="materialRegisterFormPassword">Password</label>
+                    <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                        At least 8 characters and 1 digit
+                    </small>
+                </div>
+                <div class="md-form">
+                  <input type="password" id="materialRegisterFormPassword" name="confirmpassword"class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+                  <label for="materialRegisterFormPassword">confirmPassword</label>
+                  <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                      At least 8 characters and 1 digit
+                  </small>
+              </div>
+      
+      
+                <!-- Phone number -->
+                
+      
+                <!-- Newsletter -->
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
+                    <label class="form-check-label" for="materialRegisterFormNewsletter">Subscribe to our newsletter</label>
+                </div>
+      
+                <!-- Sign up button -->
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+      
+                <!-- Social register -->
+                <p>or sign up with:</p>
+      
+                <a type="button" class="btn-floating btn-fb btn-sm">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a type="button" class="btn-floating btn-tw btn-sm">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a type="button" class="btn-floating btn-li btn-sm">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a type="button" class="btn-floating btn-git btn-sm">
+                    <i class="fab fa-github"></i>
+                </a>
+      
+                <hr>
+      
+                <!-- Terms of service -->
+                <p>By clicking
+                    <em>Sign up</em> you agree to our
+                    <a href="" target="_blank">terms of service</a>
+      
+                </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="col">
+        <div class="collapse multi-collapse animated zoomIn" id="multiCollapseExample2">
+          <div class=" card-body">
+            <form action="{% url 'jobkarlepro:FresherRigister' %}" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="Fresher_id" id='Fresher_id' value="{{ forms.id }}">
+               <div>
+             <!-- Material form register -->
+  <div>
+  
+    <h3 style="background-color:black; color:orange; padding:5px;"><strong>Student Register</strong></h3>
+  
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+  
+        <!-- Form -->
+        <div class="text-center" style="color: #757575;">
+  
+            <div class="form-row">
+                <div class="col">
+                    <!-- First name -->
+                    <div class="md-form">
+                        <input type="text" id="materialRegisterFormFirstName" name="firstname" class="form-control">
+                        <label for="materialRegisterFormFirstName">First name</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Last name -->
+                    <div class="md-form">
+                        <input type="text" id="materialRegisterFormLastName" name="lastname" class="form-control">
+                        <label for="materialRegisterFormLastName">Last name</label>
+                    </div>
+                </div>
+            </div>
+            <div class="md-form mt-0">
+              <input type="text" id="materialRegisterFormEmail" name="username" class="form-control">
+              <label for="materialRegisterFormEmail">username</label>
+          </div>
+  
+  
+            <!-- E-mail -->
+            <div class="md-form mt-0">
+                <input type="email" id="materialRegisterFormEmail" name="email" class="form-control">
+                <label for="materialRegisterFormEmail">E-mail</label>
+            </div>
+  
+            <!-- Password -->
+            <div class="md-form">
+                <input type="password" id="materialRegisterFormPassword" name="password"class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+                <label for="materialRegisterFormPassword">Password</label>
+                <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                    At least 8 characters and 1 digit
+                </small>
+            </div>
+            <div class="md-form">
+              <input type="password" id="materialRegisterFormPassword" name="confirmpassword"class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
+              <label for="materialRegisterFormPassword">confirmPassword</label>
+              <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                  At least 8 characters and 1 digit
+              </small>
+          </div>
+  
+  
+            <!-- Phone number -->
+            
+  
+            <!-- Newsletter -->
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="materialRegisterFormNewsletter">
+                <label class="form-check-label" for="materialRegisterFormNewsletter">Subscribe to our newsletter</label>
+            </div>
+  
+            <!-- Sign up button -->
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+  
+            <!-- Social register -->
+            <p>or sign up with:</p>
+  
+            <a type="button" class="btn-floating btn-fb btn-sm">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a type="button" class="btn-floating btn-tw btn-sm">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a type="button" class="btn-floating btn-li btn-sm">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a type="button" class="btn-floating btn-git btn-sm">
+                <i class="fab fa-github"></i>
+            </a>
+  
+            <hr>
+  
+            <!-- Terms of service -->
+            <p>By clicking
+                <em>Sign up</em> you agree to our
+                <a href="" target="_blank">terms of service</a>
+  
+            </div>
+        <!-- Form -->
+  
+    </div>
+  
+  </div>
+  <!-- Material form register -->
+          </form>
+          </div>
+        </div>
+      </div>
+  
+    <div class="col-sm-6"></div>
+    </div>
+  </div>
+  <!--/ Collapsible content -->
+      </div>
+    </div>
+  </div>
+  </section>
+  <div class="text-center">
+    register Form</a>
+  </div>
+  </section>
+  {% if messages %}
+  
+  {% endif %}
+</section>
+{% endblock %}

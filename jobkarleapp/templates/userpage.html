@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+  .profile-main{
+    background-image: url('/static/profile-maine-back.jpg');
+    background-size: cover;
+    position: relative;
+    bottom: 300px;
+  }
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .btn {
+    border: 2px solid gray;
+    color:white;
+    background-color:rgb(84, 160, 236);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+</style>
+<section>
+    <div class="m-5">
+        <div class="row">
+          <div class="col-sm-2">
+            <div style="position: fixed;"> 
+              <div class="card testimonial-card m-2 profile-main " >
+
+                <!-- Background color -->
+                <div class="card-up aqua-gradient"></div>
+            
+                <!-- Avatar -->
+                <div class="avatar mx-auto white">
+                  <br>
+
+
+                  <img src="{{profilepic.Profile.url}}" width="150" height="150" class="rounded-circle img-responsive" alt="no profile">
+                
+                  <a href="#"><i class="fa fa-camera fa-1x" aria-hidden="true"></i></a>
+              </div>
+            
+                <!-- Content -->
+                <div class="card-body">
+                  <!-- Name -->
+                  <h4 class="card-title font-weight-bold">{{user_data.first_name}} {{user_data.last_name}} </h4>
+                  <p class="font-weight-bold">Gender is {{user_personal_data.Gender}}</p>
+                  <p class="font-weight-bold">{{user_data.first_name}}  living in {{user_personal_data.Nationality}}</p>
+                  <p class="font-weight-bold"> Religion {{user_personal_data.Religion}}</p>
+                  <hr>
+                  <!-- Quotation -->
+                  <p class="font-weight-bold">{{user_data.email}}</p>
+                  <p><i class="fas fa-quote-left"></i> Master of Computer Applications</p>
+                </div>    
+        </div>
+            </div>  
+           
+          <!-- <div>
+            <div class="card" style="width: 300px; height:700px; position:relative; bottom:300px;"></div>
+          </div> -->
+          </div>
+          <dvi class="col-sm-1"></dvi>
+          <div class="col-sm-6 pb-2">
+{% if obj %}
+<section>
+  <div class="container card col-sm-12">
+    <div class="row">
+      <div class="col-sm-1">
+        <img src="{% static 'rigth.png' %}" width="30" id="img-companys" > 
+      </div>
+    <div class="applied-allert">
+     <P  class="m-auto centar" style=" color: green;"><span style="color: black;">{{user_data.username}}</span> {% for message in messages %} {{message}} {% endfor %} <pan style="color:#3c98ed;">{{obj.Skills}}</pan> in <span style="color:#3c98ed;">{{obj.CompanyName}}</span></P>
+    </div>
+  </div>
+</section>
+{% endif %}
+            {% for comdata in student_jobs %}
+        <!-- Card -->
+<div class="card booking-card m-2">
+        <!-- Card content -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-5">
+                <h4 class="card-title font-weight-bold"><a>{{comdata.CompanyName}}</a></h4>
+            </div>
+            <div class="col-sm-5"></div>
+            <div class="col-sm-2">
+              {% for Add in user_data.fresherqualification_set.all %}
+              <form  action="{% url 'jobkarleapp:Apply_Click' Add.id %}" method="POST">{% csrf_token %}
+                <input type="hidden" name='job_id' value="{{comdata.id}}">
+                <input type="submit"style="padding-left:30px; padding-right:30px; background-color:#007bff; color:white; font-size:15px;;" value="Apply">
+              </form>
+              
+              <input type="hidden"  value = "{{ student_job.id }}">
+
+               {% endfor %}
+            </div>
+          </div>
+      
+          <!-- Title -->
+          <!-- Data -->
+          <ul class="list-unstyled list-inline rating mb-0">
+            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+            <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+            <li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
+          </ul>
+          <p class="mb-2">{{comdata.CompanyName}}</p>
+          <!-- Text -->
+          <p class="card-text">{{comdata.Company_Description}}</p>
+          <hr class="my-4">
+          <p class="lead"><strong>{{comdata.Skills}}</strong></p>
+          <p class="card-text">{{comdata.Roles_and_Responsabulity}}</p><br>
+          <p class="lead"><strong>Interview</strong></p>
+          <p class="card-text">{{comdata.Tterview_Date}}</p>
+          <p class="card-text">{{comdata.Interview_Location}}</p>
+          <div class="row">
+            <div class="col-sm"><p class="card-text">{{comdata.First_HrName}}</p></div>
+            <div class="col-sm"><p class="card-text">{{comdata.First_HrNumber}}</p></div>
+          </div>
+          <div class="row">
+            <div class="col-sm"><p class="card-text">{{comdata.Second_HrName}}</p></div>
+            <div class="col-sm"><p class="card-text">{{comdata.Second_HrNumber}}</p></div>
+          </div>
+          <!-- Button -->
+        </div>
+      
+      </div>
+      <!-- Card -->
+    {% endfor %} 
+          </div>
+          <div class="col-sm-2">
+        
+            <div class="card p-2" style="width: 500px; height:300px; position:fixed">
+              <h4 class="" ><strong>Attach Resume</strong></h4>
+              <p class="" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(151, 148, 148);">Resume is the most important document recruiters look for .</p>
+              <p class="" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(151, 148, 148); position:relative; bottom:10px;">They generally do not look at profiles without resumes.</p>
+             
+             <div class="row">
+               <div class="col-sm-10">
+                <p><strong>{{user_qualification.Resume}}</strong></p>
+               </div>
+               <div class="col-sm-2">
+                <i class="fa fa-download p-2" style="color: #3c98ed; border:0.5px solid #3c98ed;" aria-hidden="true"></i>
+              </div>
+             </div>
+              <div class=" m-auto" style="width: 400px; height:200px; border:0.5px solid rgb(216, 212, 212);">
+                <div>
+                  <form method="GET" id="idajax" enctype="multipart/form-data">
+                  <div class="upload-btn-wrapper" style="position:relative; top:40px; left:80px;">
+                    <button class="btn">Upload a Resume</button>
+                    <input type="hidden" id="qualification_id" name="qualification_id" value="{{user_qualification.id}}">
+                    <input type="file" name="Resume" id="Resume">
+                  </div>
+                  <p style="position:relative; left:20px; top:25px; padding:5px;">Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p>
+                </form>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+</section>
+<script>
+  $("").on (function(evt){	 
+    evt.preventDefault();
+    var formData = new FormData($(this)[0]);
+ $.ajax({
+  url: "{% url 'jobkarleapp:Resume_Edite' %}",
+     type: 'GET',
+     data: formData,
+     async: false,
+     cache: false,
+     contentType: false,
+     enctype: 'multipart/form-data',
+     processData: false,
+     success: function (response) {
+       alert(response);
+     }
+ });
+ return false;
+});
+</script>
+{% endblock %}

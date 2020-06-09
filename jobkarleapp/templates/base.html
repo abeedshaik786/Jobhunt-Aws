@@ -1,0 +1,461 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="{% static 'bootstrap/css/fontawesome-all.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/mdb.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/style.css' %}"> -->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'animate.css' %}">
+    <link rel="stylesheet" href="{% static 'static_css/base.css' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+</head>
+<style>
+  * {box-sizing: border-box}
+
+.message-count {
+  color: #fff;
+  font-size: 10px;
+  font-family: Arial, san-serif;
+  font-weight: bold;
+}
+
+
+.badge {
+  position: absolute;
+  right: 0px;
+  top: -5px;
+  z-index: 10;
+}
+.badge {
+  background: radial-gradient( 5px -9px, circle, white 8%, #ed2324 26px );
+  background: -moz-radial-gradient( 5px -9px, circle, white 8%, #ed2324 26px );
+  background: -ms-radial-gradient( 5px -9px, circle, white 8%, #ed2324 26px );
+  background: -o-radial-gradient( 5px -9px, circle, white 8%, #ed2324 26px );
+  background: -webkit-radial-gradient( 5px -9px, circle, white 8%, #ed2324 26px );
+  background-color: #ed2324;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 5% 5%;
+  position: relative;
+  right: 15px;
+  float: right;
+  display: block;
+}
+
+.message-count {
+  position: relative;
+  display: block;
+  font: bold 14px/13px Helvetica, Verdana, Tahoma;
+  text-align: center;
+  margin: 0;
+  top: 2px;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+  background-color: #17A2B8;
+}
+.dropdown-menu{
+  top: 60px;
+  right: 0px;
+  left: unset;
+  width: 460px;
+  box-shadow: 0px 5px 7px -1px #c1c1c1;
+  padding-bottom: 0px;
+  padding: 0px;
+}
+.dropdown-menu:before{
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 100px;
+  border:10px solid #343A40;
+  border-color: transparent transparent #343A40 transparent;
+}
+.head{
+  padding:5px 15px;
+  border-radius: 3px 3px 0px 0px;
+}
+.footer{
+  border-radius: 0px 0px 3px 3px; 
+}
+.bg-gray{
+  background-color: #eee;
+}
+.drop-down{
+  right: 20px;
+}
+@media (max-width: 640px) {
+    .dropdown-menu{
+      top: 50px; 
+      width: 290px;
+    } 
+    .nav{
+      display: block;
+    }
+    .nav .nav-item,.nav .nav-item a{
+      padding-left: 0px;
+    }
+    .message{
+      font-size: 13px;
+    }
+}
+</style>
+
+<body class="body-imgset">
+ 
+    <!--/.Navbar-->
+    <nav class="navbar navbar-expand-lg base11 navbar-text-color">
+      <img src="{% static 'logo1.png' %}" width="50" alt="My image"> <strong class="navbar-brand "> SV colleges</strong>
+           
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#uiNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="uiNavbar">
+                <ul class="navbar-nav ml-auto" style="float: right">
+                    <li class="nav-item dropdown ">
+                        <a href="index.html" class="nav-link">JOBS</a>
+                        <!-- dropdown list data's  -->
+                        <div class="dropdown-content animated zoomIn">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <a href="#">Search Jobs</a>
+                              <a href="#">Advanced Search</a>
+                              <a href="#">Create Free job Alert</a>
+                            </div>
+                        
+                            <div class="col-sm-6">
+                            <a href="#">Jobs by Location</a>
+                            <a href="#">Jobs by Skill</a>
+                            <a href="#">Jobs by Designation</a>
+                            <a href="#">Jobs by Company</a>
+                            <a href="#">Jobs by Category</a>
+                            <a href="#">Browse all Jobs</a>
+                        
+                            </div>
+                          </div>
+                          </div>
+                          
+                    </li>
+                    <li class="nav-item dropdown-RECRUITERS">
+                        <a href="about.html" class="nav-link">
+                            RECRUITERS</a>
+                            <div class="dropdown-recruiters animated zoomIn">
+                                <div class="row ">
+                                  <div class="col-sm">
+                                    <a href="#">Browser All Recruiters</a><br>
+                                    <a href="#">Recruiters Conection </a><br>
+                                    <a href="#">Go to JobkarleRecruiters</a>
+                                  </div>
+                                  
+                                </div>
+                                </div>
+                    </li>
+                    <li class="nav-item dropdown-comp ">
+                        <a href="services.html" class="nav-link">
+                             COMPANYS</a>
+                             <div class="dropdown-companys animated zoomIn">
+                                <div class="row">
+                                  <div class="col-sm">
+                                  <a href="#">Browse All Companys</a><br>
+                                  <a href="#">About Companys</a><br>
+                                  <a href="#">Interview Quetions</a><br>
+                                  <a href="#">Write Company Reviews</a><br>
+                                  <a href="#">Write Interview Advice</a><br>
+                                  <a href="#">Company Reviews</a>
+                              
+                                  </div>
+                                </div>
+                                </div>
+                    </li>
+                    <li class="nav-item dropdown-tool">
+                        <a href="contact.html" class="nav-link">
+                             TOOLS</a>
+                             <div class="dropdown-tools animated zoomIn">
+                                  <div class=>
+                                  <a href="#">Salary Trends</a><br>
+                                  <a href="#">Career Navigator</a><br>
+                                  <a href="#">Pepole Flow</a><br>
+                                  <a href="#">Talent Migration</a><br>
+                                  <a href="#">Salary Prediction</a><br>
+                                  <a href="#">Career Trajectory</a><br>
+                                  <a href="#">Boomerange</a>
+                                  </div>
+                                </div>
+                    </li>
+                    <li class="nav-item dropdown-mor ">
+                        <a href="contact.html" class="nav-link">
+                         MORE</a>
+                         <div class="dropdown-more animated zoomIn">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <a href="#">Search Jobs</a>
+                                <a href="#">Advanced Search</a>
+                                <a href="#">Create Free job Alert</a>
+                              </div>
+                          
+                              <div class="col-sm-6">
+                              <a href="#">Jobs by Location</a>
+                              <a href="#">Jobs by Skill</a>
+                              <a href="#">Jobs by Designation</a>
+                              <a href="#">Jobs by Company</a>
+                              <a href="#">Jobs by Category</a>
+                              <a href="#">Browse all Jobs</a>
+                          
+                              </div>
+                            </div>
+                            </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a  href="{% url 'jobkarlepro:Logout' %}"class="nav-link">
+                          LOGOUT</a>
+                  </li>
+                    
+                     {% else %}
+                      <li class="nav-item">
+                        <a  href="#" data-toggle="modal" data-target="#darkModalForm" class="nav-link">
+                            LOGIN</a>
+                    </li>
+                      {% endif %}
+                    
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="far fa-bell fa-2x animated swing"></i>
+                            {% if notification_unread %}
+                            <div class="badge">
+                              <div class="message-count">{{notification_count}}</div>
+                            </div>
+                            {% endif %}</a>
+                            
+                              <div class="drop-down">
+                                <ul class="dropdown-menu">
+                                  <li class="head text-light bg-dark">
+                                    <div class="row">
+                                      <div class="col-lg-12 col-sm-12 col-12">
+                                        <span>Notifications ({{notification_count}})</span>
+                                        <a href="" class="float-right text-light">Mark all as read</a>
+                                      </div>
+                                  </li>
+                                  <div>
+                                    {% for i in notifications %}  
+                                    {% if 'Unread' == i.Status %}
+                                   
+                                    <div class=" card  m-1" style="background-color: rgb(228, 187, 208); width:450px;">
+                                      <a href="{% url 'jobkarleapp:notification_read' i.id  user_data.id %}">
+                                        <div class="row">
+                                          <div class="col-sm-3">
+                                            <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">
+                                          </div>
+                                          <div class="col-sm-9">
+                                            
+                                            <strong class="">{{i.Name}}{{i.id}}fhfh</strong>
+                                            <div>
+                                              {{i.Subject}}
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                    
+                                    {% else%}
+                                    
+                                     <div class=" card  m-1" style="background-color: rgb(240, 230, 235); width:450px;">
+                                      <a href="{% url 'jobkarleapp:notification_read' i.id  user_data.id %}" >
+                                        <div class="row">
+                                          <div class="col-sm-3">
+                                            <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black;" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">
+                                          </div>
+                                          <div class="col-sm-9">
+                                            <strong class="">{{i.Name}}{{i.id}}</strong>
+                                            <div>
+                                              {{i.Subject}}
+                                             </div>
+                                          </div>
+                                        </div>
+                                      </a>
+                                    </div>
+                                   
+                                    {% endif %}
+                                    {% endfor %}
+                                   
+                                  </div>
+                                  
+                                  <li class="footer bg-dark text-center">
+                                    <a href="" class="text-light">View All</a>
+                                  </li>
+                                </ul>
+                              </div>  
+                    </li>
+                    {% if user.is_authenticated %}
+                    {% else %}
+                    <li class="nav-item">
+                      <a href="#"  data-toggle="modal" data-target=".bd-example-modal-lg" class="nav-link">
+                           REGISTER</a>
+                  </li>
+                  {% endif %}
+                <li class="nav-item dropdown-users"><img src="{{profilepic.Profile.url}}" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">
+                    
+              </li>
+                </ul>
+            </div>
+      </nav>
+    <div class="nav-imgset p-0 m-0">
+      <nav class="navbar navbar-dark  navbar-expand-sm">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+               <img src="../img/favicon.ico" width="25" height="25"> UiBrains Technologies</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#uiNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="uiNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link mx-2">
+                           <i class="fa fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link mx-2">
+                            <i class="fa fa-id-card"></i> About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link mx-2">
+                            <i class="fa fa-cog"></i> Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link mx-2">
+                            <i class="fa fa-envelope"></i> Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+      <!-- multiple data search at a time search box -->
+
+      {% if profilepic %}
+      <form method="GET" action="{% url 'jobkarleapp:mulltisearch' user_data.id %}">
+      <div class=" col-sm-6 m-auto search-box-input animated zoomIn"><br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <strong class="search-heading ">Search Job</strong><br>
+        <div class=" search-box row ">
+         <input type="text" placeholder="Role" name='role'>
+         <input type="text" placeholder="Location" name='location'>
+         <input type="text" placeholder="Experience" name="experiance">
+         <input type="text" placeholder="Salary" name="salary">
+         <input type="submit"  class="Search-color" value="Search">
+        </div>
+      </div>
+    </div>
+  </form>
+  {% else %}
+  <form method="GET">
+    <div class=" col-sm-6 m-auto search-box-input animated zoomIn"><br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <strong class="search-heading ">Search Job</strong><br>
+      <div class=" search-box row ">
+       <input type="text" placeholder="Role" name='role'>
+       <input type="text" placeholder="Location" name='location'>
+       <input type="text" placeholder="Experience" name="experiance">
+       <input type="text" placeholder="Salary" name="salary">
+       <input type="submit"  class="Search-color" value="Search">
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+    <section>
+        {% block content %}
+
+        {% endblock %}
+    </section>
+
+    
+    <script>
+      $('body').on('click','#id_country, #id_billing_country, #id_shipping_country', function(e) {
+          //debugger
+        if ($('#id_country,#id_billing_country, #id_shipping_country').attr('list')) {
+    
+        }
+        else {
+            var country_json1 = JSON.parse(window.localStorage.getItem("country_json"));
+            var option_filed = ''; // variable to store the options
+            for (var i = 0; i < country_json1.length; i++) {
+                option_filed += '<option value="' + country_json1[i]['country'] + '">' + country_json1[i]['country'] + '</option>';
+                $("#id_country_list").html($(option_filed)) //this string add to last child (base.html) in datalist type
+            }
+            $('#id_Nationality,#id_country, #id_billing_country, #id_shipping_country').addClass("clearable").attr('list', 'id_country_list'); //this value append to lat child of base .html
+          }       
+    });
+  </script>
+  <script>
+    function countryList() {
+        $.ajax({
+            headers: { "X-CSRFToken": '{{csrf_token}}' },
+            type: "POST",
+            url: "{% url 'jobkarlepro:country_list' %}",
+            success: function(response) {
+                window.localStorage.setItem("country_json", response)
+            },
+    
+        });
+    }
+  </script>
+
+
+  
+  
+  <!-- <script>
+  
+    $(window).on('load', function() {    
+        if (localStorage.getItem("country_json") == null) {
+            countryList()
+        }
+      });
+
+    </script> -->
+     
+    <!-- <script src="{% static 'bootstrap/js/fontawesome-all.js' %}"></script>
+    <script src="{% static 'bootstrap/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/mdb.min.js' %}"></script> -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+  <datalist id="id_country_list"></datalist>
+    </body>
+
+</html>
