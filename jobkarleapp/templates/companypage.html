@@ -1,14 +1,37 @@
 {% extends 'companybase.html' %}
 {% block content %}
+<div class="companybg">
+  <div class="row">
+    <div></div>
+    <div
+    ><div class="col-sm-2 company-profile"><br><br>
+      <div class="" style="position: relative; bottom:40px; right:50px;">
+        <div class="card pt-3" style="background-color:black;">
+          <img class="m-auto" src="{{profilepic.Profile.url}}" width="250" height="200" class=" img-responsive" alt="no profile">
+        </div>
+        <div class="card">
+          <div class="m-auto img-responsive">
+            <strong class="card m-3 p-0 "><div class="row"><mark  style="background-color: black; color:white; text-align:center;">{{user_data.first_name}}</mark><mark style="background-color: yellow; color:black;">{{user_data.last_name}}</mark></div></<strong> 
+            </div>
+            <p class=" img-responsive m-auto" >{{user_data.email}}</p>
+        </div>
+    
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
 <section class=" body-bg ">
 <div class="row">
-<div class="col-sm-2"></div>
-<div class="col-sm-8"><div class=" m-auto row">
+<div class="col-xs-2">
+  
+</div>
+<div class="col-xs-8 ">
+  <div class=" m-auto row">
   {% for data in obj1 %}
-  <div class="card  mb-3 m-3" style="max-width: 20rem;">
+  <div class=" applylist-card card  mb-3 m-3" style="max-width: 20rem;">
     <div class="card-header">{{data.CompanyName}}</div>
     <div class="card-body">
-      
       <a href="{% url 'jobkarlepro:Applied_Candidates' data.id user_data.id %}"><h5><strong class="btn btn-warning" style="padding: 5px;">Candidates List</strong></h5></a>
       
       <h5 class="card-title">{{data.Skills}}</h5>
@@ -19,22 +42,9 @@
   </div>
   {% endfor %}
   </div></div>
-<div class="col-sm-2"><br><br>
-  <div class="" style="position: relative; bottom:40px; right:50px;">
-    <div class="card pt-3" style="background-color:black;">
-      <img class="m-auto" src="{{profilepic.Profile.url}}" width="250" height="200" class=" img-responsive" alt="no profile">
-    </div>
-    <div class="card">
-      <div class="m-auto img-responsive">
-        <strong class="card m-3 p-0 "><div class="row"><mark  style="background-color: black; color:white; text-align:center;">{{user_data.first_name}}</mark><mark style="background-color: yellow; color:black;">{{user_data.last_name}}</mark></div></<strong> 
-        </div>
-        <p class=" img-responsive m-auto" >{{user_data.email}}</p>
-    </div>
 
-    </div>
-</div>
 
-    </section>
+</section>
     <section>
    <!-- Button trigger modal -->
 

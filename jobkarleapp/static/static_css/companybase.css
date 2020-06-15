@@ -6,4 +6,14 @@ body{
     background-color: rgba(198, 227, 236, 0.459);
 
 }
+.companybg{
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) , url("/static/companybg.jpg");
+    color: white;
+    widows:100%;
+    background-size: cover;
+    background-position:center;
+    background-repeat: repeat-y;
+    height:500px; 
+  
+  }
 

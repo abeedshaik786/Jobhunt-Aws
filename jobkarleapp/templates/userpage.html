@@ -36,8 +36,8 @@
     <div class="m-5">
         <div class="row">
           <div class="col-sm-2">
-            <div style="position: fixed;"> 
-              <div class="card testimonial-card m-2 profile-main " >
+            <div class="card-profile"> 
+              <div class="card testimonial-card m-1 p-2 profile-main " >
 
                 <!-- Background color -->
                 <div class="card-up aqua-gradient"></div>
@@ -71,8 +71,8 @@
             <div class="card" style="width: 300px; height:700px; position:relative; bottom:300px;"></div>
           </div> -->
           </div>
-          <dvi class="col-sm-1"></dvi>
-          <div class="col-sm-6 pb-2">
+          <!-- <dvi class="col-sm-1"></dvi> -->
+          <div class="col-sm-7 pb-2">
 {% if obj %}
 <section>
   <div class="container card col-sm-12">
@@ -93,14 +93,14 @@
         <div class="card-body">
           <div class="row">
             <div class="col-sm-5">
-                <h4 class="card-title font-weight-bold"><a>{{comdata.CompanyName}}</a></h4>
+                <h4 class="card-title font-weight-bold">{{comdata.CompanyName}}</h4>
             </div>
             <div class="col-sm-5"></div>
             <div class="col-sm-2">
               {% for Add in user_data.fresherqualification_set.all %}
               <form  action="{% url 'jobkarleapp:Apply_Click' Add.id %}" method="POST">{% csrf_token %}
                 <input type="hidden" name='job_id' value="{{comdata.id}}">
-                <input type="submit"style="padding-left:30px; padding-right:30px; background-color:#007bff; color:white; font-size:15px;;" value="Apply">
+                <input class="apply-button" type="submit"style="padding-left:30px; padding-right:30px; background-color:#007bff; color:white; font-size:15px;;" value="Apply">
               </form>
               
               <input type="hidden"  value = "{{ student_job.id }}">
@@ -121,21 +121,46 @@
           </ul>
           <p class="mb-2">{{comdata.CompanyName}}</p>
           <!-- Text -->
-          <p class="card-text">{{comdata.Company_Description}}</p>
+          <p class="card-text cdesc" style="font-size: 20px;">{{comdata.Company_Description}}</p>
           <hr class="my-4">
-          <p class="lead"><strong>{{comdata.Skills}}</strong></p>
-          <p class="card-text">{{comdata.Roles_and_Responsabulity}}</p><br>
-          <p class="lead"><strong>Interview</strong></p>
-          <p class="card-text">{{comdata.Tterview_Date}}</p>
-          <p class="card-text">{{comdata.Interview_Location}}</p>
-          <div class="row">
-            <div class="col-sm"><p class="card-text">{{comdata.First_HrName}}</p></div>
-            <div class="col-sm"><p class="card-text">{{comdata.First_HrNumber}}</p></div>
-          </div>
-          <div class="row">
-            <div class="col-sm"><p class="card-text">{{comdata.Second_HrName}}</p></div>
-            <div class="col-sm"><p class="card-text">{{comdata.Second_HrNumber}}</p></div>
-          </div>
+          <p class="lead" style="font-size: 20px;"><strong>{{comdata.Skills}}</strong></p>
+          <p class="card-text" style="font-size: 20px;">{{comdata.Roles_and_Responsabulity}}</p><br>
+          <!--Accordion wrapper-->
+<div class="accordion md-accordion" id="accordionEx{{comdata.id}}" role="tablist" aria-multiselectable="true">
+
+  <!-- Accordion card -->
+  <div>
+
+    <!-- Card header -->
+    <div class="" role="tab" id="headingOne1">
+      <a data-toggle="collapse" data-parent="#accordionEx{{comdata.id}}" href="#collapseOne1{{comdata.id}}" aria-expanded="true"
+        aria-controls="#collapseOne1{{comdata.id}}">
+        <h5 class="mb-0">Show More <i class="fas fa-angle-down rotate-icon"></i>
+        </h5>
+      </a>
+    </div>
+
+    <!-- Card body -->
+    <div id="collapseOne1{{comdata.id}}" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx{{comdata.id}}">
+      <div class="card-body">
+        <p class="lead" style="font-size: 20px;"><strong>Interview</strong></p>
+        <p class="card-text" style="font-size: 20px;">{{comdata.Tterview_Date}}</p>
+        <p class="card-text" style="font-size: 20px;">{{comdata.Interview_Location}}</p>
+        <div class="row">
+          <div class="col-sm"><p class="card-text">{{comdata.First_HrName}}</p></div>
+          <div class="col-sm"><p class="card-text">{{comdata.First_HrNumber}}</p></div>
+        </div>
+        <div class="row">
+          <div class="col-sm"><p class="card-text">{{comdata.Second_HrName}}</p></div>
+          <div class="col-sm"><p class="card-text">{{comdata.Second_HrNumber}}</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Accordion wrapper -->
+         
           <!-- Button -->
         </div>
       
@@ -143,7 +168,7 @@
       <!-- Card -->
     {% endfor %} 
           </div>
-          <div class="col-sm-2">
+          <div class="col-sm-2 Resume-Edite">
         
             <div class="card p-2" style="width: 500px; height:300px; position:fixed">
               <h4 class="" ><strong>Attach Resume</strong></h4>

@@ -1,0 +1,187 @@
+
+@media (max-width: 575px) { 
+    a{
+        font-size: 25px;
+    }
+    .search-box-input{
+        position: relative;
+        bottom: 150px;
+    }
+    .search-box-input .row{
+     padding: 0px;
+     display: flex;
+    }
+    .card-profile img{
+        width: 100px;
+        height: 100px;
+    }
+    .card-profile{
+        position: absolute;
+        left:5px;
+
+        width: 250px;
+        height: 500px
+    }
+    .search-box input{
+    display: none;
+    }
+    .xs-search-box input{
+    display:block;
+    }
+    .card-profile div{
+        display: none;
+    }
+    .Resume-Edite div{
+        display: none;
+    }
+    .card-title{
+        font-size: 18px;
+    }
+    p{
+        font-size: 18px;
+    }
+    .apply-button{
+        position: absolute;
+        right: 10px;
+    }
+    .cdesc{
+        font-size: 45px;
+    }
+}
+
+
+@media (max-width: 767px) { 
+    a{
+        font-size: 25px;
+    }
+    .search-box-input{
+        position: relative;
+        bottom: 150px;
+    }
+    .search-box-input .row{
+     padding: 0px;
+     display: flex;
+    }
+    .card-profile img{
+        width: 100px;
+        height: 100px;
+    }
+    .card-profile{
+        position: absolute;
+        left:5px;
+        width: 250px;
+        height: 500px
+    }
+    .search-box input{
+    display: none;
+    }
+    .xs-search-box input{
+    display:block;
+    }
+    .card-profile div{
+        display: none;
+    }
+    .Resume-Edite div{
+        display: none;
+    }
+    .card-title{
+        font-size: 18px;
+    }
+    p{
+        font-size: 18px;
+    }
+    .apply-button{
+        position: absolute;
+        right: 1000px;
+    }
+    .cdesc{
+        font-size: 45px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    a{
+        font-size: 25px;
+    }
+    .search-box-input{
+        position: relative;
+        bottom: 150px;
+    }
+    .search-box-input .row{
+     padding: 0px;
+     display: flex;
+    }
+    .card-profile img{
+        width: 100px;
+        height: 100px;
+    }
+    .card-profile{
+        position: absolute;
+        left:5px;
+
+        width: 250px;
+        height: 500px
+    }
+    .search-box input{
+    display: none;
+    }
+    .xs-search-box input{
+    display:block;
+    }
+    .card-profile div{
+        display: none;
+    }
+    .Resume-Edite div{
+        display: none;
+    }
+    .card-title{
+        font-size: 18px;
+    }
+    p{
+        font-size: 18px;
+    }
+    .apply-button{
+        position: absolute;
+        right: 10px;
+    }
+    .cdesc{
+        font-size: 45px;
+    }
+    .small-profile img{
+        display: block;
+    }
+    .search-section{
+        position: absolute;
+        top:0px;
+    }
+    .candidates-section{
+        position: absolute;
+        top:0px;
+    }
+    .company-profile div{
+        display: none;
+    }
+    .applylist-card{
+        margin: auto;
+    }
+}
+@media (max-width: 1024px) {
+    .apply-button{
+        position: absolute;
+        right: 10px;
+    }
+   
+    .card-profile {
+        display: none;
+    }
+
+   .search-box-input input{
+    text-decoration: none;
+    border:none;
+    padding: 10px;
+}
+.small-profile{
+    display: block;
+}
+}

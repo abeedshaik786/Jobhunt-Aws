@@ -6,6 +6,15 @@
 
   
 }
+.small-profile{
+  position: relative;
+  top: 300px;
+  padding: 20px;
+}
+.small-profile img{
+ 
+  display: none;
+}
 .applied-allert {
   text-align: center;
   align-items: center;
@@ -41,6 +50,25 @@
 .base11{
     background-color:white;
 }
+.search-button{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+.xs-search-box{
+  position: absolute;
+  top:290px;
+  left: 255px;
+}
+.xs-search-box input{
+  display:none;
+  }
+.xs-search-box input{
+  text-decoration: none;
+  border:none;
+}
+
 .search-box-input input{
     text-decoration: none;
     border:none;

@@ -3,6 +3,7 @@
 <html>
 
 <head>
+
     <!-- <link rel="stylesheet" href="{% static 'bootstrap/css/fontawesome-all.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap/css/mdb.css' %}">
@@ -10,6 +11,7 @@
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'animate.css' %}">
     <link rel="stylesheet" href="{% static 'static_css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'static_css/media-quary.css' %}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -106,6 +108,37 @@
     }
     .message{
       font-size: 13px;
+    }  
+    .status {
+      width: 100%;
+      padding: 20px;
+      font-size: 30px;
+      color: greenyellow;
+      text-align: center;
+      font-family: sans-serif;
+      font-weight: bold;
+      transition: all .575s
+    }
+    .status .on{
+      color: #2DDE98;
+      text-shadow: 0 0 8px rgba(0,0,0,.4);
+    }
+    .status .off{
+      color: #ff6c5f;
+    }
+    
+    html {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .online-indicate-button{
+      width: 5px;
+      height: 5px;
     }
 }
 </style>
@@ -311,8 +344,6 @@
     <div class="nav-imgset p-0 m-0">
       <nav class="navbar navbar-dark  navbar-expand-sm">
         <div class="container">
-            <a href="index.html" class="navbar-brand">
-               <img src="../img/favicon.ico" width="25" height="25"> UiBrains Technologies</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#uiNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -338,7 +369,37 @@
             </div>
         </div>
     </nav>
+    <section>
+      <div class=" xs-search-box row ">
+        <input  class="search-button" type="text" placeholder="Role" name='role'>
+        <input type="submit"  class="Search-color" value="Search">
+       </div>
+    </section>
       <!-- multiple data search at a time search box -->
+      {% if user.is_authenticated %}
+      <section>
+        <div class="small-profile">
+          <div class="row">
+            <div>
+              <img class="card p-1" src="{{profilepic.Profile.url}}" width="150" height="150" class="img-responsive" alt="no profile">
+            </div>
+            <div class=" p-1" style="position: relative; top:20px;">
+              <a class="navbar-brand"><h3 style="color:white;" > Shaik Abeed</h3></a>
+              <div class="row pl-3">
+                <div>
+                  <div class="online-indicate-button"></div>
+                </div>
+                <div>
+                <h4 id="status" class="status on">Online</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      {% endif %}
+      
 
       {% if profilepic %}
       <form method="GET" action="{% url 'jobkarleapp:mulltisearch' user_data.id %}">
@@ -347,13 +408,8 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <strong class="search-heading ">Search Job</strong><br>
+        
         <div class=" search-box row ">
          <input type="text" placeholder="Role" name='role'>
          <input type="text" placeholder="Location" name='location'>
@@ -361,6 +417,7 @@
          <input type="text" placeholder="Salary" name="salary">
          <input type="submit"  class="Search-color" value="Search">
         </div>
+       
       </div>
     </div>
   </form>
@@ -378,17 +435,27 @@
       <br>
       <br>
       <strong class="search-heading ">Search Job</strong><br>
-      <div class=" search-box row ">
-       <input type="text" placeholder="Role" name='role'>
-       <input type="text" placeholder="Location" name='location'>
-       <input type="text" placeholder="Experience" name="experiance">
-       <input type="text" placeholder="Salary" name="salary">
-       <input type="submit"  class="Search-color" value="Search">
+      <div class="col-sm-12 p-1">
+      <div class=" search-box row">
+        <div> 
+          <input type="text" placeholder="Role" name='role'>
+        </div>
+        <div>
+          <input type="text" placeholder="Location" name='location'>
+        </div>
+        <div>
+          <input type="text" placeholder="Experience" name="experiance">
+        </div>
+        <div>
+          <input type="text" placeholder="Salary" name="salary">
+        </div>
+        <div>
+          <input type="submit"  class="Search-color" value="Search">
+        </div>
       </div>
-    </div>
+    </div> 
   </div>
   {% endif %}
-
     <section>
         {% block content %}
 
@@ -427,7 +494,28 @@
     }
   </script>
 
+<script>
+  var checking = function() {
+    var status = document.getElementById('status');
 
+    if ( navigator.onLine && status.classList.contains('off') ) {
+      status.innerHTML = 'Online';
+      document.getElementById("status").style.color='blue';
+      status.style.color="blue";
+      status.classList.remove('off');
+      status.classList.add('on');
+    }
+    if ( ! navigator.onLine && status.classList.contains('on') ) {
+      status.innerHTML = 'Offline';
+      status.style.color="yellow";
+      status.classList.remove('on');
+      status.classList.add('off'); // can't use .replace() because of Chrome
+    }
+  };
+
+window.addEventListener('online', checking);
+window.addEventListener('offline', checking);
+</script>
   
   
   <!-- <script>
