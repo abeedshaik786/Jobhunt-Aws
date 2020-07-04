@@ -1,6 +1,12 @@
 .body-imgset{
-    background-color: #ebeff5;
+    background-color:white;
 } 
+h1,h2,h3,h4,h5,h6,p,a,li,i{
+  font-family:"Rajdhani",sans-serif;
+  color:#3a414e;
+  line-height:1.25;
+}
+h1,.h1{font-size:30px;font-weight:700;line-height:1.2}
 .companyback{
   background-image: linear-gradient(rgba(164, 177, 233, 0.1),rgba(160, 168, 241, 0.1));
 
@@ -23,14 +29,18 @@
 .company-img{
   border: solid, 1px, black;
 }
+li{
+  font-size: 12px;
+}
 .nav-imgset{
   background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) , url("/static/78.jpg");
   color: white;
-  widows:100%;
+  background-repeat: no-repeat;
+  /* background-attachment:fixed; */
   background-size: cover;
-  background-position: bottom;
-  background-repeat: repeat-y;
-  height:500px; 
+  background-position:bottom;
+  height:390px; 
+ 
 
 }
 .navbar-text-color a{
@@ -43,18 +53,12 @@
 
 }
 .search-heading{
-    font-size: 25px;
+    font-size: 19px;
     position: relative;
     right: 20px;
 }
 .base11{
     background-color:white;
-}
-.search-button{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 150px;
-  padding-right: 150px;
 }
 .xs-search-box{
   position: absolute;
@@ -62,24 +66,33 @@
   left: 255px;
 }
 .xs-search-box input{
-  display:none;
+  text-decoration: none;
+    text-align: center;
+    border:none;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:white;
+    display:none;
   }
 .xs-search-box input{
   text-decoration: none;
   border:none;
 }
-
 .search-box-input input{
     text-decoration: none;
+    text-align: center;
     border:none;
-    padding: 20px;
-    
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
 }
-.search-color{
-    background-color:#4A90E2;
-}
-.search-box-input .row{
-    display:flex;
+.search-box-input{
+  background-color: white;
+  width: auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s; 
 }
 .search-text{
     font-size: 30px;
@@ -88,7 +101,6 @@
 .main-search {
     text-decoration: none;
     color: #fff;
-    background-color: #4A90E2;
     text-align: center;
     letter-spacing: .5px;
     transition: .2s ease-out;
@@ -225,4 +237,108 @@
 .dropdown-users:hover .dropdown-user {display: block;
   margin-right: 100px;
 }
+.dropdown-search {
+  display: none;
+  position: absolute;
+  background-color:rgba(172, 175, 177, 0.411);
+  padding: 10px;
+  min-width: 320px;
+  z-index: 1;
+}
+.dropdown-SEARCH i,p,h6,h4,h5,h6{
+ color:black;
+}
+#icon-card{
+  background-color: #fff;
+  align-items: center;
+  border-radius:50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: min-content;
+  padding: 10px;
+  background-color: gainsboro;
+
+}
+.mmain-search input{
+  text-decoration: none;
+  margin: 0px 0px 0px;
+  padding: 0px 0px 0px;
+}
+.card-mincontent{
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: min-content;
+  padding: 5px;
+  margin: 5px;
+}
+.dropdown-search a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-search a:hover{
+  background-color:skyblue;
+
+
+  }
+
+}
+.dropdown-SEARCH:hover a {
+  
+}
+/* Show the dropdown menu on hover */
+.dropdown-SEARCH:hover .dropdown-search {display: block;}
+
+/* Pulling in reset css and fonts http://seodesigns.com/projects/TD/css/reset.css */
+body {background:#f6f6f6;}
+p {font-family: "Webly Sleek SemiLight",Helvetica-,droid sans,sans-serif;font-weight: normal;margin: 0 0 1rem;}
+.centerbox {position: absolute;top:50%;left:50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%); /* IE 9 */
+-webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+width:620px;min-height:52px;z-index:2}
+.centerbox h1 {margin-bottom: 25px;font-size:36px;font-family: "Webly Sleek SemiLight";font-weight: normal;text-align: center;}
+.centerbox p.description {margin-bottom:40px;text-align: center;}
+.description a {text-decoration:none;}
+.main-input { background: #fff; height: 30px; width: 327px;color: #a7b1ab; border: 1px solid #cccccc; margin-bottom:0px; -webkit-appearance: none; border-radius: 4px 0px 0px 4px; -moz-border-radius: 4px 0px 0px 4px; -webkit-border-radius: 4px 0px 0px 4px;display: inline-block;text-align: left;font-size: 16px; font-weight: 500; padding:0px 0px 0px 57px;font-size:16px;border-right:0px;background: #ffffff url("http://seodesigns.com/projects/TD/images/search.png") 18px 15px no-repeat;background-size:18px 18px;float:left;}
+
+/* responsive css below */
+@media only screen and (max-width: 680px) {
+    .main-btn {border-radius: 4px 4px 4px 4px; -moz-border-radius: 0px 4px 4px 0px; -webkit-border-radius: 0px 4px 4px 0px;border-right:1px solid #cccccc;}
+    ul.search-description {right:0px;z-index:9999;}
+    .centerbox p.description {width:284px;margin:0 auto 40px auto;}
+    .centerbox {width:auto;transform: translate(-50%, -60%);
+    -ms-transform: translate(-50%, -60%); /* IE 9 */
+    -webkit-transform: translate(-50%, -60%); /* Chrome, Safari, Opera */
+    }
+    .main-form-container {width:477px}
+    #main-submit {display: none;}
+    #main-submit-mobile { background: #3cb13c;color: #fff; display:block; font-size: 19px; font-weight: 500;text-align: center; cursor: pointer;margin-bottom: 0px; -webkit-appearance: none;border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;width:141px;height:50px;border: 0px;padding-top:0px;float:none;border:0px;position: fixed;bottom: 0px;right:0px;width: 100%;z-index:1;}
+    #main-submit-mobile:hover { background: #00a221; color: #fff !important; -webkit-appearance: none; }
+    footer {padding-bottom:50px;}
+}
+
+@media only screen and (max-width: 515px) {
+    .main-input {width:210px;}
+    .main-form-container {width:360px}
+    .centerbox h1 {width:280px;margin:0 auto 15px auto;}
+    .centerbox {position: absolute;top:50%;left:50%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .cover {background: rgba(0, 0, 0, 0) url("seodesigns.com/projects/TD/images/background.jpg") no-repeat center -175px;}
+    .main-input {width: 185px;padding-left:42px;background: #ffffff url("http://seodesigns.com/projects/TD/images/search.png") 12px 15px no-repeat;background-size:18px 18px;}
+    .main-btn {width:108px;background: #ffffff url("http://seodesigns.com/projects/TD/images/main-bullet.png") 85px 23px no-repeat;background-size:6px 6px;}
+    .main-form-container {width:293px}
+    .search-small {left:13px;}
+    .search-large {left:13px;}
+}
+
+
+
+
 

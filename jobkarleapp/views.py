@@ -220,6 +220,7 @@ def FreshExtradata(request):
         forms = FresherDataModel(request.POST)
         id = request.POST.get('user_id')
         user = User.objects.get(id = id)
+        #import pdb;pdb.set_trace()
         if forms.is_valid():
             data = forms.save()
             obj = FresherData.objects.get(id=data.id)

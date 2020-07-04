@@ -23,6 +23,12 @@
     font-size: 20px;
     font-weight: bold;
   }
+  p{
+    font-size: 11px;
+  }
+  h1 ,h2 ,h3 ,h4{
+   font-size: 13px;
+  }
   
   .upload-btn-wrapper input[type=file] {
     font-size: 100px;
@@ -31,48 +37,29 @@
     top: 0;
     opacity: 0;
   }
+  .Resume-Edite{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+  }
 </style>
 <section>
-    <div class="m-5">
+    <div class="m-4" style="position: absolute; top:425px;">
         <div class="row">
           <div class="col-sm-2">
-            <div class="card-profile"> 
-              <div class="card testimonial-card m-1 p-2 profile-main " >
-
-                <!-- Background color -->
-                <div class="card-up aqua-gradient"></div>
-            
-                <!-- Avatar -->
-                <div class="avatar mx-auto white">
-                  <br>
-
-
-                  <img src="{{profilepic.Profile.url}}" width="150" height="150" class="rounded-circle img-responsive" alt="no profile">
-                
-                  <a href="#"><i class="fa fa-camera fa-1x" aria-hidden="true"></i></a>
-              </div>
-            
-                <!-- Content -->
-                <div class="card-body">
-                  <!-- Name -->
-                  <h4 class="card-title font-weight-bold">{{user_data.first_name}} {{user_data.last_name}} </h4>
-                  <p class="font-weight-bold">Gender is {{user_personal_data.Gender}}</p>
-                  <p class="font-weight-bold">{{user_data.first_name}}  living in {{user_personal_data.Nationality}}</p>
-                  <p class="font-weight-bold"> Religion {{user_personal_data.Religion}}</p>
-                  <hr>
-                  <!-- Quotation -->
-                  <p class="font-weight-bold">{{user_data.email}}</p>
-                  <p><i class="fas fa-quote-left"></i> Master of Computer Applications</p>
-                </div>    
-        </div>
-            </div>  
            
+           <!-- Default unchecked -->
+           <section data-scrollbar>
+            <img src="jobkarle-logo1.JPG">
+          </section>
+          
+          <script> Scrollbar.initAll(); </script>
           <!-- <div>
             <div class="card" style="width: 300px; height:700px; position:relative; bottom:300px;"></div>
           </div> -->
           </div>
           <!-- <dvi class="col-sm-1"></dvi> -->
-          <div class="col-sm-7 pb-2">
+<div class="col-sm-7 pb-2" style="padding: 0px 0px 0px;">
 {% if obj %}
 <section>
   <div class="container card col-sm-12">
@@ -88,7 +75,7 @@
 {% endif %}
             {% for comdata in student_jobs %}
         <!-- Card -->
-<div class="card booking-card m-2">
+<div class="card booking-card m-2" style="background-color: aliceblue;">
         <!-- Card content -->
         <div class="card-body">
           <div class="row">
@@ -100,7 +87,7 @@
               {% for Add in user_data.fresherqualification_set.all %}
               <form  action="{% url 'jobkarleapp:Apply_Click' Add.id %}" method="POST">{% csrf_token %}
                 <input type="hidden" name='job_id' value="{{comdata.id}}">
-                <input class="apply-button" type="submit"style="padding-left:30px; padding-right:30px; background-color:#007bff; color:white; font-size:15px;;" value="Apply">
+                <input class="apply-button" type="submit"style="padding-left:30px; padding-right:30px; background-color:rgb(136, 138, 139); color:white; font-size:15px;;" value="Apply">
               </form>
               
               <input type="hidden"  value = "{{ student_job.id }}">
@@ -121,10 +108,13 @@
           </ul>
           <p class="mb-2">{{comdata.CompanyName}}</p>
           <!-- Text -->
-          <p class="card-text cdesc" style="font-size: 20px;">{{comdata.Company_Description}}</p>
+          <p class="card-text cdesc" style="font-size: 12px;">{{comdata.Company_Description}}</p>
           <hr class="my-4">
-          <p class="lead" style="font-size: 20px;"><strong>{{comdata.Skills}}</strong></p>
-          <p class="card-text" style="font-size: 20px;">{{comdata.Roles_and_Responsabulity}}</p><br>
+          <p class="lead" style="font-size:13px;"><strong>{{comdata.Skills}}</strong></p>
+          <p class="card-text" style="font-size: 12px;">{{comdata.Roles_and_Responsabulity}}</p><br>
+          <div>
+            <i class="far fa-star" style="float: right;" id="icon-card" ></i>
+          </div>
           <!--Accordion wrapper-->
 <div class="accordion md-accordion" id="accordionEx{{comdata.id}}" role="tablist" aria-multiselectable="true">
 
@@ -135,7 +125,7 @@
     <div class="" role="tab" id="headingOne1">
       <a data-toggle="collapse" data-parent="#accordionEx{{comdata.id}}" href="#collapseOne1{{comdata.id}}" aria-expanded="true"
         aria-controls="#collapseOne1{{comdata.id}}">
-        <h5 class="mb-0">Show More <i class="fas fa-angle-down rotate-icon"></i>
+        <h5 style="font-size:12px;" class="mb-0">Show More <i class="fas fa-angle-down rotate-icon"></i>
         </h5>
       </a>
     </div>
@@ -143,9 +133,9 @@
     <!-- Card body -->
     <div id="collapseOne1{{comdata.id}}" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx{{comdata.id}}">
       <div class="card-body">
-        <p class="lead" style="font-size: 20px;"><strong>Interview</strong></p>
-        <p class="card-text" style="font-size: 20px;">{{comdata.Tterview_Date}}</p>
-        <p class="card-text" style="font-size: 20px;">{{comdata.Interview_Location}}</p>
+        <p class="lead" style="font-size: 11px;"><strong>Interview</strong></p>
+        <p class="card-text" style="font-size:11px;">{{comdata.Tterview_Date}}</p>
+        <p class="card-text" style="font-size: 11px;">{{comdata.Interview_Location}}</p>
         <div class="row">
           <div class="col-sm"><p class="card-text">{{comdata.First_HrName}}</p></div>
           <div class="col-sm"><p class="card-text">{{comdata.First_HrNumber}}</p></div>
@@ -168,32 +158,32 @@
       <!-- Card -->
     {% endfor %} 
           </div>
-          <div class="col-sm-2 Resume-Edite">
+          <div class="col-sm-3" style="padding: 0px 0px 0px; position:relative; top:5px;">
         
-            <div class="card p-2" style="width: 500px; height:300px; position:fixed">
+            <div class="p-2 Resume-Edite" style="padding: 0%;background-color:white;">
               <h4 class="" ><strong>Attach Resume</strong></h4>
               <p class="" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(151, 148, 148);">Resume is the most important document recruiters look for .</p>
               <p class="" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(151, 148, 148); position:relative; bottom:10px;">They generally do not look at profiles without resumes.</p>
              
              <div class="row">
-               <div class="col-sm-10">
+               <div class="m-auto">
                 <p><strong>{{user_qualification.Resume}}</strong></p>
                </div>
-               <div class="col-sm-2">
+               <div class="m-auto">
                 <i class="fa fa-download p-2" style="color: #3c98ed; border:0.5px solid #3c98ed;" aria-hidden="true"></i>
               </div>
              </div>
-              <div class=" m-auto" style="width: 400px; height:200px; border:0.5px solid rgb(216, 212, 212);">
-                <div>
+              <div class=" m-auto" style=" border:0.5px solid rgb(216, 212, 212);">
+                
                   <form method="GET" id="idajax" enctype="multipart/form-data">
-                  <div class="upload-btn-wrapper" style="position:relative; top:40px; left:80px;">
-                    <button class="btn">Upload a Resume</button>
+                  <div class="upload-btn-wrapper">
+                    <button style="font-size:11px;" class="btn">Upload a Resume</button>
                     <input type="hidden" id="qualification_id" name="qualification_id" value="{{user_qualification.id}}">
                     <input type="file" name="Resume" id="Resume">
                   </div>
-                  <p style="position:relative; left:20px; top:25px; padding:5px;">Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p>
+                  <p style="padding:5px;">Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p>
                 </form>
-                </div>
+                
               </div>
             </div>
           

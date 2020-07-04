@@ -18,6 +18,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="icon" href="/static/title-img.jpg">
 </head>
 <style>
   * {box-sizing: border-box}
@@ -144,16 +145,15 @@
 </style>
 
 <body class="body-imgset">
- 
     <!--/.Navbar-->
-    <nav class="navbar navbar-expand-lg base11 navbar-text-color">
-      <img src="{% static 'logo1.png' %}" width="50" alt="My image"> <strong class="navbar-brand "> SV colleges</strong>
+    <nav class="navbar navbar-expand-lg base11 navbar-text-color" style="padding:2px;">
+      <img src="{% static 'jobkarle-logo1.JPG' %}" width="200" height="40" alt="My image"> <strong class="navbar-brand "></strong>
            
             <button class="navbar-toggler" data-toggle="collapse" data-target="#uiNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="uiNavbar">
-                <ul class="navbar-nav ml-auto" style="float: right">
+                <ul class="navbar-nav " style="float: right">
                     <li class="nav-item dropdown ">
                         <a href="index.html" class="nav-link">JOBS</a>
                         <!-- dropdown list data's  -->
@@ -260,74 +260,7 @@
                     </li>
                       {% endif %}
                     
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="far fa-bell fa-2x animated swing"></i>
-                            {% if notification_unread %}
-                            <div class="badge">
-                              <div class="message-count">{{notification_count}}</div>
-                            </div>
-                            {% endif %}</a>
-                            
-                              <div class="drop-down">
-                                <ul class="dropdown-menu">
-                                  <li class="head text-light bg-dark">
-                                    <div class="row">
-                                      <div class="col-lg-12 col-sm-12 col-12">
-                                        <span>Notifications ({{notification_count}})</span>
-                                        <a href="" class="float-right text-light">Mark all as read</a>
-                                      </div>
-                                  </li>
-                                  <div>
-                                    {% for i in notifications %}  
-                                    {% if 'Unread' == i.Status %}
-                                   
-                                    <div class=" card  m-1" style="background-color: rgb(228, 187, 208); width:450px;">
-                                      <a href="{% url 'jobkarleapp:notification_read' i.id  user_data.id %}">
-                                        <div class="row">
-                                          <div class="col-sm-3">
-                                            <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">
-                                          </div>
-                                          <div class="col-sm-9">
-                                            
-                                            <strong class="">{{i.Name}}{{i.id}}fhfh</strong>
-                                            <div>
-                                              {{i.Subject}}
-                                             </div>
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                    
-                                    {% else%}
-                                    
-                                     <div class=" card  m-1" style="background-color: rgb(240, 230, 235); width:450px;">
-                                      <a href="{% url 'jobkarleapp:notification_read' i.id  user_data.id %}" >
-                                        <div class="row">
-                                          <div class="col-sm-3">
-                                            <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black;" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">
-                                          </div>
-                                          <div class="col-sm-9">
-                                            <strong class="">{{i.Name}}{{i.id}}</strong>
-                                            <div>
-                                              {{i.Subject}}
-                                             </div>
-                                          </div>
-                                        </div>
-                                      </a>
-                                    </div>
-                                   
-                                    {% endif %}
-                                    {% endfor %}
-                                   
-                                  </div>
-                                  
-                                  <li class="footer bg-dark text-center">
-                                    <a href="" class="text-light">View All</a>
-                                  </li>
-                                </ul>
-                              </div>  
-                    </li>
+                   
                     {% if user.is_authenticated %}
                     {% else %}
                     <li class="nav-item">
@@ -335,9 +268,81 @@
                            REGISTER</a>
                   </li>
                   {% endif %}
-                <li class="nav-item dropdown-users"><img src="{{profilepic.Profile.url}}" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">
-                    
-              </li>
+                
+                </ul>
+                <ul class="navbar-nav ml-auto " style="float: right">
+                  <li class="nav-item dropdown ">
+                    <li class="nav-item">
+                      <a href="contact.html" class="nav-link"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="far fa-bell fa-2x animated swing"></i>
+                          {% if notification_unread %}
+                          <div class="badge">
+                            <div class="message-count">{{notification_count}}</div>
+                          </div>
+                          {% endif %}</a>
+                          
+                            <div class="drop-down">
+                              <ul class="dropdown-menu" style="width: max-content;" style="background-color: skyblue;">
+                                <li class="head text-light"style="background-color: skyblue;">
+                                  <div class="row" style="background-color: skyblue;">
+                                    <div class="col-lg-12 col-sm-12 col-12" style="background-color: skyblue;">
+                                      <span style="color: black; font-w">Notifications ({{notification_count}})</span>
+                                      <a href="" class="float-right" style="color:black;">Mark all as read</a>
+                                    </div>
+                                </li>
+                                <div>
+                                  {% for i in notifications %}  
+                                  {% if 'Unread' == i.Status %}
+                                 
+                                  <div class=" card  m-1" style="background-color: rgb(228, 187, 208); width:300px;">
+                                    <a href="{% url 'jobkarleapp:notification_read' i.id  user_data.id %}">
+                                      <div class="row">
+                                        <div class="col-sm-3">
+                                          <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="30" height="30" class="rounded-circle img-responsive" alt="no profile">
+                                        </div>
+                                        <div class="col-sm-9">
+                                          
+                                          <strong class="" style="font-size: 11px;">{{i.Name}}{{i.id}}fhfh</strong>
+                                          <div>
+                                            <p>{{i.Subject}}</p>
+                                           </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                  
+                                  {% else%}
+                                  
+                                   <div class=" card  m-1" style="background-color: rgb(240, 230, 235); width:300px;">
+                                    <a href="{% url 'jobkarleapp:notification_read' i.id  user_data.id %}" >
+                                      <div class="row ">
+                                        <div class="col-sm-3">
+                                          <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black;" width="30" height="30" class="rounded-circle img-responsive" alt="no profile">
+                                        </div>
+                                        <div class="col-sm-9">
+                                          <strong class=""style="font-size: 11px;">{{i.Name}}{{i.id}}</strong>
+                                          <div>
+                                            <p>{{i.Subject}}</p>
+                                           </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                 
+                                  {% endif %}
+                                  {% endfor %}
+                                 
+                                </div>
+                                
+                                <li class="footer bg-dark text-center">
+                                  <a href="" class="text-light">View All</a>
+                                </li>
+                              </ul>
+                            </div>  
+                  </li>
+                  </li>
+                  <li class="nav-item dropdown-users"><img src="{{profilepic.Profile.url}}" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">
+                  </li>
                 </ul>
             </div>
       </nav>
@@ -347,8 +352,75 @@
             <button class="navbar-toggler" data-toggle="collapse" data-target="#uiNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="uiNavbar" style="margin: 0px 0px 0px; padding:0px 0px 0px;">
+              <ul class="navbar-nav float-right">
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown-SEARCH">
+                  <input type="text" style="background-color:rgba rgba(255, 255, 255, 0.055);color:white;" class="main-input main-name" name="NAME" placeholder="Hover here for advanced search...." />
+                      <div class="dropdown-search p-4" style="position: absolute; top:38px; width:90%;">
+                        <div><p><i class="fas fa-hiking c-white" style="width: min-content;"></i><strong style="color:black;"> My Stuff</strong></p></div>
+                          <div class="row" style="width: 100%;">
+                            <div class="col-xs-4 p-2 m-2">
+                              <div class="row m-auto">
+                                <div class="card p-1 m-1" style="width:min-content; color:black;">
+                                  <div class="m-auto"><i class="fas fa-user-circle yellow" id="icon-card"></i></div>
+                                  <p>Profile</p>
+                                </div>  
+                                
+                                <div class="card p-1 m-1" style="width: min-content;">
+                                  <div class="m-auto">
+                                    <i class="fas fa-cog gainsboro" id="icon-card"></i>
+                                  </div>
+                                  <p style="color: #343A40;">Settings</p>
+                                </div>
+                                 <div class="card p-1 m-1" style="width: min-content;">
+                                  <div class="m-auto">
+                                    <i class="fas fa-laptop burlywood" id="icon-card"></i>
+                                  </div>
+                                  <p style="color: #343A40;">Activices</p>
+                                </div>
+                                <div class="card p-1 m-1" style="width: min-content;">
+                                  <div class="m-auto">
+                                    <i class="fas fa-paper-plane blue" id="icon-card" ></i>
+                                  </div>
+                                  <p style="color: #343A40;">Applied Jobs</p>
+                                </div>
+                                <div class="card p-1 m-1" style="width: min-content;">
+                                  <div class="m-auto">
+                                    <i class="far fa-star" id="icon-card" ></i>
+                                  </div>
+                                  <p style="color: #343A40;">Saved Jobs</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-8 p-2 m-2">
+                              <div class="row p-1">
+                                <i class="fas fa-binoculars fa-lg" style="color: yellow; padding:10px"></i><h1 style="padding:10px; font-weight: bold; color:yellow;">Find The Job That Fits Your Life</h1>
+                              </div>
+                             {% if user_data %}
+                              <div class="search-box-input">
+                              <form method="GET" action="{% url 'jobkarleapp:mulltisearch' user_data.id %}">
+                              <input type="text" placeholder="Expected Role" name='role'>
+                              <input type="text" placeholder="Location" name='location'>
+                              <input type="text" placeholder="Experience" name="experiance">
+                              <input type="text" placeholder="Expected Salary" name="salary">
+                              <input type="submit" value="Search">
+                              </form>
+                              </div>
+                              {% endif %}
+                            </div>
+                          </div>
+                          
+                          </div>
+                        </li>
+                        {% endif %}
+                <li class="nav-item">
+                </li>
+              </ul>
+            </div>
             <div class="collapse navbar-collapse" id="uiNavbar">
                 <ul class="navbar-nav ml-auto">
+                  
                     <li class="nav-item">
                         <a href="index.html" class="nav-link mx-2">
                            <i class="fa fa-home"></i> Home</a>
@@ -369,21 +441,48 @@
             </div>
         </div>
     </nav>
-    <section>
-      <div class=" xs-search-box row ">
-        <input  class="search-button" type="text" placeholder="Role" name='role'>
-        <input type="submit"  class="Search-color" value="Search">
-       </div>
-    </section>
+   
       <!-- multiple data search at a time search box -->
       {% if user.is_authenticated %}
       <section>
+        <div class="m-4 bi-profile" style="width: max-content; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;">
+          <div class="card-header" style="background-color: cornflowerblue; height:35px;">
+              <div class="float-right">
+              <h4 id="status" class="status on">Online</h4>
+              </div>
+          </div>
+          <div class="card-body p-2" style="background-color: yellow;">     
+            <img style="position:relative; bottom:25px;" class="card m-0 p-0" src="{{profilepic.Profile.url}}" width="50" height="50" class="rounded-circle img-responsive" alt="no profile">   
+            <a href="https://codepen.io/AlbertFeynman/" target="_blank">{{user_data.username}}</a>
+         
+          <div class="row p-2" style="padding-top: 0%;">
+            <a class="card p-1 m-2" style="width: max-content; color:black; font-size:12px;  font-weight:bold;">Following</a>
+            <a class="card p-1 m-2" style="width: max-content; color:black; font-size:12px;  font-weight:bold;">Following</a>
+          </div>
+          <div class="row" style="margin: auto;">
+            <a class="p-1 m-1 card" style="color: yellow; font-size:9px; background-color:rgba(21, 178, 202, 0.582)">PROJECTS</a>
+            <a class="p-1 m-1 card" style="color: yellow; font-size:9px; background-color:rgba(21, 178, 202, 0.582)">PENS</a>
+            <a class="p-1 m-1 card" style="color: yellow; font-size:9px; background-color:rgba(21, 178, 202, 0.582);">POSTS</a>
+          </div>
+          <div class="row" style="margin: auto;">
+            <a class="p-1 m-1 card" style="color: white; font-size:9px; background-color:rgb(0, 7, 8);">PROJECTS</a>
+            <a class="p-1 m-1 card" style="color: white; font-size:9px; background-color:rgb(0, 7, 8);">PENS</a>
+            <a class="p-1 m-1 card" style="color: white; font-size:9px; background-color:rgb(0, 7, 8);">POSTS</a>
+          </div>
+          <div class="row" style="margin: auto;">
+            <a class="p-1 m-1 card" style="color: white; font-size:9px; background-color:rgb(0, 7, 8);">PROJECTS</a>
+            <a class="p-1 m-1 card" style="color: white; font-size:9px; background-color:rgb(0, 7, 8);">PENS</a>
+            <a class="p-1 m-1 card" style="color: white; font-size:9px; background-color:rgb(0, 7, 8);">POSTS</a>
+          </div>
+          </div>
+        </div>
         <div class="small-profile">
           <div class="row">
             <div>
               <img class="card p-1" src="{{profilepic.Profile.url}}" width="150" height="150" class="img-responsive" alt="no profile">
             </div>
-            <div class=" p-1" style="position: relative; top:20px;">
+            <div class=" p-1" style="position:relative;top:20px;">
               <a class="navbar-brand"><h3 style="color:white;" > Shaik Abeed</h3></a>
               <div class="row pl-3">
                 <div>
@@ -399,63 +498,6 @@
         </div>
       </section>
       {% endif %}
-      
-
-      {% if profilepic %}
-      <form method="GET" action="{% url 'jobkarleapp:mulltisearch' user_data.id %}">
-      <div class=" col-sm-6 m-auto search-box-input animated zoomIn"><br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <strong class="search-heading ">Search Job</strong><br>
-        
-        <div class=" search-box row ">
-         <input type="text" placeholder="Role" name='role'>
-         <input type="text" placeholder="Location" name='location'>
-         <input type="text" placeholder="Experience" name="experiance">
-         <input type="text" placeholder="Salary" name="salary">
-         <input type="submit"  class="Search-color" value="Search">
-        </div>
-       
-      </div>
-    </div>
-  </form>
-  {% else %}
-  <form method="GET">
-    <div class=" col-sm-6 m-auto search-box-input animated zoomIn"><br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <strong class="search-heading ">Search Job</strong><br>
-      <div class="col-sm-12 p-1">
-      <div class=" search-box row">
-        <div> 
-          <input type="text" placeholder="Role" name='role'>
-        </div>
-        <div>
-          <input type="text" placeholder="Location" name='location'>
-        </div>
-        <div>
-          <input type="text" placeholder="Experience" name="experiance">
-        </div>
-        <div>
-          <input type="text" placeholder="Salary" name="salary">
-        </div>
-        <div>
-          <input type="submit"  class="Search-color" value="Search">
-        </div>
-      </div>
-    </div> 
-  </div>
-  {% endif %}
     <section>
         {% block content %}
 
@@ -516,8 +558,9 @@
 window.addEventListener('online', checking);
 window.addEventListener('offline', checking);
 </script>
+<script>
   
-  
+</script>
   <!-- <script>
   
     $(window).on('load', function() {    

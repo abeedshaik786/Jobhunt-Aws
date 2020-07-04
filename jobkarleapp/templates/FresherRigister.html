@@ -27,6 +27,12 @@
         float: right;
         font-size: 20px;
     }
+    h5,p,a,li{
+      font-size: 12px;
+    }
+    h1,h2,h3,h4{
+      font-size: 15px;
+    }
     .google-logo{
         border: 2px solid black;
     }
@@ -47,27 +53,23 @@
         text-decoration: none;
     }
 
-    .bootimg{
-      }  
 </style>
-<section style="position: relative; top:80px;">
-  <div class="container card col-sm-9 my-5 py-5 z-depth-1">
+<section style="position:absolute; top:500px; width:100%;">
+  <div class="card col-sm-8 m-auto">
 
 
     <!--Section: Content-->
-    <section class="px-md-5 mx-md-5 text-center dark-grey-text">
+    <section class="text-center dark-grey-text">
   
       <!--Grid row-->
       <div class="row">
   
         <!--Grid column-->
-        <div class="col-xl-6 mb-4 mb-md-0">
+        <div class="col-md-6 mb-4 mb-md-0">
   
-          <h3 class="font-weight-bold">SVCE Application Blocks</h3>
+          <h3 class="font-weight-bold p-2">SVCE Application Blocks</h3>
   
-          <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
-            molestiae
-            numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum.</p>
+          <p class="text-muted">Education for a Better Society..!</p>
   
           <a class="btn btn-purple btn-md ml-0" href="#" role="button">Start now<i class="fa fa-gem ml-2"></i></a>
   
@@ -89,7 +91,7 @@
         <!--Grid column-->
   
         <!--Grid column-->
-        <div class="col-xl-6 mb-4 mb-md-0">
+        <div class="col-md-6 mb-4 mb-md-0">
           <img class="card p-2 bootimg m-auto" src="{% static 'testpic.jpg' %}" width="" height="550"  class="img-fluid" alt="">
         </div>
         <!--Grid column-->
@@ -110,13 +112,13 @@
   
       <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our Services</h3>
       <hr class="w-header my-4">
-      <div class="row">
+      <div class="row text-center dark-grey-text">
   
         <div class="col-md-6 col-xl-3 mb-4">
           <div class="card text-center bg-success text-white">
             <div class="card-body">
               <p class="mt-4 pt-2"><i class="far fa-object-ungroup fa-4x"></i></p>
-              <h5 class="font-weight-normal my-4 py-2"><a class="text-white" href="#">JOBS FOR YOU</a></h5>
+              <h5 class="font-weight-normal my-4 py-2"><a class="text-white dark-grey-text" href="#">JOBS FOR YOU</a></h5>
               <p class="mb-4">Stand out as an Early Applicant with instant access to jobs
                 Use SVCE Recruitments Application expert advantage to get handpicked jobs in your inbox </>
             </div>
@@ -162,7 +164,7 @@
     <!-- Section -->
   
   </div>
-  <div class="m-5">
+  <div class="m-auto p-3">
     {% for message in messages %}
     <script>
       alert('{{message}}');
@@ -596,9 +598,6 @@
     </div>
   </div>
   </section>
-  <div class="text-center">
-    register Form</a>
-  </div>
   </section>
   {% if messages %}
   

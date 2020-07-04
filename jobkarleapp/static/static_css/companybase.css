@@ -12,7 +12,8 @@ body{
     widows:100%;
     background-size: cover;
     background-position:center;
-    background-repeat: repeat-y;
+    background-blend-mode:color-burn;
+    background-origin: border-box;
     height:500px; 
   
   }

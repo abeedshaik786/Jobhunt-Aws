@@ -89,7 +89,7 @@
   
   </style>
   
-<div class="m-auto " style="position: relative; top:300px;">
+<div class="m-auto " style="position: relative; top:600px;">
     <div class="frame">
       <div class="center">
         <div class="title">
@@ -101,7 +101,7 @@
               {% csrf_token %}
               <input type="hidden" name="user_id" value="{{user_data.id}}">
               {{forms}}
-              <input type="submit">
+              <input type="submit" class="card m-auto yellow" style="font-weight: bold;">
           </form>
          
         </div>

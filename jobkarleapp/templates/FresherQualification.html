@@ -2,7 +2,9 @@
 <!-- {% load static %} -->
 {% block content %}
 {% load static %}
+<style>
 
+</style>
 
 <!-- <div class="container">
   <div class="card">
@@ -62,96 +64,100 @@
 <!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
 
 <!-- NO JS ADDED YET -->
+<div class="" style="position: absolute; top:450px; width:100%;">
+  <form class="m-auto" style="width: max-content;" method="POST" action="{% url 'jobkarlepro:fresherqualificationextra' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    
+    <input type="hidden" name="user_id" value="{{user_id.id}}">
 
-<form class="p-4 container" method="POST" action="{% url 'jobkarlepro:fresherqualificationextra' %}" enctype="multipart/form-data">
-      {% csrf_token %}
-      
-      
-      <input type="hidden" name="user_id" value="{{user_id.id}}">
-
-      <div style="width:170px;">
-        <strong class="card m-3 p-0 "><div class="row"><mark  style="background-color: black; color:white; text-align:center;">Student</mark><mark style="background-color: yellow; color:black;"> Qualification</mark></div></<strong>   
+    <div style="width:170px;">
+      <strong class="card m-3 p-0 "><div class="row"><mark  style="background-color: black; color:white; text-align:center;">Student</mark><mark style="background-color: yellow; color:black;"> Qualification</mark></div></<strong>   
+    </div>
+      <div class="row m-2">
+        <div class="col-sm-6">
+          <label style ="color:black;">Highest-Qualification</label>
+          {{forms.Highest_Qualification}}
+        </div>
+        <div class="col-sm-6">
+          <label style ="color:black;">Branch</label>  
+          <select class="form-control" name="course" placeholder="Slect Course" required id="id_course">     
+          </select>
+        </div>
       </div>
-        <div class="row m-2">
-          <div class="col-sm-6">
-            {{forms.Highest_Qualification}}
-          </div>
-          <div class="col-sm-6">
-            <select class="form-control" name="course" placeholder="Slect Course" required id="id_course">     
-            </select>
-          </div>
+      <div class="col-sm m-2">
+        {{forms.Specialization}}
+      </div>
+      <div class="row m-2">
+        <div class="col-sm-6 ">
+          {{forms.Course_Type}}
+        </div>
+        <div class="col-sm-6">
+          {{forms.Passing_Year}}
+        </div>
+      </div>
+      <div class="row m-2">
+        <div class="col-sm-6">
+          {{forms.Phone}}
+        </div>
+        <div class="col-sm-6">
+          {{forms.Resume}}
+        </div>
+      </div>
+        
+      <div style="width:max-content;">
+      <div class="row m-2">
+        <mark  style="background-color: black; color:white; text-align:center;">Student</mark>
+        <mark style="background-color: yellow; color:black;">MInimum Skills </mark></div>
+      </div>
+      <div class="row">
+        <div class="col-sm m-2">
+          {{forms.Skills1}}
         </div>
         <div class="col-sm m-2">
-          {{forms.Specialization}}
+          {{forms.Skills2}}
         </div>
-        <div class="row m-2">
-          <div class="col-sm-6 ">
-            {{forms.Course_Type}}
-          </div>
-          <div class="col-sm-6">
-            {{forms.Passing_Year}}
-          </div>
+        <div class="col-sm m-2">
+          {{forms.Skills3}}
         </div>
-        <div class="row m-2">
-          <div class="col-sm-6">
-            {{forms.Phone}}
-          </div>
-          <div class="col-sm-6">
-            {{forms.Resume}}
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm m-2">
+          {{forms.Range1}}
         </div>
-          
-        <div style="width:190px;">
-          <strong class="card m-3 p-0 "><div class="row"><mark  style="background-color: black; color:white; text-align:center;">Student</mark><mark style="background-color: yellow; color:black;">MInimum Skills </mark></div></<strong>   
+        <div class="col-sm m-2">
+          {{forms.Range2}}
         </div>
-        <div class="row">
-          <div class="col-sm m-2">
-            {{forms.Skills1}}
-          </div>
-          <div class="col-sm m-2">
-            {{forms.Skills2}}
-          </div>
-          <div class="col-sm m-2">
-            {{forms.Skills3}}
-          </div>
+        <div class="col-sm m-2">
+          {{forms.Range3}}
         </div>
-        <div class="row">
-          <div class="col-sm m-2">
-            {{forms.Range1}}
-          </div>
-          <div class="col-sm m-2">
-            {{forms.Range2}}
-          </div>
-          <div class="col-sm m-2">
-            {{forms.Range3}}
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm m-2">
+          {{forms.Skills4}}
         </div>
-        <div class="row">
-          <div class="col-sm m-2">
-            {{forms.Skills4}}
-          </div>
-          <div class="col-sm m-2">
-            {{forms.Skills5}}
-          </div>
-          <div class="col-sm m-2">
-            {{forms.Skills6}}
-          </div>
+        <div class="col-sm m-2">
+          {{forms.Skills5}}
         </div>
-        <div class="row">
-          <div class="col-sm m-2">
-            {{forms.Range4}}
-          </div>
-          <div class="col-sm m-2">
-            {{forms.Range5}}
-          </div>
-          <div class="col-sm m-2">
-            {{forms.Range6}}
-          </div>
+        <div class="col-sm m-2">
+          {{forms.Skills6}}
         </div>
-    </div>
-        <input  style="background-color:#4A90E2;" class="col-sm-2 m-auto p-2" type="submit" value="Add Qualification">
-    </form>
+      </div>
+      <div class="row">
+        <div class="col-sm m-2">
+          {{forms.Range4}}
+        </div>
+        <div class="col-sm m-2">
+          {{forms.Range5}}
+        </div>
+        <div class="col-sm m-2">
+          {{forms.Range6}}
+        </div>
+      </div>
+      <input  style="background-color:#4A90E2; width:max-content; margin:auto;" type="submit" value="Add Qualification">
+  </form>
 </div>
+
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.min.js"></script>
 <script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
 <script src="https://cdn.jotfor.ms/static/jotform.forms.js?3.3.16599" type="text/javascript"></script>

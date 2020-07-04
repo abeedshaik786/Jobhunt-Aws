@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class=" m-auto col-sm-12 ">
+<div class="m-2" style="position: absolute; top:470px; width:100%;">
     <form  action="{% url 'jobkarlepro:FreshExtradata' %}" method="POST" >
     {% csrf_token %}
-<div class="container m-auto">
-    <div class="card col-sm-8 ml-5 mt-5">
+<div class="m-auto col-sm-6">
+    <div class="card">
         <div class="card col-sm-2 mt-2" style="background-color: yellow;">        
             <strong><div class="row"><mark  style="background-color: black; color:white; text-align:center;">personal</mark><mark style="background-color: yellow; color:black;"> data</mark></div></<strong>
         </div>
@@ -18,7 +18,7 @@
         <div class="col-sm-6">{{forms.Age}}</div>
     </div>
     <div class="col-sm-12">{{forms.Address}}</div>
-    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0 m-2 col-sm-3 f-right" type="submit" >Next</button>
+    <button class="btn btn-outline-info btn-rounded m-3" type="submit" >Next</button>
 </div>
 </form>
 </div>
