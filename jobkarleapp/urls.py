@@ -31,6 +31,10 @@ urlpatterns = [
     path('Resume_Edite', views.Resume_Edite,name='Resume_Edite'),
     path('<int:sUser_id><int:User_id>/intenction/', views.intenction,name='intenction'),
     path('User_intenction', views.User_intenction,name='User_intenction'),
-    path('<int:idd>/<int:uidd>/notification_read/',views.notification_read,name='notification_read'),
+    path('<int:uidd>/notification_read/',views.notification_read,name='notification_read'),
+    path('<int:uidd>/Total_notifications/',views.Total_notifications,name='Total_notifications'),
+    path('<int:idd>/<int:uidd>/Single_notification/',views.Single_notification,name='Single_notification'),
+    path('<int:uidd>/Return_home/',views.Return_home,name='Return_home'),
+    path('<int:sidd>/Total_sent_notifications/',views.Total_sent_notifications,name='Total_sent_notifications'),
     
 ]

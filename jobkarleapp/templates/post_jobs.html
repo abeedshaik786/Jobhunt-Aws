@@ -1,7 +1,7 @@
 {% extends 'companybase.html' %}
 {% block content %}
 {% load static %}
-<div class="container card mt-5">
+<div class="container col-sm-6  mt-5">
     {% if obj %}
 <section class="m-4">
   <div class="container card col-sm mr-5">
@@ -20,7 +20,7 @@
     <form action="{% url 'jobkarleapp:job_postview' %}" method="POST">
         {% csrf_token %}
         <input type="hidden" name="user_id" value="{{user.id}}">
-    <div class="card col-sm-2 mt-2" style="background-color: yellow;">        
+    <div class="card mt-2" style="background-color: yellow; width:max-content;">        
       <strong><div class="row"><mark  style="background-color: black; color:white; text-align:center;">POST</mark><mark style="background-color: yellow; color:black;">VACANCY</mark></div></<strong>
   </div>
     <div class="row">
@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="m-2">
-        <div class="form-group shadow-textarea col-sm-12">
+        <div class="form-group col-sm-12">
             <label for="exampleFormControlTextarea6">Company Description</label>
             <textarea class=" form-control z-depth-1" name = "Company_description" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
           </div>
@@ -132,7 +132,10 @@
       <label for="cars">Interview Location</label>
         <input type="text"  class="form-control" name="interviewlocation" placeholder="Interview Location">
     </div>
-    <input type="submit" class="p-2 card" style="margin-left:400px; margin-bottom:5px; background-color:#3c98ed;" value="POST COMPANY REQUIREMENTS">
+    <div class="m-auto" style="width: max-content;">
+      <input type="submit" class="btn "  value="POST REQUIREMENTS" style="background-color: navy; color:white;">
+    </div>
+    
 </form> 
 </div>
 <script>

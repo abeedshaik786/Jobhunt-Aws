@@ -4,10 +4,28 @@
         position:fixed;
         top:0px;
     }
+    #push{
+        position: relative;
+        bottom:500px;
+    }
+    #dropdown-search {
+        width:80%;
+
+    }
+    .search-box-input{
+
+    }
+    
 }
-
-
 @media (max-width: 767px) { 
+    .main-profile{
+        display: none;
+    }
+    #push div {
+        position: absolute;
+        bottom:0px;
+
+    }
     a{
         font-size: 25px;
     }
@@ -51,16 +69,35 @@
     .cdesc{
         font-size: 45px;
     }
+    .search-section{
+        margin: 200px;;
+    }
+    .dropdown-search{
+        width:400px;
+
+    }
+   
 }
-
-
 @media (max-width: 991px) {
+    .search-section{
+        margin: 200px;;
+    }
+    .main-profile{
+        display: none;
+    }
+    .smal-nav li{
+        font-size: 10px;
+    }
+    .main-body{
+        position: relative;
+        bottom:100px;
+    }
     a{
         font-size: 25px;
     }
     .search-box-input{
         position: relative;
-        bottom: 150px;
+        bottom: 100px;
     }
     .search-box-input .row{
      padding: 0px;
@@ -118,8 +155,27 @@
     .applylist-card{
         margin: auto;
     }
+    #push{
+        position: relative;
+        top:100px;
+    }
+    .dropdown-search{
+        width:400px;
+
+    }
+    #logo-audgest{
+        position: relative;
+        right: 30px;
+    }
+   
+  
 }
+
 @media (max-width: 1024px) {
+    #logo-audgest{
+        position: relative;
+        right: 20px;
+    }
     .apply-button{
         position: absolute;
         right: 10px;
@@ -128,7 +184,43 @@
     .card-profile {
         display: none;
     }
-.small-profile{
+    .small-profile{
     display: block;
-}
+    }
+    .main-profile{
+        display: none;
+    }
+    #push{
+        position: relative;
+        top:150px;
+    }
+    .smal-nav{
+        font-size: 10px;
+    }
+    #dropdown-search {
+        width:825px;
+
+    }
+    .search-box-input{
+        position: relative;
+        top:25px;
+    }
+    #bottom-serch h1{
+        position: relative;
+        bottom: 100px;
+    }
+    #bottom-serch div {
+        position: relative;
+        bottom: 30px;
+    }
+    #small-navbar a{
+        font-size: 12px;
+
+    }
+    #candidates-name{
+        font-size: 15px;
+    }
+  
+    
+   
 }

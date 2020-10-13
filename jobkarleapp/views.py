@@ -29,6 +29,7 @@ from django.template import RequestContext
 from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Count
+from django.core.paginator import Paginator
 
 
 @requires_csrf_token
@@ -102,6 +103,9 @@ def profileimg(request):
 def ProfileData(request,User_id):
     user_data = User.objects.get(id=User_id)
     student_jobs = JobRequirments.objects.all()
+    paginator=Paginator(student_jobs, 10)
+    page_obj = paginator.get_page(1)
+
     # import pdb;pdb.set_trace()
     user_personal_data = FresherData.objects.get(user_id=user_data.id)
     user_qualification = FresherQualification.objects.get(user_id=user_data.id)
@@ -114,7 +118,7 @@ def ProfileData(request,User_id):
     notification_read=Notifications.objects.filter(Status = 'Read')
     return render(request,'userpage.html',{
         'user_data':user_data,
-        'student_jobs':student_jobs,
+        'student_jobs':page_obj,
         'user_personal_data':user_personal_data,
         'profilepic':profilepic,
         'user_qualification':user_qualification,
@@ -435,27 +439,43 @@ def Resume_Edite(request):
             forms.save()
         import pdb;pdb.set_trace()
         pass
-def User_intenction(request):
+def User_intenction(request,dummy='dummy'):
+    import pdb; pdb.set_trace()
     if request.method == "POST":
+        notification = request.POST.get('notification')
+        condition = request.POST.get('condition')
         name = request.POST.get('Name')
         subject = request.POST.get('Subject')
         message = request.POST.get('Message')
         user_id = request.POST.get('user_idd')
-        cuser_id = request.POST.get('user_id')
+        sender_user_id = request.POST.get('user_id')
         user_data = User.objects.get(id = user_id)
-        company_user_data = User.objects.get(id = cuser_id)
-        img = ProfileImg.objects.get(user_id = company_user_data.id)
+        Sender_user_data = User.objects.get(id = sender_user_id)
+        img = ProfileImg.objects.get(user_id = Sender_user_data.id)
         # import pdb;pdb.set_trace()
-        obj = Notifications()
-        obj.Name = name
-        obj.Subject = subject
-        obj.Message = message
-        obj.Status ="Unread"
-        obj.user = user_data
-        obj.sender = company_user_data.id
-        obj.Profile = img.Profile
-        obj.save()
-        return HttpResponseRedirect(reverse('jobkarleapp:intenction', args=[user_data.id , company_user_data.id]))
+        if user_data.is_staff == True:
+            obj = Notifications()
+            obj.Name = name
+            obj.Subject = subject
+            obj.Message = message
+            obj.Status ="Unread"
+            obj.user = Sender_user_data
+            obj.sender = user_data.id 
+            obj.Profile = img.Profile
+            obj.save()
+            variable1= Notifications.objects.get(id = notification)
+            return HttpResponseRedirect(reverse('jobkarleapp:Single_notification', args=[ variable1.id, user_data.id]))
+        else:
+            obj = Notifications()
+            obj.Name = name
+            obj.Subject = subject
+            obj.Message = message
+            obj.Status ="Unread"
+            obj.user = user_data
+            obj.sender = Sender_user_data.id
+            obj.Profile = img.Profile
+            obj.save()
+            return HttpResponseRedirect(reverse('jobkarleapp:intenction', args=[user_data.id , Sender_user_data.id]))
     
 def intenction(request,sUser_id ,User_id):
     # import pdb;pdb.set_trace()
@@ -473,8 +493,46 @@ def intenction(request,sUser_id ,User_id):
     'extra_data':extra_data,
     'dump':dump,
     'forms':forms,})
-def notification_read(request,idd,uidd):
+def notification_read(request,uidd):
     #import pdb;pdb.set_trace()
+    variable2 = User.objects.get(id = uidd)
+    # import pdb;pdb.set_trace()
+    notifications=Notifications.objects.filter(user_id = variable2.id)
+    notification_count=Notifications.objects.filter(Status = 'Unread',user_id = variable2.id).count()
+    notification_unread=Notifications.objects.filter(user_id = variable2.id,Status = 'Unread')
+    notification_read=Notifications.objects.filter(Status = 'Read')
+    forms = NotificationModel()
+    # import pdb;pdb.set_trace() 
+    return render(request,'notification_view.html',{
+    'variable2':variable2,
+    'forms':forms,
+    'notifications':notifications,
+    'notification_count':notification_count,
+    'notification_unread':notification_unread,
+    'notification_read':notification_read,
+    })
+def Total_notifications(request,uidd):
+    variable2 = User.objects.get(id = uidd)
+    notifications=Notifications.objects.filter(user_id = variable2.id)
+    notification_count=Notifications.objects.filter(Status = 'Unread',user_id = variable2.id).count()
+    notification_unread=Notifications.objects.filter(user_id = variable2.id,Status = 'Unread')
+    notification_read=Notifications.objects.filter(Status = 'Read')
+    return render(request,'notification_view.html',{
+    'variable2':variable2,
+    'notifications':notifications,
+    'notification_count':notification_count,
+    'notification_unread':notification_unread,
+    'notification_read':notification_read,})
+
+def Total_sent_notifications(request,sidd,dummy='sent_notification'):
+    variable2 = User.objects.get(id = sidd)
+    notifications=Notifications.objects.filter(sender = variable2.id)
+    return render(request,'notification_view.html',{
+    'variable2':variable2,
+    'notifications':notifications,
+    'dummysent':dummy})
+def Single_notification(request,idd,uidd,dummy='dummy'):
+     #import pdb;pdb.set_trace()
     variable1= Notifications.objects.get(id = idd)
     variable1.Status = 'Read'
     variable1.save()
@@ -497,6 +555,9 @@ def notification_read(request,idd,uidd):
     'notification_count':notification_count,
     'notification_unread':notification_unread,
     'notification_read':notification_read,
+    'dummy':dummy,
     })
-
+def Return_home(request,uidd):
+    user_data = User.objects.get(id = uidd)
+    return HttpResponseRedirect(reverse('jobkarleapp:ProfileData', args={user_data.id}))
  

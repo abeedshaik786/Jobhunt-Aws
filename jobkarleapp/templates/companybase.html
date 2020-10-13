@@ -20,13 +20,13 @@
     <!--/.Navbar-->
     <section>
     <nav class="navbar navbar-expand-lg base11 navbar-text-color ">
-      <img src="{% static 'logo1.png' %}" width="50" alt="My image"> <strong class="navbar-brand "> SV colleges</strong>
+     {% include 'logo.html' %}
            
             <button class="navbar-toggler" data-toggle="collapse" data-target="#uiNavbar">
                 <span class="navbar-toggler-icon blue"></span>
             </button>
             <div class="collapse navbar-collapse" id="uiNavbar">
-                <ul class="navbar-nav m-auto" style="float: right">
+                <ul class="navbar-nav m-auto" style="float: right; font-size:14px;">
                     
                     <li class="nav-item dropdown-RECRUITERS">
                         <a href="about.html" class="nav-link">
@@ -80,17 +80,7 @@
                            REGISTER</a>
                   </li>
                   {% endif %}
-                <li class="nav-item dropdown-users">
-                  <a href="contact.html" class="nav-link">
-                      <i class="far fa-user fa-2x animated swing rounded-circle img-responsive"></i></a>
-                      <div class="dropdown-user animated zoomIn">
-                        <div class="row">
-                      
-                          <div class="col-sm-4">
-                           
-                        </div>
-                        </div>
-              </li>
+                
                 </ul>
             </div>
          

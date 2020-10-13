@@ -1,78 +1,38 @@
 {% extends 'companybase.html' %}
 {% block content %}
 <div class="companybg">
-  <div class="row">
-    <div></div>
-    <div
-    ><div class="col-sm-2 company-profile"><br><br>
-      <div class="" style="position: relative; bottom:40px; right:50px;">
-        <div class="card pt-3" style="background-color:black;">
-          <img class="m-auto" src="{{profilepic.Profile.url}}" width="250" height="200" class=" img-responsive" alt="no profile">
-        </div>
-        <div class="card">
-          <div class="m-auto img-responsive">
-            <strong class="card m-3 p-0 "><div class="row"><mark  style="background-color: black; color:white; text-align:center;">{{user_data.first_name}}</mark><mark style="background-color: yellow; color:black;">{{user_data.last_name}}</mark></div></<strong> 
-            </div>
-            <p class=" img-responsive m-auto" >{{user_data.email}}</p>
-        </div>
-    
-        </div>
-    </div>
-  </div>
-  </div>
+ 
 </div>
-<section class=" body-bg ">
-<div class="row">
-<div class="col-xs-2">
-  
-</div>
-<div class="col-xs-8 ">
-  <div class=" m-auto row">
-  {% for data in obj1 %}
-  <div class=" applylist-card card  mb-3 m-3" style="max-width: 20rem;">
-    <div class="card-header">{{data.CompanyName}}</div>
-    <div class="card-body">
-      <a href="{% url 'jobkarlepro:Applied_Candidates' data.id user_data.id %}"><h5><strong class="btn btn-warning" style="padding: 5px;">Candidates List</strong></h5></a>
+<section>
+  <table class="table">
+    <thead class="black white-text">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">CompanyName</th>
+        <th scope="col">Position</th>
+        <th scope="col">Interview Date</th>
+        <th scope="col">Interview Location</th>
+        <th scope="col">Min_Ex</th>
+        <th scope="col">Max_Ex</th>
+      </tr>
+    </thead>
+    {% for data in obj1 %}
+    <tbody>
+     
+        <tr>
+          <th scope="row">1</th>
+          <td>
+            <a  href="{% url 'jobkarlepro:Applied_Candidates' data.id user_data.id %}"><p class="orenge" style="color: navy;">{{data.CompanyName}}</p></a>
+          </td>
+          <td>{{data.Skills}}</td>
+          <td>{{data.Iterview_Date}}</td>
+          <td>{{data.Interview_Location}}</td>
+          <td>{{data.Min_Exp}} EXP</td>
+          <td>{{data.Max_Exp}} EXP</td>
+        </tr>
       
-      <h5 class="card-title">{{data.Skills}}</h5>
-      <p class="card-text">Some quick example text to build on the panel title and make up the bulk of the panel's content.</p>
-      <i class="fa fa-trash m-2" aria-hidden="true"></i> <i class="f14b" aria-hidden="true"></i>
-      <i class="fas fa-user-edit m-2" style="color: orange;" id="Edite_address"  address_id ='{{Add.id}}' aria-hidden="true"></i>
-    </div>
-  </div>
-  {% endfor %}
-  </div></div>
-
-
+    </tbody>
+    {% endfor %}
+  </table>
 </section>
-    <section>
-   <!-- Button trigger modal -->
-
-<!-- Full Height Modal Right -->
-<div class="modal fade right" id="fullHeightModalRight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-
-  <!-- Add class .modal-full-height and then add class .modal-right (or other classes from list above) to set a position to the modal -->
-  <div class="modal-dialog modal-full-height modal-right" role="document">
-
-
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title w-100" id="myModalLabel">Applied Candidates</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer justify-content-center">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Full Height Modal Right -->
-    </section>
 {% endblock %}

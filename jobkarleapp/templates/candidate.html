@@ -13,13 +13,16 @@
     <link href="{% static 'static_css/aos.css' %}" rel="stylesheet">
     <link href="{% static 'static_css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'static_css/main.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'static_css/media-quary.css' %}">
   </head>
   <body id="top">
     <header>
       <div class="profile-page sidebar-collapse">
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
           <div class="container">
-            <div class="navbar-translate"><a class="navbar-brand" href="#" rel="tooltip">Creative CV</a>
+            <div class="navbar-translate"><div style="width: max-content;">
+              {% include 'logo.html' %}
+            </div>
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
             </div>
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
@@ -44,7 +47,7 @@
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="{{user_img.Profile.url}}" alt="Image"/></a></div>
-          <div class="h2 title">{{Suser_data.username}}</div>
+          <div class="h2 title-candidate">{{Suser_data.username}}</div>
           <p class="category text-white">Web Developer, Graphic Designer,  Photographer</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
         </div>
       </div>
@@ -159,7 +162,7 @@
 </div>
 </div>
 <section class="">
-  <div class="card m-2" style="width: 850px; position:relative; left:580px;">
+  <div class="p-2">
     <div>
       <div class="card col-sm-3 m-3" style="background-color: yellow;">        
         <strong><div class="row"><mark  style="background-color: black; color:white; text-align:center;">SEND Your</mark><mark style="background-color: yellow; color:black;">INTENTION</mark></div></<strong>
@@ -183,8 +186,8 @@
       {{forms.Message|safe}}
       
     </div>
-    <div class="m-2 ">
-      <input class="p-2"  style="position:relative; left:320px;color:white; background-color:rgb(129, 200, 248);" type="submit" value="Send Notification">
+    <div class="m-auto" style="width: max-content;">
+      <input class=" card"  style="color:white; background-color:rgb(129, 200, 248);" type="submit" value="Send Notification">
     </div>
   </form>
 
@@ -193,9 +196,8 @@
     </div>
     <footer class="footer">
       <div class="container text-center"><a class="cc-facebook btn btn-link" href="#"><i class="fa fa-facebook fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="#"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" href="#"><i class="fa fa-instagram fa-2x " aria-hidden="true"></i></a></div>
-      <div class="h4 title text-center">Anthony Barnett</div>
+      <div class="h4 title text-center">Abeed Shaik</div>
       <div class="text-center text-muted">
-        <p>&copy; Creative CV. All rights reserved.<br>Design - <a class="credit" href="https://templateflip.com" target="_blank">TemplateFlip</a></p>
       </div>
     </footer>
     <script src="{% static 'static_css/core/jquery.3.2.1.min.js' %}"></script>

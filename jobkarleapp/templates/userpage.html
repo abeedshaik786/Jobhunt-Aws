@@ -43,15 +43,14 @@
     border-radius: 5px;
   }
 </style>
-<section>
-    <div class="m-4" style="position: absolute; top:425px;">
-        <div class="row">
+<body >
+  <section class="main-body" id="push" style="position: relative; bottom:250px;">
+    <div class="m-0">
+        <div class="row" style="margin: 0px 0px 0px;">
           <div class="col-sm-2">
            
            <!-- Default unchecked -->
-           <section data-scrollbar>
-            <img src="jobkarle-logo1.JPG">
-          </section>
+          
           
           <script> Scrollbar.initAll(); </script>
           <!-- <div>
@@ -158,19 +157,19 @@
       <!-- Card -->
     {% endfor %} 
           </div>
-          <div class="col-sm-3" style="padding: 0px 0px 0px; position:relative; top:5px;">
+          <div class="col" style="padding: 0px 0px 0px; position:relative; top:5px; width:max-content;">
         
-            <div class="p-2 Resume-Edite" style="padding: 0%;background-color:white;">
+            <div class="p-2 Resume-Edite float-left mr-1" style="padding: 0%;background-color:white;">
               <h4 class="" ><strong>Attach Resume</strong></h4>
               <p class="" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(151, 148, 148);">Resume is the most important document recruiters look for .</p>
               <p class="" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color:rgb(151, 148, 148); position:relative; bottom:10px;">They generally do not look at profiles without resumes.</p>
              
-             <div class="row">
+             <div class="m-auto" style="width: max-content;">
                <div class="m-auto">
                 <p><strong>{{user_qualification.Resume}}</strong></p>
                </div>
-               <div class="m-auto">
-                <i class="fa fa-download p-2" style="color: #3c98ed; border:0.5px solid #3c98ed;" aria-hidden="true"></i>
+               <div class="m-auto" style="float: left;">
+                <i class="fa fa-download " style="color: #3c98ed; border:0.5px solid #3c98ed;" aria-hidden="true"></i>
               </div>
              </div>
               <div class=" m-auto" style=" border:0.5px solid rgb(216, 212, 212);">
@@ -189,8 +188,37 @@
           
           </div>
         </div>
+        <section>
+          <div>
+            {% if student_jobs.has_other_pages %}
+            <ul class="pagination">
+              <div class="m-auto row" style=" box-shadow: 0 4px 8px 0 rgba(17, 1, 1, 0.226);
+              transition: 0.3s;  padding-left:10px; padding-right:10px;">
+                {% if student_jobs.has_previous %}
+                <li><a class="card p-2 m-1" href="?page={{ student_jobs.previous_page_number }}">&laquo;PREVIOUS</a></li>
+              {% else %}
+                <li class="card p-2 m-1 disabled"><span>&laquo; PREVIOUS</span></li>
+              {% endif %}
+              {% for i in student_jobs.paginator.page_range %}
+                {% if student_jobs.number == i %}
+                  <li class="active" style="color: black;"><span class="card p-2 m-1" style="background-color: yellow;">{{ i }} <span class="sr-only">(current)</span></span></li>
+                {% else %}
+                  <li><a class="card p-2 m-1" href="?page={{ i }}">{{ i }}</a></li>
+                {% endif %}
+              {% endfor %}
+              {% if student_jobs.has_next %}
+                <li><a class="card p-2 m-1" href="?page={{ student_jobs.next_page_number }}">NEXT &raquo;</a></li>
+              {% else %}
+                <li class="disabled"><span>NEXT &raquo;</span></li>
+              {% endif %}
+              </div>
+            </ul>
+          {% endif %}
+          </div>
+        </section>
       </div>
 </section>
+
 <script>
   $("").on (function(evt){	 
     evt.preventDefault();
@@ -211,4 +239,6 @@
  return false;
 });
 </script>
+</body>
+
 {% endblock %}

@@ -52,10 +52,25 @@
     .login-input input{
         text-decoration: none;
     }
-
+    .carde {
+      position: relative;
+      color: #fff;
+      background: rgba(0, 0, 128, 0.692);
+      box-shadow: 0 4px 8px 0 rgba(17, 1, 1, 0.226);
+      transition: 0.3s;
+    }
+    .carde:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-width: 16px 16px 16px 16px;
+      border-style: solid;
+      border-color:navy orange;
+    }
 </style>
-<section style="position:absolute; top:500px; width:100%;">
-  <div class="card col-sm-8 m-auto">
+<section style="position:relative; top:200px;">
+  <div class=" col-sm-8 m-auto">
 
 
     <!--Section: Content-->
@@ -65,11 +80,20 @@
       <div class="row">
   
         <!--Grid column-->
-        <div class="col-md-6 mb-4 mb-md-0">
-  
-          <h3 class="font-weight-bold p-2">SVCE Application Blocks</h3>
-  
+        <div class="col-md-6 mb-4 mb-md-0 mt-3">
+         <div class="row m-auto" style="width: max-content;">
+           <div class="">
+            <div class="carde card m-1">
+              <p class="" style="color: white; font-size:18px;"></p>
+            </div> 
+           </div>
+           <div class="pt-1">
+            <p class="font-weight-bold p-2">Application Blocks</p>
+           </div>
+         </div>
           <p class="text-muted">Education for a Better Society..!</p>
+          <p class="text-muted">Access unadvertised jobs <mark>JOBKARLE.com</mark> is widely used by recruiters and head hunters to meet their hiring needs.
+             As you might know, not every job opportunity is posted on the internet publicly.</p>
   
           <a class="btn btn-purple btn-md ml-0" href="#" role="button">Start now<i class="fa fa-gem ml-2"></i></a>
   
@@ -86,7 +110,10 @@
           <a href="#" class="mx-1" role="button"><i class="fab fa-youtube"></i></a>
           <a href="#" class="mx-1" role="button"><i class="fab fa-github"></i></a>
           <a href="#" class="mx-1" role="button"><i class="fab fa-stack-overflow"></i></a>
-  
+          <div class="m-auto" style="position: absolute; bottom:20%; left:31%;">
+            {% include 'logo.html' %}
+          </div>
+       
         </div>
         <!--Grid column-->
   
@@ -109,15 +136,23 @@
 
     <!-- Section -->
     <section>
-  
-      <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our Services</h3>
+      <div class="row m-auto" style="width: max-content;">
+        <div class="">
+         <div class="carde card m-1">
+           <p class="" style="color: white; font-size:18px;"></p>
+         </div> 
+        </div>
+        <div class="pt-1">
+         <p class="font-weight-bold p-2  text-center dark-grey-text">Our Services</p>
+        </div>
+      </div>
       <hr class="w-header my-4">
       <div class="row text-center dark-grey-text">
   
         <div class="col-md-6 col-xl-3 mb-4">
           <div class="card text-center bg-success text-white">
             <div class="card-body">
-              <p class="mt-4 pt-2"><i class="far fa-object-ungroup fa-4x"></i></p>
+              <p class="mt-4 pt-2 card m-auto" style="width: max-content;"><i class="far fa-object-ungroup fa-4x"></i></p>
               <h5 class="font-weight-normal my-4 py-2"><a class="text-white dark-grey-text" href="#">JOBS FOR YOU</a></h5>
               <p class="mb-4">Stand out as an Early Applicant with instant access to jobs
                 Use SVCE Recruitments Application expert advantage to get handpicked jobs in your inbox </>
@@ -128,7 +163,7 @@
         <div class="col-md-6 col-xl-3 mb-4">
           <div class="card text-center">
             <div class="card-body">
-              <p class="mt-4 pt-2"><i class="fas fa-mobile-alt fa-4x grey-text"></i></p>
+              <p class="mt-4 pt-2 card m-auto" style="width: max-content;"><i class="fas fa-mobile-alt fa-4x grey-text"></i></p>
               <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Recruiters Search</a></h5>
               <p class="text-muted mb-4">Not getting enough profile views?</p>
               <p class="text-muted mb-4">
@@ -141,7 +176,7 @@
         <div class="col-md-6 col-xl-3 mb-4">
           <div class="card text-center deep-purple lighten-1 text-white">
             <div class="card-body">
-              <p class="mt-4 pt-2"><i class="fas fa-chart-line fa-4x"></i></p>
+              <p class="mt-4 pt-2 card m-auto" style="width: max-content;"><i class="fas fa-chart-line fa-4x"></i></p>
               <h5 class="font-weight-normal my-4 py-2"><a class="text-white" href="#">Companys Info</a></h5>
               <p class="mb-4">SV Colleges tied with Multi National Companies and as well as StartUp Companies soo students can get all the information about they required comapnies </p>
             </div>
@@ -151,7 +186,7 @@
         <div class="col-md-6 col-xl-3">
           <div class="card text-center">
             <div class="card-body">
-              <p class="mt-4 pt-2"><i class="fas fa-bullhorn fa-4x grey-text"></i></p>
+              <p class="mt-4 pt-2 card m-auto" style="width: max-content;"><i class="fas fa-bullhorn fa-4x grey-text"></i></p>
               <h5 class="font-weight-normal my-4 py-2"><a class="dark-grey-text" href="#">Premium Package</a></h5>
               <p class="text-muted mb-4">Premium membership will only do the following: 1) Your profile visibility to employers will increase. 2) You will receive job offers at regular intervals through sms ...</p>
             </div>
@@ -370,8 +405,6 @@
           <a href="#" data-toggle="collapse" data-target=".multi-collapse"
           aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Students</a>
           <p>The Future Begins Here !</p>
-  
-          
         </div>
         </div>
         </div>

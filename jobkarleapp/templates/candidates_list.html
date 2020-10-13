@@ -1,12 +1,6 @@
 {% extends 'companybase.html' %}
 {% block content %}
 <style>
-  form {
-    width: 450px;
-    margin: 17% auto;
-  }
-  
-  
   .header {
     color: orange;
     font-size: 20px;
@@ -36,7 +30,7 @@
   
     
   #email {
-    width: 75%;
+    width:85%;
     background: rgba(224, 170, 200, 0.733);
     font-family: inherit;
     color: #737373;
@@ -47,8 +41,8 @@
   
   
   #submit {
-    width: 25%;
-    height: 46px;
+    width: 15%;
+    height: 44px;
     background: #E86C8D;
     font-family: inherit;
     font-weight: bold;
@@ -70,128 +64,64 @@
     outline: 2px solid #E86C8D;
     box-shadow: 1px 1px 2px #E86C8D;
   }
-.search-section{
-  position: relative;
-  bottom: 300px;
-}
-.candidates-section{
-  position: relative;
-  bottom: 600px;
-}
-.card {
-  margin-left: 100px;
-  display: flex;
-  height: 200px;
-  width: 500px;
-  background-color:black;
-  border-radius: 10px;
-  box-shadow: -1rem 0 1rem rgba(75, 71, 71, 0.459);
-/*   margin-left: -50px; */
-  transition: 0.4s ease-out;
-  position: relative;
-  left: 0px;
-}
 
-.card:not(:first-child) {
-    margin-left: -50px;
-}
-
-.card:hover {
-  transform: translateY(-20px);
-  transition: 0.4s ease-out;
-}
-
-.card:hover ~ .card {
-  position: relative;
-  left: 50px;
-  transition: 0.4s ease-out;
-}
-
-.title {
-  color: white;
-  font-weight: 300;
-  position: absolute;
-  left: 20px;
-  top: 15px;
-}
-
-.bar {
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  height: 5px;
-  width: 150px;
-}
-
-.emptybar {
-  background-color: #2e3033;
-  width: 100%;
-  height: 100%;
-}
-
-.filledbar {
-  position: absolute;
-  top: 0px;
-  z-index: 3;
-  width: 0px;
-  height: 100%;
-  background: rgb(0,154,217);
-  background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
-  transition: 0.6s ease-out;
-}
-
-.card:hover .filledbar {
-  width: 120px;
-  transition: 0.4s ease-out;
-}
-
-
-.card:hover .stroke {
-  stroke-dashoffset: 100;
-  transition: 0.6s ease-out;
-}
 </style>
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+ 
 </head>
-<section class="search-section">
-  <body>
+<body>
+  <div class="search-section m-auto" style="width: max-content; position:relative; top:50px;">
     <form action="{% url 'jobkarlepro:candidate_search' %}" method="POST" name="sign up for beta form">
       {% csrf_token %}
-      <div class="header">
-         <p><strong>Search Candidate With Name</strong></p>
+      <div class="header m-auto">
+         <p style="text-align: center;"><strong>Search Candidate With Name</strong></p>
       </div>
-      <div class="description">
-        <p>Milkshake is almost ready. If you're interested in testing it out, then sign up below to get exclusive access.</p>
+      <div class="description m-auto" style="width: max-content;">
+        <p class="text-muted center" style="text-align: center;">Milkshake is almost ready. </p>
+        <p class="text-muted" style="text-align: center;">If you're interested in testing it out, then sign up below to get exclusive access.</p>
       </div>
-      <div class="input">
-        <input type="text" class="button" id="email" name="email" placeholder="ENTER CANDIDATE NAME">
+      <div class="input m-auto">
+        <input type="text" class="button" id="email" name="email" placeholder="ENTER CANDIDATE NAME" >
         <input type="submit" class="button" id="submit" value="SEARCH">
       </div>
     </form>
+  </div>
+</body>
+  <body>
+    <table class="table candidates-table" style="position: relative; top:100px;">
+      <thead class="black white-text">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email Id</th>
+          <th scope="col">Skills</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Nationality</th>
+          <th scope="col">Age</th>
+          <th
+        </tr>
+      </thead>
+      {% for d in temp %}
+      {% for i in d.fresherqualification_set.all %}
+      {% for j in d.fresherdata_set.all %}
+      <tbody>
+       
+        <tr>
+          <th scope="row">1</th>
+          <td><a id="candidates-name" href="{% url 'jobkarlepro:candidate' d.id user_data.id %}">{{d.username}}</a></td>
+          <td>{{i.Phone}}</td>
+          <td>{{d.email}}</td>
+          <td>{{i.Skills1}} , {{i.Skills2}} , {{i.Skills3}} , {{i.Skills4}} , {{i.Skills5}} , {{i.Skills6}}</td>
+          <td>{{j.Gender}}</td>
+          <td>{{j.Nationality}}</td>
+          <td>{{j.Age}}</td>
+        </tr>
+      </tbody>
+      {% endfor %}
+      {% endfor %}
+      {% endfor %}
+    </table>
   </body>
-</section>
-  
-<section class="candidates-section">
-    
-  <div class="col-sm-12">
-          <h3><i class="fa fa-users" aria-hidden="true"></i><strong> Applied Canidate</strong></h3>
-          <div class="row">
-            {% for d in temp %}
-            <a href="{% url 'jobkarlepro:candidate' d.id user_data.id %}">
-            <div class="card m-5" >
-              <h5 class="title"><strong>{{d.username}}</strong></h5><br>
-              <div class="bar">
-                <div class="emptybar">
-                  <p class="title"><strong>{{d.email}}</strong></p>
-                </div>
-                <div class="filledbar"></div>
-              </div>
-              </div></a>
-              {% endfor %}
-            </div>
-        </div>
-  
-</section>
 {% endblock %}
 
