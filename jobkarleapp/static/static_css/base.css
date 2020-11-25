@@ -12,6 +12,19 @@ h1,.h1{font-size:30px;font-weight:700;line-height:1.2}
 
   
 }
+.select_box{
+  border: none;
+      border-bottom: 1px solid #9e9e9e;
+      border-radius: 0;
+      outline: none;
+      height: 3rem;
+      width: 100%;
+      font-size: 1rem;
+      margin: 0 0 15px 0;
+      padding: 0;
+      box-shadow: none;
+      }
+      
 .small-profile{
   position: relative;
   top: 300px;
@@ -225,11 +238,7 @@ li{
   z-index: 1;
 }
 #dropdownMenu1{
-    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url("/static/profilebg.jpg");
-    background-position:right;
-    background-size:cover;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
+    color:black;
 }
 .dropdown-user a {
   color: black;
@@ -250,14 +259,13 @@ li{
   background-size:cover;
 }
 .dropdown-search {
-  display: none;
   position: absolute;
   background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url("/static/mainsearchbg.jpg");
   height: 500px;
   background-position: center;
   background-size: cover;
   padding: 10px;
-  min-width: 320px;
+  width:85%;
   z-index: 1;
 }
 .dropdown-SEARCH i,p,h6,h4,h5,h6{
@@ -292,7 +300,6 @@ li{
 .dropdown-search a {
   color: black;
   text-decoration: none;
-  display: block;
 }
 .dropdown-search a:hover{
   background-color:skyblue;
@@ -303,20 +310,7 @@ li{
   
 }
 /* Show the dropdown menu on hover */
-.dropdown-SEARCH:hover .dropdown-search {display: block;}
 
-/* Pulling in reset css and fonts http://seodesigns.com/projects/TD/css/reset.css */
-body {background:#f6f6f6;}
-p {font-family: "Webly Sleek SemiLight",Helvetica-,droid sans,sans-serif;font-weight: normal;margin: 0 0 1rem;}
-.centerbox {position: absolute;top:50%;left:50%;
-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%); /* IE 9 */
--webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
-width:620px;min-height:52px;z-index:2}
-.centerbox h1 {margin-bottom: 25px;font-size:36px;font-family: "Webly Sleek SemiLight";font-weight: normal;text-align: center;}
-.centerbox p.description {margin-bottom:40px;text-align: center;}
-.description a {text-decoration:none;}
-.main-input { background: #fff; height: 30px; width: 327px;color: #a7b1ab; border: 1px solid #cccccc; margin-bottom:0px; -webkit-appearance: none; border-radius: 4px 0px 0px 4px; -moz-border-radius: 4px 0px 0px 4px; -webkit-border-radius: 4px 0px 0px 4px;display: inline-block;text-align: left;font-size: 16px; font-weight: 500; padding:0px 0px 0px 57px;font-size:16px;border-right:0px;background: #ffffff url("http://seodesigns.com/projects/TD/images/search.png") 18px 15px no-repeat;background-size:18px 18px;float:left;}
 
 /* responsive css below */
 @media only screen and (max-width: 680px) {

@@ -89,13 +89,13 @@
   
   </style>
   
-<div class="m-auto " style="position: relative; top:600px;">
+<div class="m-auto" style="position: relative; top:360px;">
     <div class="frame">
       <div class="center">
         <div class="title">
-          <h1>Drop Profile to Upload</h1>
+          <h1 style="font-weight: bold;">Drop Profile to Upload</h1>
         </div>
-        <div class="dropzone">
+        <div class="dropzone" style="font-weight: bold;">
           <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
           <form action="{% url 'jobkarleapp:Profileextradef' %}" method="POST" enctype="multipart/form-data">
               {% csrf_token %}

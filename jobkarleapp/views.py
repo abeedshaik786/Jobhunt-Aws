@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse,HttpResponseRedirect,Http404
 from .forms import  FresherModel,FresherDataModel,FresherQualificationModel,Qualification_Course,JobRequirmentsModel,ProfileImgModel,NotificationModel
 from .models import FresherQualification,JobRequirments,FresherData,Notifications
 from django.core.files.storage import FileSystemStorage
@@ -30,6 +30,12 @@ from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Count
 from django.core.paginator import Paginator
+from django.urls import path
+from django.http import FileResponse
+from django.utils.encoding import force_text, smart_str
+import pdb;
+import os
+from django.conf import settings
 
 
 @requires_csrf_token
@@ -561,3 +567,24 @@ def Return_home(request,uidd):
     user_data = User.objects.get(id = uidd)
     return HttpResponseRedirect(reverse('jobkarleapp:ProfileData', args={user_data.id}))
  
+# def DownloadCv_View(request,Cvpath):
+#     #course_data = FresherQualification.objects.get(id = CvID)
+#     #cvpath = course_data.Resume.url
+#     ext = os.path.basename(Cvpath).split('.')[-1].lower()
+#     # cannot be used to download py, db and sqlite3 files.
+#     if ext not in ['py', 'db',  'sqlite3']:
+#         response = FileResponse(open(Cvpath, 'rb'))
+#         response['content_type'] = "application/octet-stream"
+#         response['Content-Disposition'] = 'attachment; filename=' + os.path.basename(Cvpath)
+#         return response
+#     else:
+#         raise Http404
+    # file_path = os.path.join(settings.MEDIA_ROOT,cvpath)
+    # pdb.set_trace()
+    # file_path += '/'
+    # if os.path.exists(file_path):
+    #     with open(file_path, 'rb') as fh:
+    #         response = HttpResponse(fh.read(), content_type="application/studentresumes")
+    #         response['Content-Disposition'] = 'inline;filename=' + os.path.basename(file_path)
+    #         return response
+    # raise Http404

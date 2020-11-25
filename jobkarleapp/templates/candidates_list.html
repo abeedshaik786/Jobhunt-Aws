@@ -31,7 +31,6 @@
     
   #email {
     width:85%;
-    background: rgba(224, 170, 200, 0.733);
     font-family: inherit;
     color: #737373;
     letter-spacing: 1px;
@@ -43,7 +42,6 @@
   #submit {
     width: 15%;
     height: 44px;
-    background: #E86C8D;
     font-family: inherit;
     font-weight: bold;
     color: inherit;
@@ -61,16 +59,14 @@
   
   input:focus {
     outline: none;
-    outline: 2px solid #E86C8D;
-    box-shadow: 1px 1px 2px #E86C8D;
   }
 
 </style>
 <head>
  
 </head>
-<body>
-  <div class="search-section m-auto" style="width: max-content; position:relative; top:50px;">
+<body class="">
+  <div class="search-section m-auto " style="width: max-content; position:relative; top:50px;">
     <form action="{% url 'jobkarlepro:candidate_search' %}" method="POST" name="sign up for beta form">
       {% csrf_token %}
       <div class="header m-auto">
@@ -81,15 +77,15 @@
         <p class="text-muted" style="text-align: center;">If you're interested in testing it out, then sign up below to get exclusive access.</p>
       </div>
       <div class="input m-auto">
-        <input type="text" class="button" id="email" name="email" placeholder="ENTER CANDIDATE NAME" >
-        <input type="submit" class="button" id="submit" value="SEARCH">
+        <input type="text" class="button #c5cae9 indigo lighten-4" id="email" name="email" placeholder="ENTER CANDIDATE NAME" >
+        <input type="submit" class="button #cddc39 lime" id="submit" value="SEARCH">
       </div>
     </form>
   </div>
 </body>
-  <body>
-    <table class="table candidates-table" style="position: relative; top:100px;">
-      <thead class="black white-text">
+  <body class="#dcedc8 light-green lighten-4">
+    <table class="table candidates-table container" style="position: relative; top:100px;">
+      <thead class="black black-text #f0f4c3 lime lighten-4">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Name</th>
@@ -99,13 +95,12 @@
           <th scope="col">Gender</th>
           <th scope="col">Nationality</th>
           <th scope="col">Age</th>
-          <th
         </tr>
       </thead>
       {% for d in temp %}
       {% for i in d.fresherqualification_set.all %}
       {% for j in d.fresherdata_set.all %}
-      <tbody>
+      <tbody class="#f3e5f5 purple lighten-5">
        
         <tr>
           <th scope="row">1</th>

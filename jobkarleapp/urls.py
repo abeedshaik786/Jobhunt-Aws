@@ -1,6 +1,11 @@
 from django.contrib import admin
 from django.urls import path,re_path
+from django.conf import settings
+from django.views.static import serve
+from django.conf.urls import url
+from django.urls import path, register_converter
 from . import views
+#register_converter(converters.FilePathConverter, 'filepath')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,5 +41,8 @@ urlpatterns = [
     path('<int:idd>/<int:uidd>/Single_notification/',views.Single_notification,name='Single_notification'),
     path('<int:uidd>/Return_home/',views.Return_home,name='Return_home'),
     path('<int:sidd>/Total_sent_notifications/',views.Total_sent_notifications,name='Total_sent_notifications'),
+    #re_path(r'^DownloadCv_View/(?P<Cvpath>[\w-]+)/$', views.DownloadCv_View),
+    #path('<slug:Cvpath>/DownloadCv_View/',views.DownloadCv_View,name='DownloadCv_View'),
+    #url(r'^DownloadCv_View (?P<Cvpath>[-\w]+)/$',views.DownloadCv_View,name='DownloadCv_View'),
     
 ]

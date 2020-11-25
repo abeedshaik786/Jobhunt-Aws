@@ -64,28 +64,30 @@
 <!-- original pen: https://codepen.io/roydigerhund/pen/ZQdbeN  -->
 
 <!-- NO JS ADDED YET -->
-<div class="" style="position: absolute; top:450px; width:100%;">
+<div class="#e8eaf6 indigo lighten-5" style="position: absolute; top:220px; width:100%;">
   <form class="m-auto" style="width: max-content;" method="POST" action="{% url 'jobkarlepro:fresherqualificationextra' %}" enctype="multipart/form-data">
     {% csrf_token %}
     
     
     <input type="hidden" name="user_id" value="{{user_id.id}}">
 
-    <div style="width:170px;">
-      <strong class="card m-3 p-0 "><div class="row"><mark  style="background-color: black; color:white; text-align:center;">Student</mark><mark style="background-color: yellow; color:black;"> Qualification</mark></div></<strong>   
+    <div style="width:max-content;">
+    <div class="row p-2" style="font-weight: bold;"><mark  style="background-color: black; color:white; text-align:center;">Student</mark><mark style="background-color: yellow; color:black;"> Qualification</mark></div>   
     </div>
-      <div class="row m-2">
+ 
+    <div class="card #e1bee7 purple lighten-4">
+      <div class="row m-2 ">
         <div class="col-sm-6">
           <label style ="color:black;">Highest-Qualification</label>
           {{forms.Highest_Qualification}}
         </div>
         <div class="col-sm-6">
           <label style ="color:black;">Branch</label>  
-          <select class="form-control" name="course" placeholder="Slect Course" required id="id_course">     
+          <select class="form-control #ede7f6 deep-purple lighten-5" name="course" placeholder="Slect Course" required id="id_course">     
           </select>
         </div>
       </div>
-      <div class="col-sm m-2">
+      <div class="col-sm p-4">
         {{forms.Specialization}}
       </div>
       <div class="row m-2">
@@ -104,57 +106,45 @@
           {{forms.Resume}}
         </div>
       </div>
-        
+    </div> 
       <div style="width:max-content;">
-      <div class="row m-2">
+      <div class="row p-2" style="font-weight: bold;">
         <mark  style="background-color: black; color:white; text-align:center;">Student</mark>
         <mark style="background-color: yellow; color:black;">MInimum Skills </mark></div>
       </div>
-      <div class="row">
-        <div class="col-sm m-2">
-          {{forms.Skills1}}
-        </div>
-        <div class="col-sm m-2">
-          {{forms.Skills2}}
-        </div>
-        <div class="col-sm m-2">
-          {{forms.Skills3}}
-        </div>
+      <div class="card m-2">
+        <table>
+          <thead class="p-2 #e6ee9c lime lighten-3">
+            <th class="p-2">SKILLS</th>
+            <th class="p-2">RANGE</th>
+            <th class="p-2">SKILLS</th>
+            <th class="p-2">RANGE</th>
+          </thead>
+          <tbody class="p-2 #e0f7fa cyan lighten-5">
+            <tr>
+              <td class="p-2">  {{forms.Skills1}}</td>
+              <td class="p-2"> {{forms.Range1}}</td>
+              <td class="p-2"> {{forms.Skills2}}</td>
+              <td class="p-2"> {{forms.Range2}}</td>
+            </tr>
+            <tr>
+              <td class="p-2">  {{forms.Skills3}}</td>
+              <td class="p-2"> {{forms.Range3}}</td>
+              <td class="p-2"> {{forms.Skills4}}</td>
+              <td class="p-2"> {{forms.Range4}}</td>
+            </tr>
+            <tr>
+              <td class="p-2">  {{forms.Skills5}}</td>
+              <td class="p-2"> {{forms.Range5}}</td>
+              <td class="p-2"> {{forms.Skills6}}</td>
+              <td class="p-2"> {{forms.Range6}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="row">
-        <div class="col-sm m-2">
-          {{forms.Range1}}
-        </div>
-        <div class="col-sm m-2">
-          {{forms.Range2}}
-        </div>
-        <div class="col-sm m-2">
-          {{forms.Range3}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm m-2">
-          {{forms.Skills4}}
-        </div>
-        <div class="col-sm m-2">
-          {{forms.Skills5}}
-        </div>
-        <div class="col-sm m-2">
-          {{forms.Skills6}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm m-2">
-          {{forms.Range4}}
-        </div>
-        <div class="col-sm m-2">
-          {{forms.Range5}}
-        </div>
-        <div class="col-sm m-2">
-          {{forms.Range6}}
-        </div>
-      </div>
-      <input  style="background-color:#4A90E2; width:max-content; margin:auto;" type="submit" value="Add Qualification">
+     
+ 
+      <input class=" card #ccff90 light-green accent-1 p-2 float-right mt-2 mb-5" style="width:max-content; font-weight:bold;" type="submit" value="Add STUFF">
   </form>
 </div>
 

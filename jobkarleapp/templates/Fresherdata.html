@@ -1,24 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="m-2" style="position: absolute; top:470px; width:100%;">
+<div class="m-2" style="position: absolute; top:250px; width:100%;">
     <form  action="{% url 'jobkarlepro:FreshExtradata' %}" method="POST" >
     {% csrf_token %}
 <div class="m-auto col-sm-6">
-    <div class="card">
+    <div class="card #9fa8da indigo lighten-3">
         <div class="card col-sm-2 mt-2" style="background-color: yellow;">        
-            <strong><div class="row"><mark  style="background-color: black; color:white; text-align:center;">personal</mark><mark style="background-color: yellow; color:black;"> data</mark></div></<strong>
+            <strong><div class="row" style="width: max-content;"><mark  style="background-color: black; color:white; text-align:center;">personal</mark><mark style="background-color: yellow; color:black;"> data</mark></div></<strong>
         </div>
      <input type="hidden"  name="user_id" value="{{user_id.id}}">
-    <div class="row m-2" style="text-decoration-thickness: 20px;">
+    <div class="row m-auto p-2" style="text-decoration-thickness: 20px;">
         <div class="col-sm-6">{{forms.Gender}}</div>
         <div class="col-sm-6">{{forms.Nationality}}</div>
     </div>
-    <div class="row m-2">
+    <div class="row m-auto p-2">
         <div class="col-sm-6">{{forms.Religion}}</div>
         <div class="col-sm-6">{{forms.Age}}</div>
     </div>
-    <div class="col-sm-12">{{forms.Address}}</div>
-    <button class="btn btn-outline-info btn-rounded m-3" type="submit" >Next</button>
+    <div class=" p-4 m-auto">
+        {{forms.Address}}
+    </div>
+    <button class="btn btn-outline mr-1 btn-rounded m-3#cfd8dc blue-grey lighten-4" style="color: black;" type="submit" >Next</button>
 </div>
 </form>
 </div>

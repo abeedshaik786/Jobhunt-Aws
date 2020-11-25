@@ -43,38 +43,39 @@
     border-radius: 5px;
   }
 </style>
-<body >
-  <section class="main-body" id="push" style="position: relative; bottom:250px;">
-    <div class="m-0">
+<body>
+  <section class="main-body" id="push" style="position: relative; bottom:220px;">
+    {% if obj %}
+    <section class=" card col-sm-9 m-auto #f5f5f5 grey lighten-4" id="job_button_status">
+      
+        <div class="row">
+          <div class="coll-sm-1">
+            <div class="p-2 m-2 #c5e1a5 light-green lighten-3" style="width: max-content;">
+              <img src="{% static 'rigth.png' %}" class="m-auto" width="20" id="img-companys" > 
+            </div>
+          </div>
+        <div class="applied-allert m-auto col-sm-10">
+         <h4 class="m-auto" style=" color: green; width:max-content;"><span style="color: black;">{{user_data.username}}</span> {% for message in messages %} {{message}} {% endfor %} <pan style="color:#3c98ed;">{{obj.Skills}}</pan> in <span class="lighten-3">{{obj.CompanyName}}</span></h4>
+        </div>
+      
+    </section>
+    {% endif %}
+    <div class="">
         <div class="row" style="margin: 0px 0px 0px;">
           <div class="col-sm-2">
            
            <!-- Default unchecked -->
-          
-          
-          <script> Scrollbar.initAll(); </script>
           <!-- <div>
             <div class="card" style="width: 300px; height:700px; position:relative; bottom:300px;"></div>
           </div> -->
           </div>
           <!-- <dvi class="col-sm-1"></dvi> -->
+        
 <div class="col-sm-7 pb-2" style="padding: 0px 0px 0px;">
-{% if obj %}
-<section>
-  <div class="container card col-sm-12">
-    <div class="row">
-      <div class="col-sm-1">
-        <img src="{% static 'rigth.png' %}" width="30" id="img-companys" > 
-      </div>
-    <div class="applied-allert">
-     <P  class="m-auto centar" style=" color: green;"><span style="color: black;">{{user_data.username}}</span> {% for message in messages %} {{message}} {% endfor %} <pan style="color:#3c98ed;">{{obj.Skills}}</pan> in <span style="color:#3c98ed;">{{obj.CompanyName}}</span></P>
-    </div>
-  </div>
-</section>
-{% endif %}
+
             {% for comdata in student_jobs %}
         <!-- Card -->
-<div class="card booking-card m-2" style="background-color: aliceblue;">
+<div class="card booking-card m-2">
         <!-- Card content -->
         <div class="card-body">
           <div class="row">
@@ -86,7 +87,7 @@
               {% for Add in user_data.fresherqualification_set.all %}
               <form  action="{% url 'jobkarleapp:Apply_Click' Add.id %}" method="POST">{% csrf_token %}
                 <input type="hidden" name='job_id' value="{{comdata.id}}">
-                <input class="apply-button" type="submit"style="padding-left:30px; padding-right:30px; background-color:rgb(136, 138, 139); color:white; font-size:15px;;" value="Apply">
+                <input class="apply-button pt-2 pb-2 pl-3 pr-3  card #d4e157 lime lighten-1" type="submit" style="color:white; font-size:15px;;" value="Apply">
               </form>
               
               <input type="hidden"  value = "{{ student_job.id }}">
@@ -169,14 +170,14 @@
                 <p><strong>{{user_qualification.Resume}}</strong></p>
                </div>
                <div class="m-auto" style="float: left;">
-                <i class="fa fa-download " style="color: #3c98ed; border:0.5px solid #3c98ed;" aria-hidden="true"></i>
+                <i class="fa fa-download " style="color:#fbc12dce; border:0.5px solid #3c98ed;" aria-hidden="true"></i>
               </div>
              </div>
               <div class=" m-auto" style=" border:0.5px solid rgb(216, 212, 212);">
                 
                   <form method="GET" id="idajax" enctype="multipart/form-data">
                   <div class="upload-btn-wrapper">
-                    <button style="font-size:11px;" class="btn">Upload a Resume</button>
+                    <a style="font-size:11px;" class="btn #d1c4e9 deep-purple lighten-4 card">Upload a Resume</a>
                     <input type="hidden" id="qualification_id" name="qualification_id" value="{{user_qualification.id}}">
                     <input type="file" name="Resume" id="Resume">
                   </div>
@@ -192,7 +193,7 @@
           <div>
             {% if student_jobs.has_other_pages %}
             <ul class="pagination">
-              <div class="m-auto row" style=" box-shadow: 0 4px 8px 0 rgba(17, 1, 1, 0.226);
+              <div class="m-auto row #c5cae9 indigo lighten-4" style=" box-shadow: 0 4px 8px 0 rgba(17, 1, 1, 0.226);
               transition: 0.3s;  padding-left:10px; padding-right:10px;">
                 {% if student_jobs.has_previous %}
                 <li><a class="card p-2 m-1" href="?page={{ student_jobs.previous_page_number }}">&laquo;PREVIOUS</a></li>

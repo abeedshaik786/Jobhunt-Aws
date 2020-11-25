@@ -14,8 +14,14 @@
     <link href="{% static 'static_css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'static_css/main.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'static_css/media-quary.css' %}">
+       <!-- Font Awesome -->
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+       <!-- Bootstrap core CSS -->
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+       <!-- Material Design Bootstrap -->
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
   </head>
-  <body id="top">
+  <body class="#f1f8e9 light-green lighten-5" id="top">
     <header>
       <div class="profile-page sidebar-collapse">
         <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400">
@@ -48,7 +54,11 @@
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="{{user_img.Profile.url}}" alt="Image"/></a></div>
           <div class="h2 title-candidate">{{Suser_data.username}}</div>
-          <p class="category text-white">Web Developer, Graphic Designer,  Photographer</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <p class="category text-white">Web Developer, Graphic Designer,  Photographer</p>
+          <a class="btn #64b5f6 blue lighten-2 smooth-scroll" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a>
+        
+          <a class="btn #64b5f6 blue lighten-2" style="width: max-content;" href="{{course_data.Resume.url}}" download="{{course_data.Resume.url}}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+
         </div>
       </div>
       <div class="section">
@@ -58,9 +68,9 @@
     </div>
   </div>
 </div>
-<div class="section" id="about">
-  <div class="container">
-    <div class="card" data-aos="fade-up" data-aos-offset="10">
+<div class="section #f1f8e9 light-green lighten-5" id="about">
+  <div class="container #f1f8e9 light-green lighten-5">
+    <div class="card #d1c4e9 deep-purple lighten-4" data-aos="fade-up" data-aos-offset="10">
       <div class="row">
         <div class="col-lg-4 col-md-12">
           <div class="card-body">
@@ -70,7 +80,7 @@
           </div>
         </div>
         <div class="col-lg-8 col-md-12">
-          <div class="card-body">
+          <div class="card-body #d1c4e9 deep-purple lighten-4">
             <div class="h4 mt-0 title">Basic Information</div>
             <div class="row">
               <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
@@ -103,10 +113,10 @@
     </div>
   </div>
 </div>
-<div class="section" id="skill">
-  <div class="container">
-    <div class="h4 text-center mb-4 title">Professional Skills</div>
-    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+<div class="section #f1f8e9 light-green lighten-5" id="skill">
+  <div class="container #f1f8e9 light-green lighten-5">
+    <div class="h4 text-center mb-2 title">Professional Skills</div>
+    <div class="card #e1bee7 purple lighten-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="card-body">
         <div class="row">
           <div class="col-md-6">
@@ -161,11 +171,11 @@
   </div>
 </div>
 </div>
-<section class="">
-  <div class="p-2">
+<section class="container">
+  <div class="p-2 col-sm-8 m-auto ">
     <div>
-      <div class="card col-sm-3 m-3" style="background-color: yellow;">        
-        <strong><div class="row"><mark  style="background-color: black; color:white; text-align:center;">SEND Your</mark><mark style="background-color: yellow; color:black;">INTENTION</mark></div></<strong>
+      <div class="card col-sm-3 m-3 #c5cae9 indigo lighten-4">        
+        <strong><div class="row" style="width: max-content;"><mark  style="background-color: black; color:white; text-align:center;">SEND YOUR</mark><mark class="#c5cae9 indigo lighten-4" style=" color:black;">INTENTION</mark></div></<strong>
     </div>
     </div>
     <form method="POST" action="{% url 'jobkarleapp:User_intenction' %}">
@@ -186,8 +196,8 @@
       {{forms.Message|safe}}
       
     </div>
-    <div class="m-auto" style="width: max-content;">
-      <input class=" card"  style="color:white; background-color:rgb(129, 200, 248);" type="submit" value="Send Notification">
+    <div class="m-auto float-right p-2" style="width: max-content;">
+      <input class=" card float-right #d4e157 lime lighten-1 p-2"  style="font-weight: bold; color:white;" type="submit" value="SEND STUFF">
     </div>
   </form>
 
@@ -200,6 +210,16 @@
       <div class="text-center text-muted">
       </div>
     </footer>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
     <script src="{% static 'static_css/core/jquery.3.2.1.min.js' %}"></script>
     <script src="{% static 'static_css/core/popper.min.js' %}"></script>
     <script src="{% static 'static_css/core/bootstrap.min.js' %}"></script>

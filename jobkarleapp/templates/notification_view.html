@@ -35,7 +35,7 @@ overflow:visible;
 }
 
 .main-menu {
-background:#212121;
+background:#dcedc8;
 border-right:1px solid #e5e5e5;
 position:absolute;
 top:0;
@@ -171,12 +171,12 @@ height: 100%;
       <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
      
   </head>
-  <body>
+  <body class="#cfd8dc blue-grey lighten-4">
     <nav class="main-menu" style="position: fixed;">
             <ul>
                 <li>
                     <a href="{% url 'jobkarleapp:Return_home' variable2.id %}">
-                        <i class="fa fa-home fa-2x"></i>
+                        <i class="fa fa-home fa-1x"></i>
                         <span class="nav-text">
                             Home
                         </span>
@@ -191,7 +191,7 @@ height: 100%;
               </li>
                 <li class="has-subnav">
                     <a href="{% url 'jobkarleapp:Total_notifications' variable2.id %}">
-                        <i class="fa fa-laptop fa-2x"></i>
+                        <i class="fa fa-laptop fa-1x"></i>
                         <span class="nav-text">
                             Inbox
                         </span>
@@ -200,7 +200,7 @@ height: 100%;
                 </li>
                 <li class="has-subnav">
                     <a href="#">
-                      <i class="fa fa-star fa-2x"></i>
+                      <i class="fa fa-star fa-1x"></i>
                         <span class="nav-text">
                             Saved Notifications
                         </span>
@@ -209,7 +209,7 @@ height: 100%;
                 </li>
                 <li class="has-subnav">
                     <a href="{% url 'jobkarleapp:Total_sent_notifications' variable2.id %}">
-                      <i class="fa fa-share-square fa-2x"></i>
+                      <i class="fa fa-share-square fa-1x"></i>
                         <span class="nav-text">
                             Sent
                         </span>
@@ -222,7 +222,7 @@ height: 100%;
             <ul class="logout">
                 <li>
                    <a href="{% url 'jobkarlepro:Logout' %}">
-                         <i class="fa fa-power-off fa-2x"></i>
+                         <div class="m-auto"><i class="fa fa-power-off fa-1x"></i></div>
                         <span class="nav-text">
                             Logout
                         </span>
@@ -237,7 +237,7 @@ height: 100%;
             {% if dummy %}
             <div class="row m-auto" style="width: max-content;">
               <div class="col-sm-10 m-auto">
-                  <div class=" m-3" style="background-color: aliceblue;">
+                  <div class=" m-3 #00b8d4 cyan accent-4">
                     <div class="col-sm-11"style="">
                       <div class="row m-auto">
                         <div class="col-sm-10 p-2">
@@ -248,7 +248,7 @@ height: 100%;
                           </div>
                         </div>
                         <div class="col-sm-2 p-2">
-                          <div class="m-auto"><img class="m-auto" src="{{Img.Profile.url}}" width="50" height="50"></div>
+                          <div class="float-right"><img class="m-auto float-right rounded-circle img-responsive" src="{{Img.Profile.url}}" width="50" height="50"></div>
                         </div>
                       </div>
                     </div>
@@ -323,7 +323,7 @@ height: 100%;
 <table class="table m-auto col-sm-10 " style="width:max-content;">
 
 <!--Table head-->
-<thead style="background-color: #999; position:static;">
+<thead  class="#455a64 blue-grey darken-2" style="position:static; color:white;">
 <tr>
 <th>#</th>
 <th>Profile</th>
@@ -363,7 +363,7 @@ height: 100%;
 <table class="table m-auto col-sm-10 " style="width:max-content;">
 
   <!--Table head-->
-  <thead style="background-color: #999; position:static;">
+  <thead  class="#455a64 blue-grey darken-2" style="position:static; color:white;">
     <tr>
       <th>#</th>
       <th>Profile</th>
@@ -396,12 +396,12 @@ height: 100%;
  
     {% else%}
     
-    <tr style="background-color:rgba(226, 221, 221, 0.432)">
+    <tr class="#e8eaf6 indigo lighten-5">
       
       <th scope="row">5</th>
       <td> <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="30" height="30" class="rounded-circle img-responsive" alt="no profile"></td>
       <td>{{i.Name}}</td>
-      <td style="color: #f38f8f;">{{i.Subject}}</td>
+      <td style="color:#afaaaa;">{{i.Subject}}</td>
       <td>13-5-2020</td>
       <td>
         <i class="far fa-star" style="float: right;" id="icon-card" ></i>

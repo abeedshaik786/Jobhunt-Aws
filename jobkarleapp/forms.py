@@ -16,7 +16,7 @@ class FresherDataModel(forms.ModelForm):
     def __init__(self,*args, **kwargs):
         super(FresherDataModel,self).__init__(*args,**kwargs)
         for field in self.fields:
-            self.fields[field].widget.attrs["class"] = "form-control"
+            self.fields[field].widget.attrs["class"] = "form-control select_box #9fa8da indigo lighten-3"
             self.fields[field].widget.attrs["placeholder"] = field
             if field == 'Nationality':
                 self.fields[field].widget.attrs["id"] = "id_country"
@@ -36,7 +36,7 @@ class FresherQualificationModel(forms.ModelForm):
         # elif self.instance.pk:
         #     self.fields['Course'].queryset = self.instance.Highest_Qualification.Course_set.order_by('name')
         for field in self.fields:
-            self.fields[field].widget.attrs['class'] = "form-control"
+            self.fields[field].widget.attrs['class'] = "form-control #e1bee7 purple lighten-4"
             self.fields[field].widget.attrs['placeholder'] = field
     class Meta:
         model = FresherQualification
