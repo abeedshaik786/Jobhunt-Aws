@@ -4,6 +4,7 @@ $('#company_button').on("click",function(){
     console.log("working function");
     $('#multiCollapseExample2').addClass('d-none');
    })
+  
 });
 function search_fun(){
   
@@ -15,3 +16,5 @@ function close_search_modal(){
     $('#binocular').css({'color':'#e6ee9c'});
     $('#dropdown_search').addClass('d-none');
 }
+
+

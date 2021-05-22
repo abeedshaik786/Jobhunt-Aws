@@ -1,7 +1,10 @@
 {% extends 'companybase.html' %}
 {% block content %}
 {% load static %}
-<div class="container col-sm-6  mt-5">
+
+<section class="#eceff1 blue-grey lighten-5 m-0 p-5" style="width: 100%; height:100%;">
+
+  <div class="container col-sm-6  mt-5">
     {% if obj %}
 <section class="m-4">
   <div class="container card col-sm mr-5">
@@ -17,34 +20,34 @@
 {% endif %}
    {{forms.errors}}
    
-    <form action="{% url 'jobkarleapp:job_postview' %}" method="POST">
+    <form  class="card pl-5 mb-4 #f3e5f5 purple lighten-5" action="{% url 'jobkarleapp:job_postview' %}" method="POST">
         {% csrf_token %}
         <input type="hidden" name="user_id" value="{{user.id}}">
     <div class="card mt-2" style="background-color: yellow; width:max-content;">        
       <strong><div class="row"><mark  style="background-color: black; color:white; text-align:center;">POST</mark><mark style="background-color: yellow; color:black;">VACANCY</mark></div></<strong>
   </div>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-sm-5 m-2">
           <label for="cars">Company Name</label>
-            <input type="text" class="form-control" name="companyname" placeholder="CompanyName">
+            <input type="text" class="form-control #f3e5f5 purple lighten-5" name="companyname" placeholder="CompanyName">
 
         </div>
         <div class="col-sm-5 m-2">
           <label for="cars">Designation</label>
-            <input type="text" class="form-control" name="skills" placeholder="Role">
+            <input type="text" class="form-control #f3e5f5 purple lighten-5" name="skills" placeholder="Role">
         </div>
     </div>
-    <div class="m-2">
-        <div class="form-group col-sm-12">
+    <div class="pl-0">
+        <div class="form-group col-sm-11 pl-1">
             <label for="exampleFormControlTextarea6">Company Description</label>
-            <textarea class=" form-control z-depth-1" name = "Company_description" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+            <textarea class=" form-control z-depth-1 #f3e5f5 purple lighten-5" name = "Company_description" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
           </div>
     </div>
     <div class="row">
         <div class="col-sm-5 m-2">
             <label for="cars">Choose a Minimum Experience:</label>
 
-            <select id="min_exp" class="form-control" name="min_experience">
+            <select id="min_exp" class="form-control #f3e5f5 purple lighten-5" name="min_experience">
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
@@ -58,7 +61,7 @@
         <div class="col-sm-5 m-2">
             <label for="cars">Choose a Maximum Experience:</label>
 
-            <select id="max_exp"  class="form-control" name="max_experience">
+            <select id="max_exp"  class="form-control #f3e5f5 purple lighten-5" name="max_experience">
             
               <option value="0">0</option>
               <option value="1">1</option>
@@ -75,7 +78,7 @@
         <div class="col-sm-5 m-2">
             <label for="cars">Choose a Minimum Experience:</label>
 
-            <select id="min_salary" class="form-control"name="min_salary">
+            <select id="min_salary" class="form-control #f3e5f5 purple lighten-5"name="min_salary">
               <option value="0">0</option>
               <option value="1,00,000">1</option>
               <option value="2,00,000">2</option>
@@ -89,7 +92,7 @@
         <div class="col-sm-5 m-2">
             <label for="cars">Choose a Maximum Experience:</label>
 
-            <select id="max_salary " class="form-control" name="max_salary">
+            <select id="max_salary " class="form-control #f3e5f5 purple lighten-5" name="max_salary">
               <option value="0">0</option>
               <option value="1,00,000">1</option>
               <option value="2,00,000">2</option>
@@ -102,38 +105,38 @@
         </div>
     </div>
 
-    <div class="form-group shadow-textarea col-sm-12">
+    <div class="form-group shadow-textarea col-sm-11 pl-0">
       <label for="exampleFormControlTextarea6">Roles and Responsibilities</label>
-      <textarea class="form-control z-depth-1 form-control" name="roledescription" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+      <textarea class="form-control z-depth-1 form-control #f3e5f5 purple lighten-5" name="roledescription" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
     </div>
     <div class="row">
         <div class="col-sm-5 m-2">
           <label for="cars">First Hr Name</label>
-            <input type="text"  class="form-control" name="firsthrname" placeholder="First HrName">
+            <input type="text"  class="form-control #f3e5f5 purple lighten-5" name="firsthrname" placeholder="First HrName">
         </div>
         <div class="col-sm-5 m-2">
           <label for="cars">First Hr Number</label>
-            <input type="number"  class="form-control" name="firsthrnumber" placeholder="First HrNumber">        </div>
+            <input type="number"  class="form-control #f3e5f5 purple lighten-5" name="firsthrnumber" placeholder="First HrNumber">        </div>
     </div>
     <div class="row">
       
         <div class="col-sm-5 m-2">
           <label for="cars">Second Hr Name</label>
-          <input type="text"  class="form-control" name="secondhrname" placeholder="Second HrName"></div>
+          <input type="text"  class="form-control #f3e5f5 purple lighten-5" name="secondhrname" placeholder="Second HrName"></div>
         <div class="col-sm-5 m-2">
           <label for="cars">Second Hr Number</label>
-          <input type="number"  class="form-control" name="secondhrnumber" placeholder="Second HrNumber"></div>
+          <input type="number"  class="form-control #f3e5f5 purple lighten-5" name="secondhrnumber" placeholder="Second HrNumber"></div>
     </div>
-    <div class="m-2">
+    <div class="m-2 col-sm-11 pl-0">
       <label for="cars">Interview Date</label>
-        <input type="text"  class="form-control" name="interviewdate" placeholder="Interview Date">
-    </div>
-    <div class="m-2">
+        <input type="text"  class="form-control #f3e5f5 purple lighten-5" name="interviewdate" placeholder="Interview Date">
+    </div> 
+    <div class="m-2 col-sm-11 pl-0">
       <label for="cars">Interview Location</label>
-        <input type="text"  class="form-control" name="interviewlocation" placeholder="Interview Location">
+        <input type="text"  class="form-control #f3e5f5 purple lighten-5" name="interviewlocation" placeholder="Interview Location">
     </div>
-    <div class="m-auto" style="width: max-content;">
-      <input type="submit" class="btn "  value="POST REQUIREMENTS" style="background-color: navy; color:white;">
+    <div class="m-auto m-4" style="width: max-content;">
+      <input type="submit" class="btn  text-center"  value="POST REQUIREMENTS" style="background-color: navy; color:white;">
     </div>
     
 </form> 
@@ -151,5 +154,7 @@
         }
       });
 </script>
+
+</section>
 
 {% endblock %}

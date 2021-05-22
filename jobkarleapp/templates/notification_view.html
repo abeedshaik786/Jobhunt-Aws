@@ -196,7 +196,6 @@ height: 100%;
                             Inbox
                         </span>
                     </a>
-                    
                 </li>
                 <li class="has-subnav">
                     <a href="#">
@@ -341,7 +340,12 @@ height: 100%;
 <tbody>
 <tr>
 <th scope="row">4</th>
-<td> <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="30" height="30" class="rounded-circle img-responsive" alt="no profile"></td>
+
+<td>
+  {% if i.Profile %}
+   <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="30" height="30" class="rounded-circle img-responsive" alt="no profile">
+  {% endif %}
+  </td>
 <td>{{i.Name}}</td>
 <td>{{i.Subject}}</td>
 <td>13-5-2020</td>
@@ -383,7 +387,11 @@ height: 100%;
    
     <tr style="background-color:silver;">
       <th scope="row">4</th>
-      <td> <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="30" height="30" class="rounded-circle img-responsive" alt="no profile"></td>
+      <td> 
+        {% if i.Profile %}
+        <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="30" height="30" class="rounded-circle img-responsive" alt="no profile">
+        {% endif %}
+      </td>
       <td>{{i.Name}}</td>
       <td>{{i.Subject}}</td>
       <td>13-5-2020</td>
@@ -399,7 +407,11 @@ height: 100%;
     <tr class="#e8eaf6 indigo lighten-5">
       
       <th scope="row">5</th>
-      <td> <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="30" height="30" class="rounded-circle img-responsive" alt="no profile"></td>
+      <td> 
+        {% if i.Profile %}
+        <img class="p-1" src="{{i.Profile.url}}" style="border:1px solid black; background-color:rgb(198, 207, 209);" width="30" height="30" class="rounded-circle img-responsive" alt="no profile">
+      {% endif %}
+      </td>
       <td>{{i.Name}}</td>
       <td style="color:#afaaaa;">{{i.Subject}}</td>
       <td>13-5-2020</td>

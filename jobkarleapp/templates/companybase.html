@@ -19,14 +19,14 @@
 <body class="body-imgset">
     <!--/.Navbar-->
     <section>
-    <nav class="navbar navbar-expand-lg base11 navbar-text-color #ede7f6 deep-purple lighten-5 ">
+    <nav class="navbar navbar-expand-lg base11  ">
      {% include 'logo.html' %}
            
             <button class="navbar-toggler" data-toggle="collapse" data-target="#uiNavbar">
                 <span class="navbar-toggler-icon blue"></span>
             </button>
             <div class="collapse navbar-collapse" id="uiNavbar">
-                <ul class="navbar-nav m-auto" style="float: right; font-size:14px;">
+                <ul class="navbar-nav m-0" style="font-size:14px; color:black;">
                     
                     <li class="nav-item dropdown-RECRUITERS">
                         <a href="about.html" class="nav-link">
@@ -82,6 +82,28 @@
                   {% endif %}
                 
                 </ul>
+                <ul class="navbar-nav " style="float: right; position:absolute; top:0; right:0;">
+                    {% if user_data.is_authenticated %}
+                    {% if profilepic %}
+                    <li class="dropdown nav-link">
+                      
+                         <a href="contact.html" class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="far fa-bell fa-2x animated swing" style="color:#343A40;"></i>
+                            {% if notification_unread %}
+                            <div class="badge">
+                              <div class="message-count">{{notification_count}}</div>
+                            </div>
+                            {% endif %}</a>
+       
+                      <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" style="width:max-content;">
+                       
+                          <li class="dropdown-item"><a href="{% url 'jobkarleapp:notification_read' user_data.id %}">HR Notifications</a></li>
+                        
+                        </ul>
+                      </li>
+                      {% endif %}
+                      {% endif%}
+                </ul>
             </div>
          
       </nav>
@@ -93,6 +115,8 @@
         {% endblock %}
     </section>
      
+    
+    <script rel="stylesheet" type="text/javascript" src="{% static 'static_css/main_tree.js' %}"></script>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->

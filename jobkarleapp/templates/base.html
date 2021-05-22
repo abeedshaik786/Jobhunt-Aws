@@ -200,7 +200,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="uiNavbar">
-                <ul class="navbar-nav" id="big-navbar">
+                <ul class="navbar-nav" id="big-navbar" style="font-weight: bold;">
                     <li class="nav-item dropdown">
                         <a class="nav-link">JOBS</a>
                         <!-- dropdown list data's  -->
@@ -277,17 +277,17 @@
                          <div class="dropdown-more animated zoomIn">
                             <div class="row">
                               <div class="col-sm-6">
-                                <a href="#">Search Jobs</a>
-                                <a href="#">Advanced Search</a>
+                                <a href="#">Search Jobs</a><br>
+                                <a href="#">Advanced Search</a><br>
                                 <a href="#">Create Free job Alert</a>
                               </div>
                           
                               <div class="col-sm-6">
-                              <a href="#">Jobs by Location</a>
-                              <a href="#">Jobs by Skill</a>
-                              <a href="#">Jobs by Designation</a>
-                              <a href="#">Jobs by Company</a>
-                              <a href="#">Jobs by Category</a>
+                              <a href="#">Jobs by Location</a><br>
+                              <a href="#">Jobs by Skill</a><br>
+                              <a href="#">Jobs by Designation</a><br>
+                              <a href="#">Jobs by Company</a><br>
+                              <a href="#">Jobs by Category</a><br>
                               <a href="#">Browse all Jobs</a>
                           
                               </div>
@@ -454,8 +454,8 @@
       <!-- multiple data search at a time search box -->
       {% if user.is_authenticated %}
       {% if profilepic %}
-      <section class="main-profile" style="width: max-content;">
-        <div class="m-4 bi-profile" style="width: max-content; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      <section class="main-profile col-sm-2">
+        <div class="bi-profile float-left" style="width: max-content; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;">
           <div class="card-header #dcedc8 light-green lighten-4" style="height:35px;">
               <div class="float-right">

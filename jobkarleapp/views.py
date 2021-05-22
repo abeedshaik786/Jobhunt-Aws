@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect,Http404
 from .forms import  FresherModel,FresherDataModel,FresherQualificationModel,Qualification_Course,JobRequirmentsModel,ProfileImgModel,NotificationModel
-from .models import FresherQualification,JobRequirments,FresherData,Notifications
+from .models import FresherQualification,JobRequirments,FresherData,Notifications,profilesummary
 from django.core.files.storage import FileSystemStorage
 from .functions import handle_uploaded_file
 from .models import Fresher,FresherData,JobRequirments,ProfileImg,Qualification
@@ -143,12 +143,20 @@ def Companyprofile_data(request,User_id):
     # import pdb;pdb.set_trace()
     # user_personal_data = FresherData.objects.get(user_id=user_data.id)
     profilepic = ProfileImg.objects.get(user_id=user_data.id)
+    notifications=Notifications.objects.filter(user_id = user_data.id)
+    notification_count=Notifications.objects.filter(Status = 'Unread',user_id = user_data.id).count()
+    notification_unread=Notifications.objects.filter(user_id = user_data.id,Status = 'Unread')
+    notification_read=Notifications.objects.filter(Status = 'Read')
     return render(request,'companypage.html',{
         'user_data':user_data,
         'jobs_data':jobs_data,
         'obj1':obj1,
         'user_personal_data':user_personal_data,
         'profilepic':profilepic,
+        'notifications':notifications,
+        'notification_count':notification_count,
+        'notification_unread':notification_unread, 
+        'notification_read':notification_read,
 
     })
 
@@ -409,6 +417,7 @@ def Applied_Candidates(request,idd ,uidd):
 def candidate(request,idd,uidd):
     Suser_data = User.objects.get(id=idd)
     user_data = User.objects.get(id = uidd)
+    summary = profilesummary.objects.get(user__id=Suser_data.id)
     user_img = ProfileImg.objects.get(user__id=Suser_data.id)
     course_data = FresherQualification.objects.get(user__id=Suser_data.id)
     extra_data = FresherData.objects.get(user__id=Suser_data.id)
@@ -416,6 +425,7 @@ def candidate(request,idd,uidd):
     forms = NotificationModel()
     return render(request,'candidate.html',{
     'user_data':user_data,
+    'summary':summary,
     'Suser_data':Suser_data,
     'user_img':user_img,
     'course_data':course_data,
@@ -431,9 +441,10 @@ def candidate_search(request):
 
 def studentlist(request):
     students_list = User.objects.filter(is_staff = False)
+    summary = profilesummary.objects.all()
     # students_pic = ProfileImg.objects.all()
     # import pdb;pdb.set_trace()
-    return render(request,'studentslist.html',{'students_list':students_list})
+    return render(request,'studentslist.html',{'students_list':students_list,'summary':summary})
     
 def Resume_Edite(request):
     import pdb;pdb.set_trace()

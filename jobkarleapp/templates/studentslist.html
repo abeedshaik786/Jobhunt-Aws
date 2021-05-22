@@ -22,8 +22,16 @@
   }
 </style>
 <div class="bg_studentslist m-auto ">
+  <div class="row m-2 float-left">
+    <div class=" p-2 m-2 rounded-circle card" style="width: 30px; height:30px;">
+      <div class=" p-2 m-auto rounded-circle card " style="width: 20px; height:20px; background-color:black;"></div>
+    </div>
+    <div class=" p-2 m-2 rounded-circle card" style="width: 30px; height:30px;">
+      <div class=" p-2 m-auto rounded-circle card " style="width: 20px; height:20px; background-color:black;"></div>
+    </div>
+  </div>
+  
   <div class="row m-4" style="float: right;">
-    <div class="card p-2"></div>
   <div class="bg_studentimg card">
     <div class="m-auto" style="height:max-content">
   <p class="text-center m-0" style="font-weight: 900;">Trust Us</p>
@@ -34,5 +42,98 @@
   </div>
   </div>
 </div>
+<section>
+{% for student in students_list %}
+{% for profilepic in student.profileimg_set.all %}
+{% for data in student.profilesummary_set.all %}
+{% for q in student.fresherqualification_set.all %}
+<div class="m-auto col-7" style>
+  <div class="card col-sm-12 m-2 p-2 " style="margin-top: 5px; margin-bottom:5px;">
+<div class="moreopen" id="profilemore">
+  <div class="row m-auto">
+    <div class="row p-2 col-sm-12 m-0">
+      <div class="col-sm-6">
+        <img src="{{profilepic.Profile.url}}" width="100" height="100" class=" img-responsive m-auto" alt="no profile">
+        <p class="pl-3 pt-2" style="font-weight: bold; color:rgba(0, 0, 0, 0.548); color:blue;">{{student.first_name}}</p>
+      </div>
+      <div class="col-sm-6" style="font-weight: bold; color:rgba(0, 0, 0, 0.548); float:right;">
+        <div class="float-right">
+          <p class="m-0">{{student.email}}</p>
+        <p class="m-0">{{q.Phone}}</p>
+        <button class=" card mt-3 p-1 #f3e5f5 purple lighten-5" style="font-weight: bold; color:rgba(0, 0, 0, 0.548);">sort profile</button>
+        </div>
+
+        
+      </div>
+    </div>
+ <div>
+   <div>
+     <p class="p-2 mt-0" style="font-weight: bold; color:rgba(0, 0, 0, 0.548); ">
+          {{data.StudentInfo}}
+     </p>
+   </div>
+   <div>
+     <p class="p-1 card float-right m-1 #eceff1 blue-grey lighten-5">{{q.Skills1}}</p>
+     <p class="p-1 card float-right m-1 #eceff1 blue-grey lighten-5">{{q.Skills2}}</p>
+     <p class="p-1 card float-right m-1 #eceff1 blue-grey lighten-5">{{q.Skills3}}</p>
+     <p class="p-1 card float-right m-1 #eceff1 blue-grey lighten-5">{{q.Skills4}}</p>
+     <p class="p-1 card float-right m-1 #eceff1 blue-grey lighten-5">{{q.Skills5}}</p>
+     <p class="p-1 card float-right m-1 #eceff1 blue-grey lighten-5">{{q.Skills6}}</p>
+   </div>
+</div>
+   <br>
+    <!--Accordion wrapper-->
+<div class="accordion md-accordion m-2 pt-2" id="accordionEx{{student.id}}" role="tablist" aria-multiselectable="true">
+
+  <div class="">
+
+    <!-- Card header -->
+    <div class="" role="tab" id="headingThree3{{student.id}}">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx{{student.id}}" href="#collapseThree3{{student.id}}"
+        aria-expanded="false" aria-controls="collapseThree3{{student.id}}">
+        <p class="mb-0 " id="moredualebuton"  onclick="profilemore()" style="font-weight: bold;">
+          More<i class="fas fa-angle-down rotate-icon p-2"></i>
+        </p>
+      </a>
+    </div>
+
+    <!-- Card body -->
+    <div id="collapseThree3{{student.id}}" class="collapse" role="tabpanel" aria-labelledby="headingThree3{{student.id}}" data-parent="#accordionEx{{student.is}}">
+      <div class="card-body">
+        <div>
+          <p>Gender:</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- Accordion card -->
+
+</div>
+<!-- Accordion wrapper -->
+   </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endfor %}
+  {% endfor %}
+  {% endfor %}
+
+  <script>
+    function profilemore(){
+      $('#profilemore').addClass('d-none');
+      $("#moredualebuton").removeAttr("onclick",profilemore+"()");
+      $("#moredualebuton").attr("onclick",profilemoreclose+"()");
+      console.log('profile d-none working');
+  }
+   function profilemoreclose(){
+    $('#profilemore').removeClass('d-none');
+    $("#moredualebuton").removeAttr("onclick",profilemoreclose+"()");
+    $("#moredualebuton").attr("onclick",profilemore+"()");
+    console.log('profile remove d-none working');
+   }
+  </script>
+</section>
 
 {% endblock %}

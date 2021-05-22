@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Fresher,FresherData,FresherQualification,Qualification,Qualification_Course,JobRequirments,ProfileImg,Notifications
+from .models import Fresher,FresherData,FresherQualification,Qualification,Qualification_Course,JobRequirments,ProfileImg,Notifications,profilesummary
 
 # Register your models here.
 admin.site.register(Fresher)
@@ -10,5 +10,6 @@ admin.site.register(Qualification_Course)
 admin.site.register(JobRequirments)
 admin.site.register(ProfileImg)
 admin.site.register(Notifications)
+admin.site.register(profilesummary)
 
 
