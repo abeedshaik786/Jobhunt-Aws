@@ -33,7 +33,7 @@ msgpack==0.6.2
 openpyxl==3.0.5
 packaging==19.0
 pdfminer.six==20201018
-Pillow==6.2.1
+Pillow==8.2.0
 pipwin==0.4.5
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
