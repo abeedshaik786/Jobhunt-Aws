@@ -13,7 +13,7 @@ constantly==15.1.0
 cryptography==2.7
 Cython==0.29.21
 daphne==2.4.1
-Django==2.2.2
+Django==2.2.28
 django-ckeditor==5.9.0
 django-crispy-forms==1.10.0
 django-filter==2.2.0
