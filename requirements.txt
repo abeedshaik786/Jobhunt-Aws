@@ -44,7 +44,7 @@ pyjsparser==2.7.1
 PyMuPDF==1.18.4
 pyOpenSSL==19.1.0
 pyparsing==2.4.0
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 PyPrind==2.11.2
 pytesseract==0.3.6
 pytz==2018.9
